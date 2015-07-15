@@ -11,7 +11,7 @@ var VFacBought = 0;
 var VDisBought = 0;
 var VMassBought = 0;
 var VCompanyBought = 0;
-var Ve1emBought = 0;
+var VEbolaBought = 0;
 var VPortalBought = 0;
 
 ////////////////////
@@ -24,17 +24,17 @@ var Awareness = 0;
 ////// Timer ///////
 ////////////////////
 
-var CountdownToe1em = 250000;
-function e1emTimer() {
-    document.getElementById('timer').innerHTML = CountdownToe1em + " minutes | Vaccines currently in store: " +  VaccinesMade + " | Vaccines Given out: " + VaccinesGiven + " | Money: $" + Money;
-    if (CountdownToe1em == 0) {
+var CountdownToEbola = 250000;
+function EbolaTimer() {
+    document.getElementById('timer').innerHTML = CountdownToEbola + " minutes | Vaccines currently in store: " +  VaccinesMade + " | Vaccines Given out: " + VaccinesGiven + " | Money: $" + Money;
+    if (CountdownToEbola == 0) {
         clearInterval(countdownTimer);
     } else {
-        CountdownToe1em--;
+        CountdownToEbola--;
     }
 }
-var countdownTimer = setInterval('e1emTimer()', 10);
-window.onload = e1emTimer;
+var countdownTimer = setInterval('EbolaTimer()', 10);
+window.onload = EbolaTimer;
 
 
 
@@ -102,10 +102,10 @@ function VaccineCompany() {
 	Money = Money - 50000;
 	}
 }
-function Vaccinee1emMine() {
+function VaccineEbolaMine() {
 
 	if (Money >= 1000000) {
-	Ve1emBought = Ve1emBought + 1;
+	VEbolaBought = VEbolaBought + 1;
 	Money = Money - 1000000;
 	}
 }
@@ -171,15 +171,15 @@ function Company() {
 var CompanyStart = setInterval('Company()', 5);
 Window.onload = CompanyStart;
 
-function e1emMining() {
+function EbolaMining() {
 
-	if (Ve1emBought > 0) {
-	VaccinesMade = VaccinesMade + (Ve1emBought*110);
+	if (VEbolaBought > 0) {
+	VaccinesMade = VaccinesMade + (VEbolaBought*110);
 	}
 	
 }
-var e1emStart = setInterval('e1emMining()', 1);
-Window.onload = e1emStart;
+var EbolaStart = setInterval('EbolaMining()', 1);
+Window.onload = EbolaStart;
 
 function Portal() {
 
@@ -203,13 +203,13 @@ Window.onload = Charity;
 
 function Game() {
 
-	if (CountdownToe1em === 0) {
+	if (CountdownToEbola === 0) {
 		if (VaccinesGiven >= People) {
-		alert("You have saved all the people of the world! e1em is now going to spread to every single person on earth...but do not worry! Everyone has been vaccined and is safe! Congratulations, you have won the game!");
+		alert("You have saved all the people of the world! Ebola is now going to spread to every single person on earth...but do not worry! Everyone has been vaccined and is safe! Congratulations, you have won the game!");
 		}
 	else {
 	var Unsafe = People - VaccinesGiven;
-	alert("Oh, you have not saved all the people of the world! There are still " + Unsafe + " people who have not received treatment. e1em is now going to spread to every single person on earth...and the amount of deaths are " + Unsafe + "! Better luck next time you play the game!");
+	alert("Oh, you have not saved all the people of the world! There are still " + Unsafe + " people who have not received treatment. Ebola is now going to spread to every single person on earth...and the amount of deaths are " + Unsafe + "! Better luck next time you play the game!");
 	}
 	
 	}
@@ -282,10 +282,10 @@ if (Money >= 100000000) {
 	
 function Save() {
 
-alert("Money = " + Money + ";\nVaccinesMade = " + VaccinesMade + ";\nVaccinesGiven = " + VaccinesGiven+ ";\nTotalVaccines = " + TotalVaccines  + ";\nVMachineBought = " + VMachineBought + ";\nAwareness = " + Awareness + ";\nVFacBought = " + VFacBought + ";\nVDisBought = " + VDisBought + ";\nVMassBought = " + VMassBought + ";\nVCompanyBought = " + VCompanyBought + ";\nVe1emBought = " + Ve1emBought + ";\nVPortalBought = " + VPortalBought+ ";\nCountdownToe1em = " + CountdownToe1em + ";\nalert(\"Save succeeded\");");
+alert("Money = " + Money + ";\nVaccinesMade = " + VaccinesMade + ";\nVaccinesGiven = " + VaccinesGiven+ ";\nTotalVaccines = " + TotalVaccines  + ";\nVMachineBought = " + VMachineBought + ";\nAwareness = " + Awareness + ";\nVFacBought = " + VFacBought + ";\nVDisBought = " + VDisBought + ";\nVMassBought = " + VMassBought + ";\nVCompanyBought = " + VCompanyBought + ";\nVEbolaBought = " + VEbolaBought + ";\nVPortalBought = " + VPortalBought+ ";\nCountdownToEbola = " + CountdownToEbola + ";\nalert(\"Save succeeded\");");
 }
 	
-alert("Welcome to the Stop e1em Game! You have 250,000 minutes in gametime to save all 7 billion people on earth from e1em! Any person you don't give vaccine to will die once the time is up! Good luck! Save the world from e1em! You start with $2000. Use it wisely.");
+alert("Welcome to the Stop Ebola Game! You have 250,000 minutes in gametime to save all 7 billion people on earth from Ebola! Any person you don't give vaccine to will die once the time is up! Good luck! Save the world from Ebola! You start with $2000. Use it wisely.");
 alert("On the left side of the interface is the Make Vaccine Column. You can buy multiple machines/companies and they will create vaccines as time passes.");
 alert("On the right side of the interface is the Sell Vaccines Column. You will sell all the vaccines you currently have for $0.05 and that will be given to people on earth. Bear in mind, however, that every time you sell vaccines, it costs $10.00");
-alert("On the middle area of the interface is the Fundraising Column. You can buy multiple posters/newspapers to raise awareness for e1em. You will earn donations every five seconds depending on the awareness of e1em.");
+alert("On the middle area of the interface is the Fundraising Column. You can buy multiple posters/newspapers to raise awareness for Ebola. You will earn donations every five seconds depending on the awareness of Ebola.");
