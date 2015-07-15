@@ -1,24 +1,20 @@
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
 
 <head>
-	<title>Stop e1em!</title>
-	<script src="Script.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-
-
-    <div>
-    <h1 align="center"> STOP e1em GAME </h1>
+    <div class="Homepage">
+    <h1 align="center"> STOP EBOLA GAME </h1>
     </div>
 	
 	
-	
-		<div align="center"></div>
+	<script src="Script.js"> </script>
+		<div align="center" id="timer"></div>
 	<br>
 		<p align="center">
-			<span></span>
-	<button type="button"> Save (Put this on console next time you play)</button>
+			<span id="timer" class="timer"></span>
+	<button type="button" onclick="Save()"> Save (Put this on console next time you play)</button>
 		</p>
 		
 		<br>
@@ -26,18 +22,18 @@
 
     
     
+</head>
 
 
-
-	<div>
-		<div>
-	 <div>
+	<div class="Make">
+		<div class="container">
+	 <div class="col-md-5">
 	 <h1> Make Vaccines </h1>
-	 <a>
-	<button type="button"> Make a Vaccine </button>
-	<span>
-	<b> &quot;The old-fashioned way&quot; </b>
-	<span>
+	 <a class="ehideDisplay">
+	<button type="button" onclick="Vaccine()"> Make a Vaccine </button>
+	<span class="showDisplayOnHover">
+	<b> "The old-fashioned way" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Makes a vaccine every click!
 	</span>
@@ -47,11 +43,11 @@
 	<br>
 	
 	
-	<a>
-	<button type="button"> Easy Vaccine Machine (Cost: $5.00)</button>
-	<span>
-	<b> &quot;Cheap and Simple, right from Mr. Smith&#39;s backyard!&quot; </b>
-	<span>
+	<a class="hideDisplay">
+	<button type="button" onclick="VaccineMachine()"> Easy Vaccine Machine (Cost: $5.00)</button>
+	<span class="showDisplayOnHover">
+	<b> "Cheap and Simple, right from Mr. Smith's backyard!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Makes 0.25 Vaccines every second
 	</span>
@@ -61,11 +57,11 @@
 	<br>
 	<br>
 	
-	<a>
-	<button type="button"> Vaccine Small Factory (Cost: $50.00)</button>
-	<span>
-	<b> &quot;Start the Industry, right now, anytime!&quot; </b>
-	<span>
+	<a class="hideDisplay">
+	<button type="button" onclick="VaccineFactory()"> Vaccine Small Factory (Cost: $50.00)</button>
+	<span class="showDisplayOnHover">
+	<b> "Start the Industry, right now, anytime!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Makes 4 Vaccines every second
 	</span>
@@ -75,11 +71,11 @@
 	<br>
 	<br>
 	
-	<a>
-	<button type="button"> Vaccine Dispenser (Cost: $200.00)</button>
-	<span>
-	<b> &quot;Made accidentally by two friends from Tuvalu&quot; </b>
-	<span>
+	<a class="hideDisplay">
+	<button type="button" onclick="VaccineDispenser()"> Vaccine Dispenser (Cost: $200.00)</button>
+	<span class="showDisplayOnHover">
+	<b> "Made accidentally by two friends from Tuvalu" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Makes 20 Vaccines every second
 	</span>
@@ -89,11 +85,11 @@
 	<br>
 	<br>
 	
-	<a>
-	<button type="button"> Vaccine Mass Making System (Cost: $10,000.00) </button>
-	<span>
-	<b> &quot;The robots of NASA can now make vaccines!&quot; </b>
-	<span>
+	<a class="bhideDisplay">
+	<button type="button" onclick="VaccineMMS()"> Vaccine Mass Making System (Cost: $10,000.00) </button>
+	<span class="showDisplayOnHover">
+	<b> "The robots of NASA can now make vaccines!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Makes around 1100 Vaccines every second
 	</span>
@@ -103,11 +99,11 @@
 	<br>
 	<br>
 	
-	<a>
-	<button type="button"> Vaccine Company (Cost: $50,000.00) </button>
-	<span>
-	<b> &quot;Get Foxconn? Gordon&#39;s Company? Or better!&quot; </b>
-	<span>
+	<a class="chideDisplay">
+	<button type="button" onclick="VaccineCompany()"> Vaccine Company (Cost: $50,000.00) </button>
+	<span class="showDisplayOnHover">
+	<b> "Get Foxconn? Gordon's Company? Or better!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Makes 5200 Vaccines every second
 	</span>
@@ -117,11 +113,11 @@
 	<br>
 	<br>
 	
-	<a>
-	<button type="button"> e1em Vaccine Mine (Cost: $1,000,000.00) </button>
-	<span>
-	<b> &quot;An e1em Vaccine Mine? That&#39;s gonna be mine!&quot; </b>
-	<span>
+	<a class="hideDisplay">
+	<button type="button" onclick="VaccineEbolaMine()"> Ebola Vaccine Mine (Cost: $1,000,000.00) </button>
+	<span class="showDisplayOnHover">
+	<b> "An Ebola Vaccine Mine? That's gonna be mine!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Makes 110000 Vaccines every second
 	</span>
@@ -131,11 +127,11 @@
 	<br>
 	<br>
 	
-	<a>
-	<button type="button"> e1em Vaccine Portal (Cost: $30,000,000.00) </button>
-	<span>
-	<b> &quot;Opening the fifth dimension?! This is out of the world cool!&quot;</b>
-	<span>
+	<a class="ahideDisplay">
+	<button type="button" onclick="VaccinePortal()"> Ebola Vaccine Portal (Cost: $30,000,000.00) </button>
+	<span class="showDisplayOnHover">
+	<b> "Opening the fifth dimension?! This is out of the world cool!"</b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Makes ??? Vaccines every second
 	</span>
@@ -146,15 +142,15 @@
 
 
 
-<div>
-<h1> Fundraise for e1em  </h1>
+<div class="col-md-5">
+<h1 > Fundraise for Ebola  </h1>
 	  <br>
 	  <br>
-	  <a>
-	  <button type="button"> Advertise with Poster (Cost: $50.00) </button>
-	  <span>
-	<b> &quot;Greener Future, Greener e1em- uh, I meant, better society!&quot; </b>
-	<span>
+	  <a class="ahideDisplay">
+	  <button type="button" onclick="Poster()"> Advertise with Poster (Cost: $50.00) </button>
+	  <span class="showDisplayOnHover">
+	<b> "Greener Future, Greener Ebola- uh, I meant, better society!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Increases Money every five seconds by $1
 	</span>
@@ -162,11 +158,11 @@
 	</a>
       <br>
       <br>
-      <a>
-      <button type="button"> Advertise with Magazine (Cost: $200.00)</button>
-      <span>
-	<b> &quot;Spend your pocket money on e1em, not clothes!&quot; </b>
-	<span>
+      <a class="hideDisplay">
+      <button type="button" onclick="Magazine()"> Advertise with Magazine (Cost: $200.00)</button>
+      <span class="showDisplayOnHover">
+	<b> "Spend your pocket money on Ebola, not clothes!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Increases Money every five seconds by $8
 	</span>
@@ -174,11 +170,11 @@
 	</a>
       <br>
       <br>
-      <a>
-      <button type="button"> Advertise with Newspaper (Cost: $4,000.00)</button>
-      <span>
-	<b> &quot;Breaking News: Fundraise for e1em!&quot; </b>
-	<span>
+      <a class="hideDisplay">
+      <button type="button" onclick="Newspaper()"> Advertise with Newspaper (Cost: $4,000.00)</button>
+      <span class="showDisplayOnHover">
+	<b> "Breaking News: Fundraise for Ebola!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Increases Money every five seconds by $200
 	</span>
@@ -186,11 +182,11 @@
 	</a>
       <br>
       <br>
-      <a>
-      <button type="button"> Advertise with TV Commercial (Cost: $15,000.00)</button>
-      <span>
-	<b> &quot;Before you watch the program, try helping e1em!&quot; </b>
-	<span>
+      <a class="hideDisplay">
+      <button type="button" onclick="TVAdvert()"> Advertise with TV Commercial (Cost: $15,000.00)</button>
+      <span class="showDisplayOnHover">
+	<b> "Before you watch the program, try helping Ebola!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Increases Money every five seconds by $1000
 	</span>
@@ -198,11 +194,11 @@
 	</a>
       <br>
       <br>
-      <a>
-      <button type="button"> Talk from the Senate (Cost: $150,000.00)</button>
-      <span>
-	<b> &quot;The senate believes e1em is a concern for all people&quot; </b>
-	<span>
+      <a class="hideDisplay">
+      <button type="button" onclick="SenateTalk()"> Talk from the Senate (Cost: $150,000.00)</button>
+      <span class="showDisplayOnHover">
+	<b> "The senate believes Ebola is a concern for all people" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Increases Money every five seconds by $12,000
 	</span>
@@ -210,10 +206,10 @@
 	</a>
       <br>
       <br>
-      <a>
-      <button type="button"> UN Declaration of Calamity (Cost: $1,200,000.00)</button><span>
-	<b> &quot;e1em will threaten the world unless you fund!&quot; </b>
-	<span>
+      <a class="bhideDisplay">
+      <button type="button" onclick="UNDeclaration()"> UN Declaration of Calamity (Cost: $1,200,000.00)</button><span class="showDisplayOnHover">
+	<b> "Ebola will threaten the world unless you fund!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Increases Money every five seconds by $100,000
 	</span>
@@ -222,11 +218,11 @@
 	
       <br>
       <br>
-      <a>
-      <button type="button"> e1em on Religious Documents (Cost: $10,000,000.00)</button>
-      <span>
-	<b> &quot;And He said: &quot;Stop All Cases of e1em!&quot; &quot; </b>
-	<span>
+      <a class="chideDisplay">
+      <button type="button" onclick="Religion()"> Ebola on Religious Documents (Cost: $10,000,000.00)</button>
+      <span class="showDisplayOnHover">
+	<b> "And He said: "Stop All Cases of Ebola!" " </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 Increases Money every five seconds by $1,200,000
 	</span>
@@ -236,11 +232,11 @@ Increases Money every five seconds by $1,200,000
       <br>
       
 
-      <a>
-      <button type="button"> Galactical Announcement (Cost: $100,000,000.00)</button>
-      <span>
-	<b> &quot;NASA has transmitted messages for money to fundraise e1em&quot; </b>
-	<span>
+      <a class="chideDisplay">
+      <button type="button" onclick="Galaxy()"> Galactical Announcement (Cost: $100,000,000.00)</button>
+      <span class="showDisplayOnHover">
+	<b> "NASA has transmitted messages for money to fundraise Ebola" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 Increases Money every five seconds by $15,000,000
 	</span>
@@ -250,14 +246,14 @@ Increases Money every five seconds by $15,000,000
       <br>
 </div>
 
-<div>
-      <div>
-        <h1 align="center"> Sell </h1>
-        <a>
-	<button type="button"> Give out all Vaccines (Cost: $10.00)</button>
-	<span>
-	<b> &quot;Sell all your vaccines!&quot; </b>
-	<span>
+<div class="Sell">
+      <div class="col-md-2">
+        <h1 align=center> Sell </h1>
+        <a class="dhideDisplay">
+	<button type="button" onclick="GiveVaccine()"> Give out all Vaccines (Cost: $10.00)</button>
+	<span class="showDisplayOnHover">
+	<b> "Sell all your vaccines!" </b>
+	<span class="showBodyOfDisplayOnHover">
 	<br>
 	Earn $0.02 per Vaccine
 	</span>
@@ -278,4 +274,4 @@ Increases Money every five seconds by $15,000,000
 
 
 
-	</body></html>
+	
