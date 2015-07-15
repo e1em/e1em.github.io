@@ -1,0 +1,289 @@
+a.hideDisplay{
+  position: relative; /* This makes everything work.*/
+  /* Allows you to layer overlapping elements. */
+  z-index: 20; 
+  color: #000;
+  text-decoration: none
+   }
+   
+a.hideDisplay:hover {
+z-index: 1000; 
+}
+
+a.hideDisplay span.showDisplayOnHover{
+ display: none
+ }
+ 
+a.hideDisplay:hover span.showDisplayOnHover{ 
+  display: block;
+  position: absolute;
+  font-size: 14px; 
+  /* This sets the height of a line of text in the box. */
+  line-height: 25px;
+  
+  /* These position the box where it needs to go. */
+  top: -30px; 
+  right: -400px; 
+  
+  /* These adjust the size of the box when it appears. */
+  width: auto;
+  padding: 10px;
+  
+  border: 1px solid #666666;
+  background-color: #FFFFFF; 
+  
+ /* text color */
+  color: #000000;
+  text-align: left;
+  }
+  
+  span.showBodyOfDisplayOnHover {
+ font-size: 14px; 
+ font-weight: normal;
+ color: #444;
+ line-height: 18px; 
+  }
+  
+
+
+/* A PART */
+  
+a.ahideDisplay{
+  position: relative; /* This makes everything work.*/
+  /* Allows you to layer overlapping elements. */
+  z-index: 20; 
+  color: #000;
+  text-decoration: none
+   }
+   
+a.ahideDisplay:hover {
+z-index: 1000; 
+}
+
+a.ahideDisplay span.showDisplayOnHover{
+ display: none
+ }
+ 
+a.ahideDisplay:hover span.showDisplayOnHover{ 
+  display: block;
+  position: absolute;
+  font-size: 14px; 
+  /* This sets the height of a line of text in the box. */
+  line-height: 25px;
+  
+  /* These position the box where it needs to go. */
+  top: -30px; 
+  right: -450px; 
+  
+  /* These adjust the size of the box when it appears. */
+  width: auto;
+  padding: 10px;
+  
+  border: 1px solid #666666;
+  background-color: #FFFFFF; 
+  
+ /* text color */
+  color: #000000;
+  text-align: left;
+  }
+  
+  span.showBodyOfDisplayOnHover {
+ font-size: 14px; 
+ font-weight: normal;
+ color: #444;
+ line-height: 18px; 
+  }
+  
+  
+/* B PART */
+  
+a.bhideDisplay{
+  position: relative; /* This makes everything work.*/
+  /* Allows you to layer overlapping elements. */
+  z-index: 20; 
+  color: #000;
+  text-decoration: none
+   }
+   
+a.bhideDisplay:hover {
+z-index: 1000; 
+}
+
+a.bhideDisplay span.showDisplayOnHover{
+ display: none
+ }
+ 
+a.bhideDisplay:hover span.showDisplayOnHover{ 
+  display: block;
+  position: absolute;
+  font-size: 14px; 
+  /* This sets the height of a line of text in the box. */
+  line-height: 25px;
+  
+  /* These position the box where it needs to go. */
+  top: -30px; 
+  right: -380px; 
+  
+  /* These adjust the size of the box when it appears. */
+  width: auto;
+  padding: 10px;
+  
+  border: 1px solid #666666;
+  background-color: #FFFFFF; 
+  
+ /* text color */
+  color: #000000;
+  text-align: left;
+  }
+  
+  span.showBodyOfDisplayOnHover {
+ font-size: 14px; 
+ font-weight: normal;
+ color: #444;
+ line-height: 18px; 
+  }
+  
+  
+/* C PART */
+  
+a.chideDisplay{
+  position: relative; /* This makes everything work.*/
+  /* Allows you to layer overlapping elements. */
+  z-index: 20; 
+  color: #000;
+  text-decoration: none
+   }
+   
+a.chideDisplay:hover {
+z-index: 1000; 
+}
+
+a.chideDisplay span.showDisplayOnHover{
+ display: none
+ }
+ 
+a.chideDisplay:hover span.showDisplayOnHover{ 
+  display: block;
+  position: absolute;
+  font-size: 14px; 
+  /* This sets the height of a line of text in the box. */
+  line-height: 25px;
+  
+  /* These position the box where it needs to go. */
+  top: -30px; 
+  right: -350px; 
+  
+  /* These adjust the size of the box when it appears. */
+  width: auto;
+  padding: 10px;
+  
+  border: 1px solid #666666;
+  background-color: #FFFFFF; 
+  
+ /* text color */
+  color: #000000;
+  text-align: left;
+  }
+  
+  span.showBodyOfDisplayOnHover {
+ font-size: 14px; 
+ font-weight: normal;
+ color: #444;
+ line-height: 18px; 
+  }
+  
+  /* D PART */
+  
+a.dhideDisplay{
+  position: relative; /* This makes everything work.*/
+  /* Allows you to layer overlapping elements. */
+  z-index: 20; 
+  color: #000;
+  text-decoration: none
+   }
+   
+a.dhideDisplay:hover {
+z-index: 1000; 
+}
+
+a.dhideDisplay span.showDisplayOnHover{
+ display: none
+ }
+ 
+a.dhideDisplay:hover span.showDisplayOnHover{ 
+  display: block;
+  position: right;
+  font-size: 14px; 
+  /* This sets the height of a line of text in the box. */
+  line-height: 25px;
+  
+  /* These position the box where it needs to go. */
+  top: -30px; 
+  right: -350px; 
+  
+  /* These adjust the size of the box when it appears. */
+  width: auto;
+  padding: 10px;
+  
+  border: 1px solid #666666;
+  background-color: #FFFFFF; 
+  
+ /* text color */
+  color: #000000;
+  text-align: left;
+  }
+  
+  span.showBodyOfDisplayOnHover {
+ font-size: 14px; 
+ font-weight: normal;
+ color: #444;
+ line-height: 18px; 
+  }
+  
+    /* MAKE VACCINE TEXT */
+  
+a.ehideDisplay{
+  position: relative; /* This makes everything work.*/
+  /* Allows you to layer overlapping elements. */
+  z-index: 20; 
+  color: #000;
+  text-decoration: none
+   }
+   
+a.ehideDisplay:hover {
+z-index: 1000; 
+}
+
+a.ehideDisplay span.showDisplayOnHover{
+ display: none
+ }
+ 
+a.ehideDisplay:hover span.showDisplayOnHover{ 
+  display: block;
+  position: absolute;
+  font-size: 14px; 
+  /* This sets the height of a line of text in the box. */
+  line-height: 25px;
+  
+  /* These position the box where it needs to go. */
+  top: -30px; 
+  right: -250px; 
+  
+  /* These adjust the size of the box when it appears. */
+  width: auto;
+  padding: 10px;
+  
+  border: 1px solid #666666;
+  background-color: #FFFFFF; 
+  
+ /* text color */
+  color: #000000;
+  text-align: left;
+  }
+  
+  span.showBodyOfDisplayOnHover {
+ font-size: 14px; 
+ font-weight: normal;
+ color: #444;
+ line-height: 18px; 
+  }
