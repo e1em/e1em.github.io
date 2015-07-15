@@ -24,7 +24,7 @@ var Awareness = 0;
 ////// Timer ///////
 ////////////////////
 
-var CountdownToe1em = 250000;
+var CountdownToe1em = 120000;
 function e1emTimer() {
     document.getElementById('timer').innerHTML = CountdownToe1em + " minutes | Vaccines currently in store: " +  VaccinesMade + " | Vaccines Given out: " + VaccinesGiven + " | Money: $" + Money;
     if (CountdownToe1em == 0) {
@@ -285,7 +285,6 @@ function Save() {
 alert("Money = " + Money + ";\nVaccinesMade = " + VaccinesMade + ";\nVaccinesGiven = " + VaccinesGiven+ ";\nTotalVaccines = " + TotalVaccines  + ";\nVMachineBought = " + VMachineBought + ";\nAwareness = " + Awareness + ";\nVFacBought = " + VFacBought + ";\nVDisBought = " + VDisBought + ";\nVMassBought = " + VMassBought + ";\nVCompanyBought = " + VCompanyBought + ";\nVe1emBought = " + Ve1emBought + ";\nVPortalBought = " + VPortalBought+ ";\nCountdownToe1em = " + CountdownToe1em + ";\nalert(\"Save succeeded\");");
 }
 	
-alert("Welcome to the Stop e1em Game! You have 250,000 minutes in gametime to save all 7 billion people on earth from e1em! Any person you don't give vaccine to will die once the time is up! Good luck! Save the world from e1em! You start with $2000. Use it wisely.");
-alert("On the left side of the interface is the Make Vaccine Column. You can buy multiple machines/companies and they will create vaccines as time passes.");
-alert("On the right side of the interface is the Sell Vaccines Column. You will sell all the vaccines you currently have for $0.05 and that will be given to people on earth. Bear in mind, however, that every time you sell vaccines, it costs $10.00");
-alert("On the middle area of the interface is the Fundraising Column. You can buy multiple posters/newspapers to raise awareness for e1em. You will earn donations every five seconds depending on the awareness of e1em.");
+alert("Welcome to the Stop e1em Game! You have 120,000 minutes in gametime to save all 7 billion people on earth from e1em! Any person you don't give vaccine to will die once the time is up! Good luck! Save the world from e1em! You start with $2000. Use it wisely.");
+alert("E1EM is a dangerous virus and is an abbreviation for Enthusiastic 1 Expordelli Maximus. The disease will spread to every single person in 120,000 minutes in gametime and will kill every single person that does not receive a vaccine from that time.");
+alert("BUY VACCINES. GIVE VACCINES. REPEAT. HAVE FUN OK BYE")
