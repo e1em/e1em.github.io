@@ -154,7 +154,7 @@ Window.onload = DispenserStart;
 function MMS() {
 
 	if (VMassBought > 0) {
-	VaccinesMade = VaccinesMade + (VMassBought*11);
+	VaccinesMade = VaccinesMade + (VMassBought*10);
 	}
 	
 }
