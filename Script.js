@@ -5,6 +5,8 @@ var VaccinesGiven = 0;
 var TotalVaccines = 0;
 var AutoVaccine = 0;
 
+var endGame = 0;
+
 //Support 
 var VMachineBought = 0;
 var VFacBought = 0;
@@ -203,13 +205,17 @@ Window.onload = Charity;
 
 function Game() {
 
-	if (CountdownToe1em === 0) {
+	if (CountdownToe1em === 0 && endGame === 0) {
 		if (VaccinesGiven >= People) {
 		alert("You have saved all the people of the world! e1em is now going to spread to every single person on earth...but do not worry! Everyone has been vaccined and is safe! Congratulations, you have won the game!");
+		endGame = 1;
+			
 		}
 	else {
 	var Unsafe = People - VaccinesGiven;
 	alert("Oh, you have not saved all the people of the world! There are still " + Unsafe + " people who have not received treatment. e1em is now going to spread to every single person on earth...and the amount of deaths are " + Unsafe + "! Better luck next time you play the game!");
+	endGame = 1;
+		
 	}
 	
 	}
