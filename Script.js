@@ -207,9 +207,10 @@ Window.onload = Charity;
 
 function Game() {
 	
-	if (VaccinesGiven >= 7000000000) {
+	if (VaccinesGiven >= 7000000000 && endGame === 0) {
 		
 		alert("You have saved all people of the world. Nobody gets E1EM and you win!! Good job!")
+		endGame = 1;
 		window.close()
 	}
 	else if (CountdownToe1em <= 0 && VaccinesGiven <= 7000000000)  {
