@@ -208,8 +208,9 @@ function Game() {
 	if (VaccinesGiven >= People) {
 		alert("You have saved all the people of the world! e1em is now going to spread to every single person on earth...but do not worry! Everyone has been vaccined and is safe! Congratulations, you have won the game!");
 		endGame = 1;
-		
-		}
+	
+	}
+	
 	else {
 	var Unsafe = People - VaccinesGiven;
 	alert("Oh, you have not saved all the people of the world! There are still " + Unsafe + " people who have not received treatment. e1em is now going to spread to every single person on earth...and the amount of deaths are " + Unsafe + "! Better luck next time you play the game!");
@@ -220,7 +221,7 @@ function Game() {
 	
 	}
 	
-}
+
 var Banana = setInterval('Game()', 1);
 Window.onload = Banana;
 
