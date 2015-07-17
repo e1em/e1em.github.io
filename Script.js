@@ -215,7 +215,7 @@ function Game() {
 	var Unsafe = People - VaccinesGiven;
 	alert("Oh, you have not saved all the people of the world! There are still " + Unsafe + " people who have not received treatment. e1em is now going to spread to every single person on earth...and the amount of deaths are " + Unsafe + "! Better luck next time you play the game!");
 	endGame = 1;
-	window.close()
+	open(location, '_self').close();
 		
 	}
 	
@@ -311,8 +311,8 @@ var name = prompt("What is your name?");
 			}
 		}
 		if (!goodPersonIsCool) {
-			var adjs = ["save", "destroy", "digest"];
+			var adjs = ["save", "protect", "do good things to"];
 			var which = Math.floor(Math.random() * 3);
-			alert("Your priorities are not set straight. We're trying to " + adjs[which] + "here.");
-			window.close();
+			alert("Your priorities are not set straight. We're trying to " + adjs[which] + " the world here.");
+			open(location, '_self').close();
 		}
