@@ -205,8 +205,7 @@ Window.onload = Charity;
 
 function Game() {
 
-	if (CountdownToe1em === 0 && endGame === 0) {
-		if (VaccinesGiven >= People) {
+	if (VaccinesGiven >= People) {
 		alert("You have saved all the people of the world! e1em is now going to spread to every single person on earth...but do not worry! Everyone has been vaccined and is safe! Congratulations, you have won the game!");
 		endGame = 1;
 			
