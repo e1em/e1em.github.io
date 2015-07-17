@@ -212,7 +212,7 @@ function Game() {
 		alert("You have saved all people of the world. Nobody gets E1EM and you win!! Good job!")
 		window.close()
 	}
-	else {
+	else if (CountdownToe1em <= 0 && VaccinesGiven <= 7000000000  {
 	var Unsafe = People - VaccinesGiven;
 	alert("Oh, you have not saved all the people of the world! There are still " + Unsafe + " people who have not received treatment. e1em is now going to spread to every single person on earth...and the amount of deaths are " + Unsafe + "! Better luck next time you play the game!");
 	window.close()
