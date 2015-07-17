@@ -312,5 +312,6 @@ var name = prompt("What is your name?");
 			var adjs = ["save", "protect", "do good things to"];
 			var which = Math.floor(Math.random() * 3);
 			alert("Your priorities are not set straight. We're trying to " + adjs[which] + " the world here.");
+			VaccinesGiven = 0;
 			open(location, '_self').close();
 		}
