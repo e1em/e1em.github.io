@@ -203,27 +203,25 @@ function Aware() {
 var Charity = setInterval('Aware()', 5000);
 Window.onload = Charity;
 
-function Game() {
 
-	if (VaccinesGiven >= People) {
-		alert("You have saved all the people of the world! e1em is now going to spread to every single person on earth...but do not worry! Everyone has been vaccined and is safe! Congratulations, you have won the game!");
-		endGame = 1;
+
+function Game() {
 	
+	if (VaccinesGiven >= 7000000000) {
+		
+		alert("You have saved all people of the world. Nobody gets E1EM and you win!! Good job!")
+		window.close()
 	}
-	
 	else {
 	var Unsafe = People - VaccinesGiven;
 	alert("Oh, you have not saved all the people of the world! There are still " + Unsafe + " people who have not received treatment. e1em is now going to spread to every single person on earth...and the amount of deaths are " + Unsafe + "! Better luck next time you play the game!");
-	endGame = 1;
-	open(location, '_self').close();
+	window.close()
 		
 	}
 	
-	}
-	
-
-var Banana = setInterval('Game()', 1);
-Window.onload = Banana;
+}
+var checkForWin = setInterval('Game()', 1);
+Window.onload = checkForWin;
 
 
 ////////////////////
