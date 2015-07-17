@@ -207,13 +207,29 @@ function Game() {
 
 	if (VaccinesGiven >= People) {
 		alert("You have saved all the people of the world! e1em is now going to spread to every single person on earth...but do not worry! Everyone has been vaccined and is safe! Congratulations, you have won the game!");
+		var name = prompt("What is your goal?");
+		var quest = prompt("What is your quest?");
+		var res = quest.split(" ");
+		var goodPersonIsCool = false;
+		for (var i = 0; i < res.length; i++) {
+			if (res[i] == "e1em") {
+				goodPersonIsCool = true;
+			}
+		}
+		if (!goodPersonIsCool) {
+			var adjs = ["save", "destroy", "digest"];
+			var which = Math.floor(Math.random() * 3);
+			alert("Your priorities are not set straight. We're trying to " + adjs[which] + "here.");
+			window.close();
+		}
 		endGame = 1;
-			
+		
 		}
 	else {
 	var Unsafe = People - VaccinesGiven;
 	alert("Oh, you have not saved all the people of the world! There are still " + Unsafe + " people who have not received treatment. e1em is now going to spread to every single person on earth...and the amount of deaths are " + Unsafe + "! Better luck next time you play the game!");
 	endGame = 1;
+	window.close()
 		
 	}
 	
