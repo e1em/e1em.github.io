@@ -298,21 +298,3 @@ function Pause() {
 	
 alert("Welcome to the Stop e1em Game! You have 120,000 minutes in gametime to save all 7 billion people on earth from e1em! Any person you don't give vaccine to will die once the time is up! Good luck! Save the world from e1em! You start with $2000. Use it wisely.");
 alert("E1EM is a dangerous virus and is an abbreviation for Enthusiastic 1 Expordelli Maximus. The disease will spread to every single person in 120,000 minutes in gametime and will kill every single person that does not receive a vaccine from that time.");
-alert("BUY VACCINES. GIVE VACCINES. REPEAT. HAVE FUN OK BYE")
-
-var name = prompt("What is your name?");
-		var quest = prompt("What is your quest?");
-		var res = quest.split(" ");
-		var goodPersonIsCool = false;
-		for (var i = 0; i < res.length; i++) {
-			if (res[i] == "e1em") {
-				goodPersonIsCool = true;
-			}
-		}
-		if (!goodPersonIsCool) {
-			var adjs = ["save", "protect", "do good things to"];
-			var which = Math.floor(Math.random() * 3);
-			alert("Your priorities are not set straight. We're trying to " + adjs[which] + " the world here.");
-			VaccinesGiven = 0;
-			open(location, '_self').close();
-		}
