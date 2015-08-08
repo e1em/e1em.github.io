@@ -1,0 +1,15 @@
+ <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+<script src="ai.js"> </script>
+ 
+ <body background="background.jpg">
+ 
+ <head>
+    <div class="Homepage">
+    <h1 align="center"> TALK TO THE AI </h1>
+    
+     <p align=center>
+    <br>
+    <button type="button" onclick="respond()" style="height:160px; width:300px">  TALK TO THE AI <br> </p> </button>
+    </p>
+    
