@@ -9,7 +9,6 @@
 <script> 
 
 
-
 function respond() {
 
 var answer = 0;
@@ -23,24 +22,27 @@ var lowerCaseInput = input.toLowerCase();
 var word = lowerCaseInput.split(" ");
 
 
-choices = ["hello", "hi", "what's your name", "the hobbits", "i", "am", "feeling", "i'm"];
-output = ["Hey!", "Hey!", "I am the AI.", "To Isengard!"];
+choices = ["hello", "hi", "hey", "heya", "what's your name", "the hobbits"];
+output = ["Hey!", "Hey!", "Hi there!", "Hello.", "I am the AI.", "To Isengard!"];
 
 var isPosMood = 0;
 var isNegMood = 0;
 
 var i = 0;
-while (i<4) {
+while (i<6) {
 
-	var n = lowerCaseInput.indexOf(choices[i]);
-
-	if (n != -1) {
-		alert(output[i]);
-		answer = 1;
+	var h = 0;
+	word[h] = word[h].replace("!", "");
+	word[h] = word[h].replace("?", "");
+	word[h] = word[h].replace(",", "");
+	while (h < word.length) {
+		if (word[h] == choices[i]) {
+			alert(output[i]);
+		}
+	h++;
 	}
-
-	i++
-
+	
+i++;
 }
 
 
@@ -50,9 +52,9 @@ while (i<4) {
 var j = 0;
 while (j < word.length) {
 
-if (word[j] == choices[3]) {
-	if (word[j+1] == choices[4]) {
-		if (word[j+2] == choices[5]) {
+if (word[j] == "i") {
+	if (word[j+1] == "am") {
+		if (word[j+2] == "feeling") {
 			var rawMood = word[j+3];
 			aMood = rawMood.toLowerCase();
 			mood = aMood.replace("!", "");
@@ -73,6 +75,9 @@ if (word[j] == choices[3]) {
 					if (answer.toLowerCase() == "no" || answer.toLowerCase() == "nope" || answer.toLowerCase() == "i don't think so")  
 					{
 						alert("Well, in that case, I can't give any advice or insight. Hope you feel better soon!");
+					}
+					else if (answer == "") {
+						alert("Look: I can't give any feedback if you don't say anything to me.");
 					}
 					else {
 						alert("Okay. I don't really get what this means: '" + answer + "'. Regardless, I wish you the best and hope you will have better thoughts!");
@@ -97,8 +102,8 @@ j++
 //"I'm feeling" scenario
 j = 0;
 while (j < word.length) {
-	if (word[j] == choices[6]) {
-		if (word[j+1] == choices[5]) {
+	if (word[j] == "i'm") {
+		if (word[j+1] == "feeling") {
 			var rawMood = word[j+2];
 			aMood = rawMood.toLowerCase();
 			mood = aMood.replace("!", "");
@@ -119,6 +124,9 @@ while (j < word.length) {
 					if (answer.toLowerCase() == "no" || answer.toLowerCase() == "nope" || answer.toLowerCase() == "i don't think so")  
 					{
 						alert("Well, in that case, I can't give any advice or insight. Hope you feel better soon!");
+					}
+					else if (answer == "") {
+						alert("Look: I can't give any feedback if you don't say anything to me.");
 					}
 					else {
 						alert("Okay. I don't really get what this means: '" + answer + "'. Regardless, I wish you the best and hope you will have better thoughts!");
@@ -299,7 +307,23 @@ k++;
 
 //Things to the AI
 niceThings = ["good", "awesome", "smart", "intelligent", "perfect", "great", "genius", "amazing", "talented", "wise", "nice", "kind"];
-rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "gay", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch"];
+rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "gay", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch", "mental", "mentally"];
+indRudeThings = ["shit", "fuck", "retarded", "face", "gay", "faggot", "awful", "whore", "awful", "terrible", "mental", "mentally"];
+
+k = 0;
+while (k < indRudeThings.length) {
+	j = 0;
+	while(j < word.length) {
+	if (word[j] == indRudeThings[k]) {
+		alert("I can already sense your negative aura. Don't rub it on us anymore.");
+	}
+	j++;
+	}
+
+	k++;
+}
+
+
 
 if (lowerCaseInput.indexOf("you are") != -1 || lowerCaseInput.indexOf("you're") != -1) {
 
@@ -390,10 +414,23 @@ if (lowerCaseInput.indexOf("what") != -1)  {
 	}
 }
 
+//"It is" scenario:
+
+if (lowerCaseInput.indexOf("it is") != -1)  {
+	alert("It is? Okay then.");
+}
+
 
 		
 
 }
+
+
+
+
+
+
+
 
 </script>
  
