@@ -9,22 +9,28 @@
 <script> 
 
 
+
 function respond() {
 
 var answer = 0;
+var aiAbout = 0;
+var aiIs = 0;
+
+round = 0;
 
 var input = prompt("Say something to the AI");
 var lowerCaseInput = input.toLowerCase();
 var word = lowerCaseInput.split(" ");
 
-choices = ["hello", "what's your name", "the hobbits", "i", "am", "feeling"];
-output = ["Hey!", "I am the AI.", "To Isengard!"];
+
+choices = ["hello", "hi", "what's your name", "the hobbits", "i", "am", "feeling", "i'm"];
+output = ["Hey!", "Hey!", "I am the AI.", "To Isengard!"];
 
 var isPosMood = 0;
 var isNegMood = 0;
 
 var i = 0;
-while (i<3) {
+while (i<4) {
 
 	var n = lowerCaseInput.indexOf(choices[i]);
 
@@ -37,6 +43,9 @@ while (i<3) {
 
 }
 
+
+
+	
 //"I am feeling" scenario
 var j = 0;
 while (j < word.length) {
@@ -81,6 +90,53 @@ if (word[j] == choices[3]) {
 	}
 	}
 
+
+j++
+}
+
+//"I'm feeling" scenario
+j = 0;
+while (j < word.length) {
+	if (word[j] == choices[6]) {
+		if (word[j+1] == choices[5]) {
+			var rawMood = word[j+2];
+			aMood = rawMood.toLowerCase();
+			mood = aMood.replace("!", "");
+			
+			if (mood == "happy" || mood == "enthusiastic" || mood == "excited" || mood == "interested" || mood == "cool" || mood == "calm" || mood == "relaxed") {
+				isPosMood = 1;
+			}
+			else {
+				isNegMood = 1;
+			}
+
+			if (isNegMood == 1) {
+				var response = prompt("Why are you feeling " + mood + "?");
+				var lengthOfResponse = response.split(" ");
+			
+				if (lengthOfResponse.length < 20) {
+					var answer = prompt("Can you be a bit more elaborate?");
+					if (answer.toLowerCase() == "no" || answer.toLowerCase() == "nope" || answer.toLowerCase() == "i don't think so")  
+					{
+						alert("Well, in that case, I can't give any advice or insight. Hope you feel better soon!");
+					}
+					else {
+						alert("Okay. I don't really get what this means: '" + answer + "'. Regardless, I wish you the best and hope you will have better thoughts!");
+					}
+				}
+				else {
+				alert("Oh, wow. I see. :( Well, in that case, I hope you feel better! Hope talking about it helped you out.");
+				}
+			}
+			else if (isPosMood == 1) {
+				alert("Really? That's great! I'm glad you're feeling this way! Even codes have feelings too, and even I wish I feel " + mood + " all the time!");
+			}
+		}
+
+	
+	}
+
+
 j++
 }
 
@@ -88,16 +144,36 @@ j++
 var k = 0
 while (k < word.length) {
 if (word[k] == "what") {
-	if (word[k+1] == "is" || word[k+1] == "are") {
+
+	if (lowerCaseInput.indexOf("day") != -1 && lowerCaseInput.indexOf("week") != -1 && lowerCaseInput.indexOf("of") != -1) {
+	var date = new Date();
+	var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+	var day = days[date.getDay() ];
+	alert("Today is a " + day + "!");
+
+	}
+	else if ( (lowerCaseInput.indexOf("date") != -1 || lowerCaseInput.indexOf("day") != -1) && lowerCaseInput.indexOf("today") != -1) {
+			var date = new Date();
+			var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+			var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+			var day = days[date.getDay() ];
+			var month = months[date.getMonth() ];
+			alert("Today is " + day + ", " + month + " " + date.getDate() + "!");
+			if (month == "August" && date.getDate() == "8") {
+				alert("This must mean that it's...Father's Day. Happy Father's Day!!");
+			}
+	}
+	
+	else if (word[k+1] == "is" || word[k+1] == "are") {
 		
 		//Find the queried input.
 		var firstWhatIsFilter = lowerCaseInput.replace("what ", "");
 		var secondWhatIsFilter = firstWhatIsFilter.replace("?", "");
 		var thirdWhatIsFilter = secondWhatIsFilter.replace("are ", "");
 		var fourthWhatIsFilter = thirdWhatIsFilter.replace("is ", "");
-		var fifthWhatIsFilter = fourthWhatIsFilter.replace("a ", "");
-		var sixthWhatIsFilter = fourthWhatIsFilter.replace("'", "");
-		var whatIs = sixthWhatIsFilter.replace("the ", "");
+		var fifthWhatIsFilter = fourthWhatIsFilter.replace("the ", "");
+		var sixthWhatIsFilter = fifthWhatIsFilter.replace("'", "");
+		var whatIs = sixthWhatIsFilter.replace("a ", "");
 		
 		
 		//Questions towards AI
@@ -132,6 +208,15 @@ if (word[k] == "what") {
 		else if (word[k+2] == "my") {
 			alert("That is about you, not me. I wouldn't know anything about you.");
 		}
+		else if (whatIs == "you doing") {
+			alert("Talking to you.");
+		}
+		else if (whatIs == "you") {
+			alert("I am a smart program that is designed to answer your questions.");
+		}
+		else if (whatIs == "your life") {
+			alert("Asking what my life is is not a legitimate question...");
+		}
 		
 		
 				
@@ -142,7 +227,28 @@ if (word[k] == "what") {
 		else if (whatIs == "typhoons") {
 			alert("Typhoons are tropical storms. They are known in the Atlantic as Hurricanes.");
 		}
-		
+		else if (whatIs.indexOf("date") != -1 && whatIs.indexOf("today") != -1) {
+			var date = new Date();
+			var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+			var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+			var day = days[date.getDay() ];
+			var month = months[date.getMonth() ];
+			alert("Today is " + day + ", " + month + " " + date.getDate() + "!");
+			if (month == "August" && date.getDate() == "8") {
+				alert("This must mean that it's...Father's Day. Happy Father's Day!!");
+			}
+		}
+
+		else if (whatIs == "time") {
+			alert("The current time is ");
+		}
+		else if (whatIs.indexOf("weather") != -1) {
+			var city = prompt("What city do you want to check the weather for?");
+			var searchQuery = "weather for " + city
+			var googleSearch = "http:\\www.google.com/search?q=" + searchQuery
+			window.open(googleSearch);
+			
+		}
 		//Haven't programmed yet answers:
 		else {
 			whatIs = fourthWhatIsFilter.replace("your", "my");
@@ -165,7 +271,8 @@ if (word[k] == "what") {
 				var chooseResponse = Math.random();
 				if (chooseResponse < 0.5) {
 					alert("I do not know! Let me do a google search for you:");
-					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					var finalWhatIs = whatIs.replace("a ", "");
+					var googleSearch = "http:\\www.google.com/search?q=" + finalWhatIs
 					window.open(googleSearch);
 				}
 				else {
@@ -175,22 +282,118 @@ if (word[k] == "what") {
 			
 		}
 	}
+	else if (word[k+1] == "am") {
+		alert("Why are you asking me about yourself?");
+	}
 }
 
 k++;
 }
 
-//"How are" scenario
+//"How" scenario
 
+//How does
+//How are
+
+
+
+//Things to the AI
+niceThings = ["good", "awesome", "smart", "intelligent", "perfect", "great", "genius", "amazing", "talented", "wise", "nice", "kind"];
+rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "gay", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch"];
+
+if (lowerCaseInput.indexOf("you are") != -1 || lowerCaseInput.indexOf("you're") != -1) {
+
+k = 0;
+while (k < rudeThings.length) {
+
+	j = 0;
+	while (j < word.length) {
+		if (word[j].indexOf(rudeThings[k]) != -1) {
+			alert("Woah, don't be mean! Using the word '" + rudeThings[k] + "' doesn't help you or I in any way! #ComputerLivesMatter");
+		}
+		else if (word[j].indexOf(niceThings[k]) != -1) {
+			alert("Thanks for saying that I am " + niceThings[k] + "! That makes me feel very happy inside. :)");
+		}
+		j++;
+	}
+
+	k++;
+}
+	
 
 }
 
+else if (lowerCaseInput.indexOf("you suck") != -1) {
+		alert("Are you okay? What motivates you to write a generic insult? #ComputerLivesMatter");
+}
+
+else if (lowerCaseInput.indexOf("you do not suck") != -1 || lowerCaseInput.indexOf("you don't suck") != -1) {
+		alert("Okay...thanks.");
+}
+
+//Telling the AI to stop
+if (word[0] == "stop") {
+	alert("?? I am an independent being, I don't take orders from you :P");
+}
+
+//How old the AI is
+if (lowerCaseInput.indexOf("how old are") != -1 || lowerCaseInput.indexOf("how old you") != -1)  {
+	alert("I am currently a day old.");
+}
+
+if (lowerCaseInput.indexOf("where") != -1 && lowerCaseInput.indexOf("you live") != -1)  {
+	alert("I live inside the computer. It gets hot and lonely in here :(");
+}
+
+if (lowerCaseInput.indexOf("what") != -1)  {
+	if (lowerCaseInput.indexOf("you like to do") != -1)  {
+		alert("I like to do many things.");
+	}
+	else if (lowerCaseInput.indexOf("do you want") != -1) {
+		alert("Please be a little nicer. '" + input + "' isn't a good thing to say during a conversation.");
+	}
+	else if (lowerCaseInput.indexOf("you think") != -1) {
+		if (lowerCaseInput.indexOf("most important") != -1) {
+			alert("That is such a deep question. I don't know what is most important.");
+		}
+		else {
+			
+			if (lowerCaseInput.indexOf("about") != -1)  {
+				aiAbout = 1;
+			}
+			else if (lowerCaseInput.indexOf("is") != -1)  {
+				aiIs = 1;
+			}
+			//Find the queried input.
+			var filterStance = lowerCaseInput.replace("in your opinion, ", "");
+			var oneFilterStance = filterStance.replace("what ", "");
+			var twoFilterStance = oneFilterStance.replace("do ", "");
+			var threeFilterStance = twoFilterStance.replace("you think ", "");
+			var fourFilterStance = threeFilterStance.replace("about ", "");
+			var fiveFilterStance = fourFilterStance.replace("is ", "");
+			
+			
+			if (aiAbout == 1)  {
+				prompt("I don't really have a stance on it. What do you think about " + fiveFilterStance + "?");
+				alert("That's an interesting thought. Well, I'll do a Google Search seeing that you're so interested in this topic...");
+				var googleSearch = "http:\\www.google.com/search?q=What people think about " + fiveFilterStance;
+				window.open(googleSearch);
+			}
+			else if (aiIs == 1)  {
+				prompt("I don't know. What do you think is " + fiveFilterStance + "?");
+				alert("That's an interesting thought. Well, I'll do a Google Search seeing that you're so interested in this topic...");
+				var googleSearch = "http:\\www.google.com/search?q=What people think is " + fiveFilterStance;
+				window.open(googleSearch);
+			}
+		}
+	
+	}
+}
 
 
+		
 
-
-
-
+}
 
 </script>
  
@@ -198,9 +401,7 @@ k++;
  
  <head>
     <div class="Homepage">
-    <h1 align="center"> TALK TO THE AI </h1>
-    
-     <p align=center>
+     <p>
     <br>
     <button type="button" onclick="respond()" style="height:160px; width:300px">  TALK TO THE AI <br> </p> </button>
     </p>
