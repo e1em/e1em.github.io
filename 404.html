@@ -14,7 +14,7 @@ function respond() {
 var answer = 0;
 var aiAbout = 0;
 var aiIs = 0;
-
+var neutralAreYou = 0;
 var rudeWordDetected = 0;
 
 round = 0;
@@ -24,8 +24,8 @@ var lowerCaseInput = input.toLowerCase();
 var word = lowerCaseInput.split(" ");
 
 
-choices = ["hello", "hi", "hey", "heya", "what's your name", "the hobbits"];
-output = ["Hey!", "Hey!", "Hi there!", "Hello.", "I am the AI.", "To Isengard!"];
+choices = ["hello", "hi", "hey", "heya", "bye", "bai", "what's your name", "the hobbits", "nice ai", "party" ];
+output = ["Hey!", "Hey!", "Hi there!", "Hello.", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "You're leaving? Ok then :( it was fun talking to you! Bye!!","I am the AI.", "To Isengard!", "Are you talking about me? Gee, thanks so much! :) That made me feel 381.34 times better!", "WE LIKE TO PARTY....WE LIKE TO, WE LIKE TO PARTY!"];
 niceThings = ["good", "awesome", "smart", "intelligent", "perfect", "great", "genius", "amazing", "talented", "wise", "nice", "kind"];
 nicePhrase = ["good", "awesome", "smart", "intelligent", "perfect", "great", "a genius", "amazing", "talented", "wise", "nice", "kind"];
 rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "gay", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch", "mental", "mentally", "nigga", "nigger", "poop", "poo", "a poo", "a poop", "weird"];
@@ -38,7 +38,7 @@ var isNegMood = 0;
 
 //Hello, what's your name, the hobbits
 var i = 0;
-while (i<6) {
+while (i<13) {
 
 	var h = 0;
 	word[h] = word[h].replace("!", "");
@@ -51,6 +51,16 @@ while (i<6) {
 	h++;
 	}
 	
+i++;
+}
+
+i = 6
+while (i<choices.length) {
+
+	if (lowerCaseInput.indexOf(choices[i]) != -1) {
+		alert(output[i]);
+	}
+
 i++;
 }
 
@@ -236,6 +246,10 @@ if (word[k] == "what") {
 		else if (whatIs == "your life") {
 			alert("Asking what my life is is not a legitimate question...");
 		}
+		else if (whatIs == "your face") {
+			alert("Asking what my face is is not a legitimate question...");
+			neutralAreYou = 1;
+		}
 		
 		
 				
@@ -279,9 +293,13 @@ if (word[k] == "what") {
 					alert("I do not know! Let me do a google search for you:");
 					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
 					window.open(googleSearch);
+					neutralAreYou = 1;
 				}
 				else {
-					alert("I've never heard of '" + whatIs + "'. Please tell me more about it.");
+					alert("I've never heard of '" + whatIs + "'. But I can do a Google Search for you!");
+					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					window.open(googleSearch);
+					neutralAreYou = 1;
 				}
 				
 			}
@@ -293,9 +311,14 @@ if (word[k] == "what") {
 					var finalWhatIs = whatIs.replace("a ", "");
 					var googleSearch = "http:\\www.google.com/search?q=" + finalWhatIs
 					window.open(googleSearch);
+					neutralAreYou = 1;
 				}
 				else {
-					alert("I've never heard of '" + whatIs + "'. Please tell me more about it.");
+					alert("I've never heard of '" + whatIs + "'. But I can do a Google Search for you!");
+					var finalWhatIs = whatIs.replace("a ", "");
+					var googleSearch = "http:\\www.google.com/search?q=" + finalWhatIs
+					window.open(googleSearch);
+					neutralAreYou = 1;
 				}
 			}
 			
@@ -313,14 +336,14 @@ k++;
 
 //"Are you" scenario
 if (lowerCaseInput.indexOf("are you") != -1) {
-var neutralAreYou = 0;
+neutralAreYou = 0;
 var isRobot = lowerCaseInput.replace("are you", "");
 isRobot = isRobot.replace("?", "");
 isRobot = isRobot.replace("!", "");
 isRobot = isRobot.replace(" ", "");
 
 while (k < rudePhrase.length) {
-	if(isRobot.indexOf(rudePhrase[k]) != -1)
+	if(isRobot.indexOf(rudePhrase[k]) != -1 && neutralAreYou == 0)
 	{
 		neutralAreYou = 1;
 		rudeWordDetected = 1;
@@ -520,7 +543,7 @@ k = 0;
 while (k < indRudeThings.length) {
 	j = 0;
 	while(j < word.length) {
-	if (word[j] == indRudeThings[k] && rudeWordDetected == 0) {
+	if (word[j] == indRudeThings[k] && rudeWordDetected == 0 && neutralAreYou == 0) {
 		alert("WARNING: I can already sense your negative aura. Please watch your mouth!!");
 	}
 	j++;
@@ -530,6 +553,7 @@ while (k < indRudeThings.length) {
 }		
 
 }
+
 
 </script>
  
