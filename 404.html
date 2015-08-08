@@ -5,6 +5,206 @@
   </head>
   <body>
     <h1>Error 404</h1>
-    <p>Sorry about that.</p>
+    <p>In the meantime, go talk to our newly created AI!</p>
+<script> 
+
+
+function respond() {
+
+var answer = 0;
+
+var input = prompt("Say something to the AI");
+var lowerCaseInput = input.toLowerCase();
+var word = lowerCaseInput.split(" ");
+
+choices = ["hello", "what's your name", "the hobbits", "i", "am", "feeling"];
+output = ["Hey!", "I am the AI.", "To Isengard!"];
+
+var isPosMood = 0;
+var isNegMood = 0;
+
+var i = 0;
+while (i<3) {
+
+	var n = lowerCaseInput.indexOf(choices[i]);
+
+	if (n != -1) {
+		alert(output[i]);
+		answer = 1;
+	}
+
+	i++
+
+}
+
+//"I am feeling" scenario
+var j = 0;
+while (j < word.length) {
+
+if (word[j] == choices[3]) {
+	if (word[j+1] == choices[4]) {
+		if (word[j+2] == choices[5]) {
+			var rawMood = word[j+3];
+			aMood = rawMood.toLowerCase();
+			mood = aMood.replace("!", "");
+			
+			if (mood == "happy" || mood == "enthusiastic" || mood == "excited" || mood == "interested" || mood == "cool" || mood == "calm" || mood == "relaxed") {
+				isPosMood = 1;
+			}
+			else {
+				isNegMood = 1;
+			}
+
+			if (isNegMood == 1) {
+				var response = prompt("Why are you feeling " + mood + "?");
+				var lengthOfResponse = response.split(" ");
+			
+				if (lengthOfResponse.length < 20) {
+					var answer = prompt("Can you be a bit more elaborate?");
+					if (answer.toLowerCase() == "no" || answer.toLowerCase() == "nope" || answer.toLowerCase() == "i don't think so")  
+					{
+						alert("Well, in that case, I can't give any advice or insight. Hope you feel better soon!");
+					}
+					else {
+						alert("Okay. I don't really get what this means: '" + answer + "'. Regardless, I wish you the best and hope you will have better thoughts!");
+					}
+				}
+				else {
+				alert("Oh, wow. I see. :( Well, in that case, I hope you feel better! Hope talking about it helped you out.");
+				}
+			}
+			else if (isPosMood == 1) {
+				alert("Really? That's great! I'm glad you're feeling this way! Even codes have feelings too, and even I wish I feel " + mood + " all the time!");
+			}
+		}
+
+	}
+	}
+
+j++
+}
+
+//"What is" scenario
+var k = 0
+while (k < word.length) {
+if (word[k] == "what") {
+	if (word[k+1] == "is" || word[k+1] == "are") {
+		
+		//Find the queried input.
+		var firstWhatIsFilter = lowerCaseInput.replace("what ", "");
+		var secondWhatIsFilter = firstWhatIsFilter.replace("?", "");
+		var thirdWhatIsFilter = secondWhatIsFilter.replace("are ", "");
+		var fourthWhatIsFilter = thirdWhatIsFilter.replace("is ", "");
+		var fifthWhatIsFilter = fourthWhatIsFilter.replace("a ", "");
+		var sixthWhatIsFilter = fourthWhatIsFilter.replace("'", "");
+		var whatIs = sixthWhatIsFilter.replace("the ", "");
+		
+		
+		//Questions towards AI
+		if (whatIs == "your name") {
+			alert("I am the AI.");
+		}
+		else if (whatIs == "your favourite food" || whatIs == "your favorite food") {
+			alert("I am an AI. I don't eat food.");
+		}
+		else if (whatIs == "your job") {
+			alert("My job involves living inside a computer answering your questions.");
+		}
+		else if (whatIs == "your dream job") {
+			alert("My dream job is to become a billionaire and swim in a pool of $100 bills.");
+		}
+		else if (whatIs == "your hobbies" || whatIs == "your hobby") {
+			alert("My hobbies include reading codes, and changing colours of pixels. Nifty stuff.");
+		}
+		else if (whatIs == "your age") {
+			alert("I am currently one day old.");
+		}
+		else if (whatIs == "your favourite song" || whatIs == "your favorite song") {
+			alert("I have to say that my favorite song is...hmm...I guess Classic?");
+		}
+		else if (whatIs == "your favourite piece" || whatIs == "your favorite piece") {
+			alert("The New World Symphony. Best orchestral piece EVER.");
+		}
+		else if (whatIs == "your mothers name" || whatIs == "your fathers name" || whatIs == "your parents name") {
+			alert("I don't remember. I guess I was separated at birth?");
+		}
+		
+		else if (word[k+2] == "my") {
+			alert("That is about you, not me. I wouldn't know anything about you.");
+		}
+		
+		
+				
+		//Actual Things
+		else if (whatIs == "typhoon") {
+			alert("Typhoon is a tropical storm. It is known in the Atlantic as a Hurricane.");
+		}
+		else if (whatIs == "typhoons") {
+			alert("Typhoons are tropical storms. They are known in the Atlantic as Hurricanes.");
+		}
+		
+		//Haven't programmed yet answers:
+		else {
+			whatIs = fourthWhatIsFilter.replace("your", "my");
+			if (secondWhatIsFilter.indexOf("are") != -1) {
+			
+				var chooseResponse = Math.random();
+				
+				if (chooseResponse < 0.5) {
+					alert("I do not know! Let me do a google search for you:");
+					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					window.open(googleSearch);
+				}
+				else {
+					alert("I've never heard of '" + whatIs + "'. Please tell me more about it.");
+				}
+				
+			}
+			else if (secondWhatIsFilter.indexOf("is") != -1) {
+			
+				var chooseResponse = Math.random();
+				if (chooseResponse < 0.5) {
+					alert("I do not know! Let me do a google search for you:");
+					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					window.open(googleSearch);
+				}
+				else {
+					alert("I've never heard of '" + whatIs + "'. Please tell me more about it.");
+				}
+			}
+			
+		}
+	}
+}
+
+k++;
+}
+
+//"How are" scenario
+
+
+}
+
+
+
+
+
+
+
+
+</script>
+ 
+ <body background="background.jpg">
+ 
+ <head>
+    <div class="Homepage">
+    <h1 align="center"> TALK TO THE AI </h1>
+    
+     <p align=center>
+    <br>
+    <button type="button" onclick="respond()" style="height:160px; width:300px">  TALK TO THE AI <br> </p> </button>
+    </p>
+    
+
   </body>
 </html>
