@@ -29,7 +29,7 @@ output = ["Hey!", "Hey!", "Hi there!", "Hello.", "You're leaving? Ok then :( it 
 niceThings = ["good", "awesome", "smart", "intelligent", "perfect", "great", "genius", "amazing", "talented", "wise", "nice", "kind"];
 nicePhrase = ["good", "awesome", "smart", "intelligent", "perfect", "great", "a genius", "amazing", "talented", "wise", "nice", "kind"];
 rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "gay", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch", "mental", "mentally", "nigga", "nigger", "poop", "poo", "a poo", "a poop", "weird", "vagina", "penis"];
-rudePhrase = ["sucky", "terrible", "ugly", "stupid", "shit", "an asshole", "gay", "a faggot", "awful", "disgusting", "awful", "a whore", "mean", "retarded", "annoying", "a fucktard", "a dick", "a twat", "a bitch", "mental", "mentally", "a nigga", "a nigger", "poop", "fuck", "weird", "vagina", "penis"];
+rudePhrase = ["sucky", "terrible", "ugly", "stupid", "shit", "an asshole", "gay", "a faggot", "awful", "disgusting", "awful", "a whore", "mean", "retarded", "annoying", "a fucktard", "a dick", "a twat", "a bitch", "mental", "mentally", "a nigga", "a nigger", "poop", "fuck", "weird"];
 indRudeThings = ["shit", "fuck", "retarded", "face", "gay", "faggot", "awful", "whore", "awful", "terrible", "mental", "mentally", "nigger", "nigga"];
 
 
@@ -167,7 +167,7 @@ j++
 //"What is" scenario
 var k = 0
 while (k < word.length) {
-if (word[k] == "what") {
+if (word[k] == "what" || word[k] == "what,") {
 
 	if (lowerCaseInput.indexOf("day") != -1 && lowerCaseInput.indexOf("week") != -1 && lowerCaseInput.indexOf("of") != -1) {
 	var date = new Date();
@@ -186,13 +186,11 @@ if (word[k] == "what") {
 			if (month == "August" && date.getDate() == "8") {
 				alert("This must mean that it's...Father's Day. Happy Father's Day!!");
 			}
-	}
-	
+	}	
 	else if (lowerCaseInput.indexOf("time") != -1 && lowerCaseInput.indexOf("it") != -1) {
 		var time = new Date();
 		alert("The time is now: " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() + ".");
 	}
-	
 	else if (word[k+1] == "is" || word[k+1] == "are") {
 		
 		//Find the queried input.
@@ -327,6 +325,22 @@ if (word[k] == "what") {
 	else if (word[k+1] == "am") {
 		alert("Why are you asking me about yourself?");
 	}
+	else {
+	if (word[k+1] == "you" && (word[k+2] == "egg" || word[k+2] == "egg!")) {
+		alert("Young fry of treachery!");
+	}
+	else {
+		//Find the queried input.
+		var firstWhatIsFilter = lowerCaseInput.replace("what ", "");
+		var secondWhatIsFilter = firstWhatIsFilter.replace("?", "");
+		var thirdWhatIsFilter = secondWhatIsFilter.replace("the ", "");
+		var fourthWhatIsFilter = thirdWhatIsFilter.replace("'", "");
+		var whatIs = fourthWhatIsFilter.replace("a ", "");
+		
+		
+
+	}
+	}
 }
 
 k++;
@@ -380,7 +394,7 @@ if (isRobot == "doing") {
 }
 
 if (isRobot == "trying") {
-	var trying = prompt("Trying to what?");
+	prompt("Trying to what?");
 	alert("Well, look at the screen and try to make a judgment for yourself.");
 	neutralAreYou = 1;
 }
@@ -426,8 +440,121 @@ while (k < rudePhrase.length) {
 
 }
 
+//"Am I" scenario
+if (lowerCaseInput.indexOf("am i") != -1) {
+neutralAreYou = 0;
+var isRobot = lowerCaseInput.replace("am i ", "");
+isRobot = isRobot.replace("?", "");
+isRobot = isRobot.replace("!", "");
+isRobot = isRobot.replace(" ", "");
+
+while (k < rudePhrase.length) {
+	if(isRobot.indexOf(rudePhrase[k]) != -1 && neutralAreYou == 0)
+	{
+		neutralAreYou = 1;
+		rudeWordDetected = 1;
+		alert("I dislike the word choice. But no, I do not think you are a '" + isRobot + "'. And please don't use that word again. You are awesome in your own way :)");
+	}
+	k++;
+}
+
+k = 0;
+while (k < nicePhrase.length) {
+	if(isRobot.indexOf(nicePhrase[k]) != -1)
+	{
+		neutralAreYou = 1;
+		alert("I think you are quite " + nicePhrase[k] + "! I mean it.");
+	}
+	k++;
+}
+
+if (isRobot.indexOf("doing something") != -1) {
+	alert("Yes, I am. I am talking to you.");
+	neutralAreYou = 1;
+}
+
+if (isRobot == "doing") {
+	alert("Are you speaking english? Because that makes no grammatical sense.");
+	neutralAreYou = 1;
+}
+
+if (isRobot == "trying") {
+	prompt("Trying to what?");
+	alert("Well, you would know better yourself. Ask yourself the same question!");
+	neutralAreYou = 1;
+}
+
+if (isRobot == "working") {
+	alert("Well, what does 'working' mean? You are functioning as a living system. (I hope, at least)");
+	neutralAreYou = 1;
+}
 
 
+if (isRobot.indexOf("boy") != -1 || isRobot.indexOf("girl") != -1) {
+	var boyOrGirl = prompt("I don't know, but you can tell me! Are you a boy or are you a girl?");
+	if (boyOrGirl.indexOf("boy") != -1 && boyOrGirl.indexOf("not") == -1) {
+		alert("Ah, so you are a boy! Gotcha.");
+	}
+	else {
+		alert("Ah, so you are a girl!");
+	}
+	neutralAreYou = 1;
+}
+
+//Outlier [WHAT GENDER ARE YOU?]
+if (isRobot.indexOf("what gender") != -1) {
+	alert("I am neutral. I am neither a girl nor a boy.");
+	neutralAreYou = 1;
+}
+
+if (isRobot.indexOf("ready") != -1) {
+	var readyFor = prompt("Ready for what?");
+	alert("Well, you would be a better judge for that. Maybe you should judge whether you're ready for " + readyFor + ".");
+	neutralAreYou = 1;
+}
+
+while (k < rudePhrase.length) {
+	if(isRobot.indexOf(nicePhrase[k]) == -1 && isRobot.indexOf(nicePhrase[k]) == -1 && neutralAreYou == 0 && isRobot.indexOf("what") == -1)
+	{
+		var neutralQ = prompt("I don't know, you tell me! Do you think I am '" + isRobot + "' right now?");
+		neutralQ = neutralQ.toLowerCase();
+		if (neutralQ.indexOf("ye") != -1 ) {
+			alert("Well, so I guess you think that I am " + isRobot + ". Cool beans.");
+		}
+		else {
+			alert("So you don't think I am " + isRobot + ". Thanks for your opinion.");
+		}
+		neutralAreYou =1;
+	}
+	k++;
+}
+
+
+}
+
+//"I am" Scenario
+if (lowerCaseInput.indexOf("i am") != -1 || lowerCaseInput.indexOf("i'm") != -1) {
+
+k = 0;
+while (k < rudeThings.length) {
+
+	j = 0;
+	while (j < word.length) {
+		if (word[j].indexOf(rudeThings[k]) != -1) {
+			rudeWordDetected = 1;
+			alert("Woah, don't be too harsh on yourself! Everyone is unique and awesome in their own way :)");
+		}
+		else if (word[j].indexOf(niceThings[k]) != -1) {
+			alert("Well, that's awesome if you think that you are " + niceThings[k] + "!");
+		}
+		j++;
+	}
+
+	k++;
+}
+	
+
+}
 
 //Asking the AI Scenarios
 {
@@ -532,10 +659,15 @@ if (lowerCaseInput.indexOf("who") != -1)  {
 
 
 //"It is" scenario:
-
 if (lowerCaseInput.indexOf("it is") != -1)  {
 	alert("It is? Okay then.");
 }
+
+
+//do you
+//why is
+//which is
+//
 
 
 //Check for bad words:
@@ -554,10 +686,7 @@ while (k < indRudeThings.length) {
 
 
 //is it
-//do you
-//why is
-//which is
-//
+
 }
 
 </script>
