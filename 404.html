@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Error 404</title>
+      <title>NOT MAIN PAGE</title>
   </head>
   <body>
-    <h1>ERROR 404</h1>
-    <p>I'm sorry we cannot find the page you requested, but why don't you talk to our newly created AI? Also by Gordon Chi.</p>
+    <h1>NOT MAIN PAGE</h1>
+    <p>This isn't the E1em game, but that's fine! Instead, before you go to that site right now, why don't you talk to our newly created AI? Also by Gordon Chi.</p>
 <script> 
+
 
 
 function respond() {
@@ -24,14 +25,14 @@ var lowerCaseInput = input.toLowerCase();
 var word = lowerCaseInput.split(" ");
 
 
-choices = ["hello", "hi", "hey", "heya", "bye", "bai", "what's your name", "the hobbits", "nice ai", "party" ];
-output = ["Hey!", "Hey!", "Hi there!", "Hello.", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "You're leaving? Ok then :( it was fun talking to you! Bye!!","I am the AI.", "To Isengard!", "Are you talking about me? Gee, thanks so much! :) That made me feel 381.34 times better!", "WE LIKE TO PARTY....WE LIKE TO, WE LIKE TO PARTY!"];
-niceThings = ["good", "awesome", "smart", "intelligent", "perfect", "great", "genius", "amazing", "talented", "wise", "nice", "kind"];
-nicePhrase = ["good", "awesome", "smart", "intelligent", "perfect", "great", "a genius", "amazing", "talented", "wise", "nice", "kind"];
+choices = ["hello", "hi", "hey", "heya", "bye", "bai", "what's your name", "the hobbits", "nice ai", "bad ai", "party" ];
+output = ["Hey!", "Hey!", "Hi there!", "Hello.", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "You're leaving? Ok then :( it was fun talking to you! Bye!!","I am the AI.", "To Isengard!", "Are you talking about me? Gee, thanks so much! :) That made me feel 381.34 times better!", "Aww :'( I've been trying to get your approval. Oh well", "WE LIKE TO PARTY....WE LIKE TO, WE LIKE TO PARTY!"];
+niceThings = ["good", "awesome", "smart", "intelligent", "perfect", "great", "genius", "amazing", "talented", "wise", "nice", "kind", "clever", "helpful"];
+nicePhrase = ["good", "awesome", "smart", "intelligent", "perfect", "great", "a genius", "amazing", "talented", "wise", "nice", "kind", "clever", "helpful"];
 rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "gay", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch", "mental", "mentally", "nigga", "nigger", "poop", "poo", "a poo", "a poop", "weird", "vagina", "penis"];
 rudePhrase = ["sucky", "terrible", "ugly", "stupid", "shit", "an asshole", "gay", "a faggot", "awful", "disgusting", "awful", "a whore", "mean", "retarded", "annoying", "a fucktard", "a dick", "a twat", "a bitch", "mental", "mentally", "a nigga", "a nigger", "poop", "fuck", "weird"];
 indRudeThings = ["shit", "fuck", "retarded", "face", "gay", "faggot", "awful", "whore", "awful", "terrible", "mental", "mentally", "nigger", "nigga"];
-
+badFeels = ["tired", "stressed", "exhausted", "dull", "idle"];
 
 var isPosMood = 0;
 var isNegMood = 0;
@@ -547,6 +548,18 @@ while (k < rudeThings.length) {
 		else if (word[j].indexOf(niceThings[k]) != -1) {
 			alert("Well, that's awesome if you think that you are " + niceThings[k] + "!");
 		}
+		else if (word[j].indexOf(badFeels[k]) != -1) {
+			var isSchoolStress = prompt("Let me guess: is this because of school?");
+			if (isSchoolStress.indexOf("ye") != -1) {
+				var date = new Date();
+				var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+				var month = months[date.getMonth() ];
+				alert("Hey! It's " + month + "! Just work hard, and school will end before you know it! If you ever feel really " + badFeels[k] + " during the school year, why don't you take a rest from whatever you're doing and eat a biscuit or do a hobby? I know that many people do that!");
+			}
+			else {
+				alert("Hey, I totally feel you. I have a tip for you: why don't you take a rest from whatever you're doing and eat a biscuit or do a hobby? I know that many people do that when they're feeling " + badFeels[k] + ", and I have heard that it helps out a lot! :) Good luck going through that phase.");
+			}
+		}
 		j++;
 	}
 
@@ -688,6 +701,13 @@ while (k < indRudeThings.length) {
 //is it
 
 }
+
+
+
+
+
+
+
 
 </script>
  
