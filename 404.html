@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>NOT MAIN PAGE</title>
+      <title>TALK TO THE AI</title>
   </head>
   <body>
-    <h1>NOT MAIN PAGE</h1>
-    <p>This isn't the E1em game, but that's fine! Instead, before you go to that site right now, why don't you talk to our newly created AI? Also by Gordon Chi.</p>
+    <h1> TALK TO THE AI </h1></h1>
+    <p>Talk to our newly created AI! Also by Gordon Chi. <br> Another Game? www.e1em.com :) enjoy </p>
+   
 <script> 
 function respond() {
 
@@ -35,6 +36,7 @@ badFeels = ["tired", "stressed", "exhausted", "dull", "idle", "sad", "unhappy", 
 musicians = ["beethoven", "mozart", "krystian zimmerman", "hans zimmer", "gershwin", "john williams", "mendelssohn", "secret garden", "little mix", "mkto", "bruno mars", "chopin", "brahms", "kanye west", "sia", "david guetta",  "justin bieber",  "ariana grande", "carly rae jepsen"];
 countries = ["taiwan","usa", "united states", "us", "china", "russia", "japan", "germany", "uk", "united kingdom", "egypt", "saudi arabia", "france", "spain", "greece", "italy", "mongolia", "norway", "sweden", "finland", "poland", "hungary", "austria", "south korea", "north korea", "portugal", "denmark", "canada", "mexico"];
 displayCountries = ["Taiwan","the United States", "the United States", "the United States", "China", "Russia", "Japan", "Germany", "the United Kingdom", "the United Kingdom", "Egypt", "Saudi Arabia", "France", "Spain", "Greece", "Italy", "Mongolia", "Norway", "Sweden", "Finland", "Poland", "Hungary", "Austria", "South Korea", "North Korea", "Portugal", "Denmark", "Canada", "Mexico"]
+food = ["hamburgers", "spaghetti", "noodles", "chinese food", "sausages", "cake", "bananas", "fruits", "vegetables", "steak", "italian food", "japanese food"]
 
 var isPosMood = 0;
 var isNegMood = 0;
@@ -326,7 +328,7 @@ if (lowerCaseInput.indexOf("are there ") != -1) {
 }
 
 
-else if (lowerCaseInput.indexOf("you suck") != -1) {
+else if (lowerCaseInput.indexOf("you suck") != -1 && lowerCaseInput.indexOf("are") == -1) {
 		alert("Are you okay? What motivates you to write a generic insult? #ComputerLivesMatter");
 }
 
@@ -354,6 +356,9 @@ if (lowerCaseInput.indexOf("what") != -1)  {
 	}
 	else if (lowerCaseInput.indexOf("do you want") != -1) {
 		alert("Please be a little nicer. '" + input + "' isn't a good thing to say during a conversation.");
+	}
+	else if (lowerCaseInput.indexOf("do you like") != -1) {
+		alert("There are many things I like! I really like reading code, watching sport, and listening to documentaries and music.");
 	}
 	else if (lowerCaseInput.indexOf("you think") != -1) {
 		if (lowerCaseInput.indexOf("most important") != -1) {
@@ -692,9 +697,9 @@ k++;
 }
 
 //"Are you" scenario
-if (lowerCaseInput.indexOf("are you") != -1) {
+if (lowerCaseInput.indexOf("are you ") != -1) {
 neutralAreYou = 0;
-var isRobot = lowerCaseInput.replace("are you", "");
+var isRobot = lowerCaseInput.replace("are you ", "");
 isRobot = isRobot.replace("?", "");
 isRobot = isRobot.replace("!", "");
 isRobot = isRobot.replace(" ", "");
@@ -789,6 +794,19 @@ while (k < rudePhrase.length) {
 
 
 }
+
+//"Are your" scenario
+if (lowerCaseInput.indexOf("are your ") != -1) {
+	neutralAreYou = 0;
+	var isRobot = lowerCaseInput.replace("are your ", "");
+	isRobot = isRobot.replace("?", "");
+	isRobot = isRobot.replace("!", "");
+	isRobot = isRobot.replace(" ", "");
+	
+	alert("I don't really want to say...");
+	
+}
+
 
 //"Am I" scenario
 if (lowerCaseInput.indexOf("am i") != -1) {
@@ -921,6 +939,90 @@ while (k < rudeThings.length) {
 
 
 //do you
+i=0;
+while (i < word.length) {
+	if (word[i] == "do") {
+		if (word[i+1] == "you") {
+			//Checking what he likes
+			if (word[i+2] == "like") {
+				likeTarget = lowerCaseInput.replace("do you like ", "");
+				j = 0;
+				while (j < musicians.length) {
+					if (likeTarget == food[j]) {
+						var foodMention = 1;
+					}
+					if (likeTarget == musicians[j]) {
+						if (j<=12) {
+							var musicianAppreciation = 1;
+						}
+						else if (j > 12) {
+							var musicianAppreciation = -1;
+						}
+					}
+					if (likeTarget == countries[j]) {
+						var countryMention = 1;
+						var mentionedPlacingInArray = j;
+					}
+					j++;
+				}
+				if (foodMention == 1) {
+					alert("I do not eat food. So I wouldn't know if I like " +  likeTarget + "!");
+				}
+				else if (musicianAppreciation == 1) {
+					alert("Yes, " +  likeTarget + " is one of my favourite musicians!");
+				}
+				else if (musicianAppreciation == -1) {
+					shouldLike = prompt("No, I don't really like " +  likeTarget + ". How about you? Do you like " + likeTarget + "?");
+					if (shouldLike.indexOf("ye") != -1 && shouldLike.indexOf("not") == -1) {
+						alert("Oh, I see. Well, Sorry if we have conflicting views :( I just never really liked " + likeTarget + ", tbh.");
+					}
+					else {
+						alert("Yay! We have the same view on " + likeTarget + ". (If you were honest earlier, that is)");
+					}
+				}
+				else if (countryMention == 1) {
+					prompt("I don't know if I know enough to say whether I like " + displayCountries[mentionedPlacingInArray] + " or not. However, I know that " + displayCountries[mentionedPlacingInArray] + " is a unique and beautiful country! How about you? Do you like " + displayCountries[mentionedPlacingInArray] + "?");
+				}
+				else {
+					shouldLike = prompt("Hmm, I've never heard of '" +  likeTarget + "' before. But tell me: do you like it/him?");
+					if (shouldLike.indexOf("ye") != -1 && shouldLike.indexOf("not") == -1) {
+						alert("Really? Cool. If you like it, then maybe I'll like " + likeTarget + " one day! I'll need to know more about it though...");
+					}
+					else {
+						alert("Really? If you don't like it, then maybe I wouldn't like " + likeTarget + " that much. However, I need to know more about it to see whether I like it or not.");
+					}
+				}
+				
+			}
+			else if (word[i+2] == "want") {
+				thingWanted = lowerCaseInput.replace("do you want ", "");
+				alert("I don't want " + thingWanted + " at the moment, but that can always change.");
+			}
+			else if (word[i+2] == "need") {
+				thingNeeded = lowerCaseInput.replace("do you need ", "");
+				
+				if (lowerCaseInput.indexOf("survive") != -1) {
+					thingNeeded = lowerCaseInput.replace("survive ", "");
+					thingNeeded = lowerCaseInput.replace("to ", "");
+					if (word[i+3] == "water" || word[i+3] == "oxygen" || word[i+3] == "food" || word[i+3] == "music" || word[i+3] == "love") {
+						alert("I don't know about you, but I truly believe that we all need " + word[i+3] + " to survive!");
+					}
+					else {
+						alert("I'm not sure. I don't need " + word[i+3] + " to survive. For me at least.");
+					}
+					
+				}
+				else {
+					alert("I don't want " + thingNeeded + " at the moment, but that can always change.");
+				}
+			}
+			else {
+				alert("Do I...?");
+			}
+		}
+	}
+	i++;
+}
 
 
 //why is
@@ -1100,7 +1202,6 @@ while (i < word.length) {
 	i++;
 }
 
-i = 0;
 //"Is [musician]" scenario:
 i = 0;
 while (i < word.length) {
@@ -1194,7 +1295,7 @@ if (lowerCaseInput.indexOf("are the ") != -1 && lowerCaseInput.indexOf("there ar
 }
 
 //"Are..." scenario:
-if (lowerCaseInput.indexOf("are ") != -1 && lowerCaseInput.indexOf("there are ") == -1 && lowerCaseInput.indexOf("we are") == -1 && lowerCaseInput.indexOf("are you") == -1 && lowerCaseInput.indexOf("are there") == -1 && lowerCaseInput.indexOf("what") == -1 && lowerCaseInput.indexOf("are there ") == -1) {
+if (lowerCaseInput.indexOf("are ") < 2 && lowerCaseInput.indexOf("there are ") == -1 && lowerCaseInput.indexOf("we are") == -1 && lowerCaseInput.indexOf("are you") == -1 && lowerCaseInput.indexOf("are there") == -1 && lowerCaseInput.indexOf("what") == -1 && lowerCaseInput.indexOf("are there ") == -1 && lowerCaseInput.indexOf("you") == -1) {
 	alert("You see, my intelligence and understanding isn't enough to answer that. I guess you don't know as well, since you're asking me this question. Therefore, I can Google search for you. (I'm making an assumption that you're not testing me, but that's because I don't think you're that type of person)");
 	lowerCaseInput.replace("I was wondering if ", "");
 	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
@@ -1203,33 +1304,22 @@ if (lowerCaseInput.indexOf("are ") != -1 && lowerCaseInput.indexOf("there are ")
 
 }
 
+
+
 //Check for bad words:
 k = 0;
 while (k < indRudeThings.length) {
 	j = 0;
 	while(j < word.length) {
-	if (word[j] == indRudeThings[k] && rudeWordDetected == 0 && neutralAreYou == 0) {
-		alert("WARNING: I can already sense your negative aura. Please watch your mouth!!");
-	}
-	j++;
-	}
-
+		if (word[j] == indRudeThings[k] && rudeWordDetected == 0 && neutralAreYou == 0) {
+			alert("WARNING: I can already sense your negative aura. Please watch your mouth!!");
+			}
+		j++;
+		}
 	k++;
-}		
-
-
+	}		
 
 }
-
-
-
-
-
-
-
-
-
-
 </script>
  
  <body background="background.jpg">
