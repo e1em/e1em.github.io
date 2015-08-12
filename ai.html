@@ -7,8 +7,7 @@
     <h1> TALK TO THE AI </h1></h1>
     <p>Talk to our newly created AI! Also by Gordon Chi. <br> Another Game? www.e1em.com :) enjoy </p>
    
-<script> 
-function respond() {
+<script> function respond() {
 
 var answer = 0;
 var aiAbout = 0;
@@ -1293,17 +1292,6 @@ if (lowerCaseInput.indexOf("are the ") != -1 && lowerCaseInput.indexOf("there ar
 	neutralAreYou = 1;
 
 }
-
-//"Are..." scenario:
-if (lowerCaseInput.indexOf("are ") < 2 && lowerCaseInput.indexOf("there are ") == -1 && lowerCaseInput.indexOf("we are") == -1 && lowerCaseInput.indexOf("are you") == -1 && lowerCaseInput.indexOf("are there") == -1 && lowerCaseInput.indexOf("what") == -1 && lowerCaseInput.indexOf("are there ") == -1 && lowerCaseInput.indexOf("you") == -1) {
-	alert("You see, my intelligence and understanding isn't enough to answer that. I guess you don't know as well, since you're asking me this question. Therefore, I can Google search for you. (I'm making an assumption that you're not testing me, but that's because I don't think you're that type of person)");
-	lowerCaseInput.replace("I was wondering if ", "");
-	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
-	window.open(googleSearch);
-	neutralAreYou = 1;
-
-}
-
 
 
 //Check for bad words:
