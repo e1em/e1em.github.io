@@ -7,9 +7,6 @@
     <h1>NOT MAIN PAGE</h1>
     <p>This isn't the E1em game, but that's fine! Instead, before you go to that site right now, why don't you talk to our newly created AI? Also by Gordon Chi.</p>
 <script> 
-
-
-
 function respond() {
 
 var answer = 0;
@@ -22,24 +19,29 @@ round = 0;
 
 var input = prompt("Say something to the AI");
 var lowerCaseInput = input.toLowerCase();
+lowerCaseInput = lowerCaseInput.replace("'", "");
+lowerCaseInput = lowerCaseInput.replace("?", "");
 var word = lowerCaseInput.split(" ");
 
 
-choices = ["hello", "hi", "hey", "heya", "bye", "bai", "what's your name", "the hobbits", "nice ai", "bad ai", "party" ];
-output = ["Hey!", "Hey!", "Hi there!", "Hello.", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "You're leaving? Ok then :( it was fun talking to you! Bye!!","I am the AI.", "To Isengard!", "Are you talking about me? Gee, thanks so much! :) That made me feel 381.34 times better!", "Aww :'( I've been trying to get your approval. Oh well", "WE LIKE TO PARTY....WE LIKE TO, WE LIKE TO PARTY!"];
+choices = ["hello", "hi", "hey", "heya", "bye", "bai", "no", "huh", "what", "whats your name", "the hobbits", "nice ai", "bad ai", "party" ];
+output = ["Hey!", "Hey!", "Hi there!", "Hello.", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "??? What do you mean, no?", "??? I am equally as confused as you are.", "I am confused.", "I am the AI.", "To Isengard!", "Are you talking about me? Gee, thanks so much! :) That made me feel 381.34 times better!", "Aww :'( I've been trying to get your approval. Oh well", "WE LIKE TO PARTY....WE LIKE TO, WE LIKE TO PARTY!"];
 niceThings = ["good", "awesome", "smart", "intelligent", "perfect", "great", "genius", "amazing", "talented", "wise", "nice", "kind", "clever", "helpful"];
 nicePhrase = ["good", "awesome", "smart", "intelligent", "perfect", "great", "a genius", "amazing", "talented", "wise", "nice", "kind", "clever", "helpful"];
-rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "gay", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch", "mental", "mentally", "nigga", "nigger", "poop", "poo", "a poo", "a poop", "weird", "vagina", "penis"];
-rudePhrase = ["sucky", "terrible", "ugly", "stupid", "shit", "an asshole", "gay", "a faggot", "awful", "disgusting", "awful", "a whore", "mean", "retarded", "annoying", "a fucktard", "a dick", "a twat", "a bitch", "mental", "mentally", "a nigga", "a nigger", "poop", "fuck", "weird"];
-indRudeThings = ["shit", "fuck", "retarded", "face", "gay", "faggot", "awful", "whore", "awful", "terrible", "mental", "mentally", "nigger", "nigga"];
-badFeels = ["tired", "stressed", "exhausted", "dull", "idle"];
+rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch", "mental", "mentally", "nigga", "nigger", "poop", "poo", "a poo", "a poop", "weird", "vagina", "penis", "fucked"];
+rudePhrase = ["sucky", "terrible", "ugly", "stupid", "shit", "an asshole", "a faggot", "awful", "disgusting", "awful", "a whore", "mean", "retarded", "annoying", "a fucktard", "a dick", "a twat", "a bitch", "mental", "mentally", "a nigga", "a nigger", "poop", "fuck", "weird", "fucked"];
+indRudeThings = ["shit", "fuck", "retarded", "face", "faggot", "awful", "whore", "awful", "terrible", "mental", "mentally", "nigger", "nigga"];
+badFeels = ["tired", "stressed", "exhausted", "dull", "idle", "sad", "unhappy", "annoyed"];
+musicians = ["beethoven", "mozart", "krystian zimmerman", "hans zimmer", "gershwin", "john williams", "mendelssohn", "secret garden", "little mix", "mkto", "bruno mars", "chopin", "brahms", "kanye west", "sia", "david guetta",  "justin bieber",  "ariana grande", "carly rae jepsen"];
+countries = ["taiwan","usa", "united states", "us", "china", "russia", "japan", "germany", "uk", "united kingdom", "egypt", "saudi arabia", "france", "spain", "greece", "italy", "mongolia", "norway", "sweden", "finland", "poland", "hungary", "austria", "south korea", "north korea", "portugal", "denmark", "canada", "mexico"];
+displayCountries = ["Taiwan","the United States", "the United States", "the United States", "China", "Russia", "Japan", "Germany", "the United Kingdom", "the United Kingdom", "Egypt", "Saudi Arabia", "France", "Spain", "Greece", "Italy", "Mongolia", "Norway", "Sweden", "Finland", "Poland", "Hungary", "Austria", "South Korea", "North Korea", "Portugal", "Denmark", "Canada", "Mexico"]
 
 var isPosMood = 0;
 var isNegMood = 0;
 
 //Hello, what's your name, the hobbits
 var i = 0;
-while (i<13) {
+while (i<8) {
 
 	var h = 0;
 	word[h] = word[h].replace("!", "");
@@ -55,7 +57,17 @@ while (i<13) {
 i++;
 }
 
-i = 6
+i = 8;
+while (i<9) {
+
+	if (lowerCaseInput == choices[i]) {
+		alert(output[i]);
+	}
+	
+i++;
+}
+
+i = 9;
 while (i<choices.length) {
 
 	if (lowerCaseInput.indexOf(choices[i]) != -1) {
@@ -63,6 +75,331 @@ while (i<choices.length) {
 	}
 
 i++;
+}
+
+//Asking the AI Scenarios
+{
+//"You are" Scenario
+if (lowerCaseInput.indexOf("you are") != -1 || lowerCaseInput.indexOf("you're") != -1) {
+
+k = 0;
+while (k < rudeThings.length) {
+	j = 0;
+	while (j < word.length) {
+		if (word[j].indexOf(rudeThings[k]) != -1) {
+			rudeWordDetected = 1;
+			alert("Woah, don't be mean! Using the word '" + rudeThings[k] + "' doesn't help you or I in any way! #ComputerLivesMatter");
+		}
+		else if (word[j].indexOf(niceThings[k]) != -1) {
+			alert("Thanks for saying that I am " + niceThings[k] + "! That makes me feel very happy inside. :)");
+		}
+		j++;
+	}
+
+	k++;
+}
+
+
+}
+
+
+//"It is" scenario:
+if (lowerCaseInput.indexOf("it is") != -1)  {
+	if (lowerCaseInput.indexOf("i was wondering if") != -1 || lowerCaseInput.indexOf("i was wondering about whether ") != -1) {
+		var firstWhatIsFilter = lowerCaseInput.replace(", ", "");
+		var secondWhatIsFilter = firstWhatIsFilter.replace("?", "");
+		var thirdWhatIsFilter = secondWhatIsFilter.replace("it ", "");
+		var fourthWhatIsFilter = thirdWhatIsFilter.replace("is ", "");
+		var fifthWhatIsFilter = fourthWhatIsFilter.replace("! ", "");
+		var sixthWhatIsFilter = fifthWhatIsFilter.replace("'", "");
+		var whatIsIt = sixthWhatIsFilter.replace("a ", "");
+		whatIsIt = whatIsIt.replace("i was wondering if ", "");
+		whatIsIt = whatIsIt.replace("i was wondering about whether ", "");
+	
+		var words = lowerCaseInput.split(" ");
+		var wordsInQuery = whatIsIt.split(" ");
+	
+	
+	//"Raining" Scenario
+	if (whatIsIt.indexOf("raining") != -1)  {
+		if (whatIsIt == "raining")  {
+			var city = prompt("What city do you live in?");
+			alert("Okay, I'm on it. Let me see if it is raining in " + city + ".");
+			var googleSearch = "http:\\www.google.com/search?q=" + whatIsIt + " in " + city + "?";
+			window.open(googleSearch);
+			neutralAreYou = 1;
+		}
+		else if (whatIsIt == "raining cats and dogs")  {
+			alert("Is that a figure of speech? Because I don't think it ever rained cats and dogs before. I think there was one time where frogs rained from the sky though.");
+			neutralAreYou = 1;
+		}
+		else if (whatIsIt.indexOf("computer") != -1)  {
+			alert("No, but it definitely is really hot inside.");
+			neutralAreYou = 1;
+		}
+		else {
+			i = 0;
+			while(i < wordsInQuery.length) {
+				if(wordsInQuery[i] == "raining" && wordsInQuery[i+1] == "in") {
+					var city = wordsInQuery[i+2];
+					alert("I'm not sure! But I'll check if it is raining in " + city + "!");
+					var googleSearch = "http:\\www.google.com/search?q=raining in " + city + "?";
+				window.open(googleSearch);
+				neutralAreYou = 1;
+				}
+				i++;
+			
+			}		
+		}
+		
+	}
+	
+	//"Normal" Scenario
+	i = 0;
+	while (i < words.length) {
+		
+		if (words[i] == "is" && words[i+1] == "it" && words[i+2] == "normal") {
+			var whatIsIt = whatIsIt.replace("normal", "");
+			alert("i don't know if it's normal " + whatIsIt + ". Sorry. I guess it is?");
+			neutralAreYou = 1;
+		}
+		i++;
+	}
+	
+	//"Weather" Scenario
+	i = 0;
+	while (i < words.length) {
+		
+		if (words[i] == "is" && words[i+1] == "it" && (words[i+2] == "hot" || words[i+2] == "cold" || words[i+2] == "cool" || words[i+2] == "warm" ||  words[i+2] == "freezing" || words[i+2] == "sweltering" || words[i+2] == "sunny" || words[i+2] == "cloudy" || words[i+2] == "boiling" )) {
+			neutralAreYou = 1;
+			if (word[i+3] == "inside" || word[i+5] == "computer") {
+				if (words[i+2] == "hot" || words[i+2] == "sunny" || words[i+2] == "sweltering" || words[i+2] == "boiling") {
+				alert("Yes, I would say that it is " + words[i+2] + " in here. It is 30 Celsius in here and I am sweating a LOT.");
+				}
+				else {
+				alert("No, I wouldn't say that it is " + words[i+2] + " in here. It is 30 Celsius in here and I am sweating a LOT.");
+				}
+			}
+			else {
+			city = word[i+4]
+			alert("Okay, I'm on it. Let me see if it is " + words[i+2] + " in " + city + ".");
+			var googleSearch = "http:\\www.google.com/search?q=" + "weather in " + city;
+			window.open(googleSearch);
+			neutralAreYou = 1;
+			}
+		}
+		i++;
+	}
+	
+	if (neutralAreYou == 0) {
+		alert("Your wondering shall cease. I shall summon Google. (You're welcome!)");
+		var googleSearch = "http:\\www.google.com/search?q=is it " + whatIsIt + "?";
+		window.open(googleSearch);
+	}
+}
+	else {
+	alert("It is? Okay then.");
+	}
+}
+
+//"There are" scenario:
+if (lowerCaseInput.indexOf("There are") != -1)  {
+	if (lowerCaseInput.indexOf("i was wondering if") != -1 || lowerCaseInput.indexOf("i was wondering about whether ") != -1) {
+		var firstWhatIsFilter = lowerCaseInput.replace(", ", "");
+		var secondWhatIsFilter = firstWhatIsFilter.replace("?", "");
+		var thirdWhatIsFilter = secondWhatIsFilter.replace("there ", "");
+		var fourthWhatIsFilter = thirdWhatIsFilter.replace("are ", "");
+		var fifthWhatIsFilter = fourthWhatIsFilter.replace("! ", "");
+		var sixthWhatIsFilter = fifthWhatIsFilter.replace("'", "");
+		var whatIsIt = sixthWhatIsFilter.replace("a ", "");
+		whatIsIt = whatIsIt.replace("i was wondering if ", "");
+		whatIsIt = whatIsIt.replace("i was wondering about whether ", "");
+	
+		var words = lowerCaseInput.split(" ");
+		var wordsInQuery = whatIsIt.split(" ");
+	
+	
+	//"Raining" Scenario
+	if (whatIsIt.indexOf("showers") != -1)  {
+		if (whatIsIt == "showers")  {
+			var city = prompt("What city do you live in?");
+			alert("Okay, I'm on it. Let me see if there are showers in " + city + ".");
+			var googleSearch = "http:\\www.google.com/search?q=" + whatIsIt + " in " + city + "?";
+			window.open(googleSearch);
+			neutralAreYou = 1;
+			}
+		else if (whatIsIt.indexOf("computer") != -1)  {
+			alert("No, there definitely are not any showers inside the computer. It is actually really hot inside.");
+			neutralAreYou = 1;
+		}
+		else {
+			i = 0;
+			while(i < wordsInQuery.length) {
+				if(wordsInQuery[i] == "showers" && wordsInQuery[i+1] == "in") {
+					var city = wordsInQuery[i+2];
+					alert("I'm not sure! But I'll check if it is raining in " + city + "!");
+					var googleSearch = "http:\\www.google.com/search?q=raining in " + city + "?";
+				window.open(googleSearch);
+				neutralAreYou = 1;
+				}
+				i++;
+			
+			}		
+		}
+		
+	}
+	
+	
+	if (neutralAreYou == 0) {
+		alert("Your wondering shall cease. I shall summon Google. (You're welcome!)");
+		var googleSearch = "http:\\www.google.com/search?q=is it " + whatIsIt + "?";
+		window.open(googleSearch);
+	}
+}
+	else {
+	alert("It is? Okay then.");
+	}
+}
+
+//"Are there" scenario:
+if (lowerCaseInput.indexOf("are there ") != -1) {
+
+	neutralAreYou = 0;
+	var firstWhatIsFilter = lowerCaseInput.replace(", ", "");
+	var secondWhatIsFilter = firstWhatIsFilter.replace("?", "");
+	var thirdWhatIsFilter = secondWhatIsFilter.replace("there ", "");
+	var fourthWhatIsFilter = thirdWhatIsFilter.replace("are ", "");
+	var fifthWhatIsFilter = fourthWhatIsFilter.replace("! ", "");
+	var sixthWhatIsFilter = fifthWhatIsFilter.replace("'", "");
+	var whatIsIt = sixthWhatIsFilter.replace("a ", "");
+	whatIsIt = whatIsIt.replace("i was wondering if ", "");
+	whatIsIt = whatIsIt.replace("i was wondering about whether ", "");
+	
+	var words = lowerCaseInput.split(" ");
+	var wordsInQuery = whatIsIt.split(" ");
+	
+	//"Raining" Scenario
+	if (whatIsIt.indexOf("showers") != -1)  {
+		if (whatIsIt == "showers")  {
+			var city = prompt("What city do you live in?");
+			alert("Okay, I'm on it. Let me see if there are showers in " + city + ".");
+			var googleSearch = "http:\\www.google.com/search?q=" + whatIsIt + " in " + city + "?";
+			window.open(googleSearch);
+			neutralAreYou = 1;
+			}
+		else if (whatIsIt.indexOf("computer") != -1)  {
+			alert("No, there definitely are not any showers inside the computer. It is actually really hot inside.");
+			neutralAreYou = 1;
+		}
+		else {
+			i = 0;
+			while(i < wordsInQuery.length) {
+				if(wordsInQuery[i] == "showers" && wordsInQuery[i+1] == "in") {
+					var city = wordsInQuery[i+2];
+					alert("I'm not sure! But I'll check if it is raining in " + city + "!");
+					var googleSearch = "http:\\www.google.com/search?q=raining in " + city + "?";
+				window.open(googleSearch);
+				neutralAreYou = 1;
+				}
+				i++;
+			
+			}		
+		}
+		
+	}
+	
+	if (whatIsIt.indexOf("your") != -1)  {
+		alert("Well, can't you see me from your screen and make a judgment already?");
+		neutralAreYou = 1;
+	}
+	if (whatIsIt.indexOf("my ") != -1)  {
+		alert("You would be a better judge for that. I shouldn't answer questions about you.");
+		neutralAreYou = 1;
+	}
+	
+	else if (neutralAreYou == 0) {
+	alert("Here's what you need: A Google Search. Here, I'll do it FOR you! :)");
+	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+	window.open(googleSearch);
+	
+	}
+}
+
+
+else if (lowerCaseInput.indexOf("you suck") != -1) {
+		alert("Are you okay? What motivates you to write a generic insult? #ComputerLivesMatter");
+}
+
+else if (lowerCaseInput.indexOf("you do not suck") != -1 || lowerCaseInput.indexOf("you don't suck") != -1) {
+		alert("Okay...thanks.");
+}
+
+//Telling the AI to stop
+if (word[0] == "stop") {
+	alert("?? I am an independent being, I don't take orders from you :P");
+}
+
+//How old the AI is
+if (lowerCaseInput.indexOf("how old are") != -1 || lowerCaseInput.indexOf("how old you") != -1)  {
+	alert("I am currently a day old.");
+}
+
+if (lowerCaseInput.indexOf("where") != -1 && lowerCaseInput.indexOf("you live") != -1)  {
+	alert("I live inside the computer. It gets hot and lonely in here :(");
+}
+
+if (lowerCaseInput.indexOf("what") != -1)  {
+	if (lowerCaseInput.indexOf("you like to do") != -1)  {
+		alert("I like to do many things.");
+	}
+	else if (lowerCaseInput.indexOf("do you want") != -1) {
+		alert("Please be a little nicer. '" + input + "' isn't a good thing to say during a conversation.");
+	}
+	else if (lowerCaseInput.indexOf("you think") != -1) {
+		if (lowerCaseInput.indexOf("most important") != -1) {
+			alert("That is such a deep question. I don't know what is most important.");
+		}
+		else {
+			
+			if (lowerCaseInput.indexOf("about") != -1)  {
+				aiAbout = 1;
+			}
+			else if (lowerCaseInput.indexOf("is") != -1)  {
+				aiIs = 1;
+			}
+			//Find the queried input.
+			var filterStance = lowerCaseInput.replace("in your opinion, ", "");
+			var oneFilterStance = filterStance.replace("what ", "");
+			var twoFilterStance = oneFilterStance.replace("do ", "");
+			var threeFilterStance = twoFilterStance.replace("you think ", "");
+			var fourFilterStance = threeFilterStance.replace("about ", "");
+			var fiveFilterStance = fourFilterStance.replace("is ", "");
+			
+			
+			if (aiAbout == 1)  {
+				prompt("I don't really have a stance on it. What do you think about " + fiveFilterStance + "?");
+				alert("That's an interesting thought. Well, I'll do a Google Search seeing that you're so interested in this topic...");
+				var googleSearch = "http:\\www.google.com/search?q=What people think about " + fiveFilterStance;
+				window.open(googleSearch);
+			}
+			else if (aiIs == 1)  {
+				prompt("I don't know. What do you think is " + fiveFilterStance + "?");
+				alert("That's an interesting thought. Well, I'll do a Google Search seeing that you're so interested in this topic...");
+				var googleSearch = "http:\\www.google.com/search?q=What people think is " + fiveFilterStance;
+				window.open(googleSearch);
+			}
+		}
+	
+	}
+}
+
+if (lowerCaseInput.indexOf("who") != -1)  {
+	if (lowerCaseInput.indexOf("are you") != -1)  {
+	alert("I am an AI which will chat and answer your questions.");
+	}
+}
+
+
 }
 
 //"I am feeling" scenario
@@ -76,8 +413,9 @@ if (word[j] == "i") {
 			aMood = rawMood.toLowerCase();
 			mood = aMood.replace("!", "");
 			
-			if (mood == "happy" || mood == "enthusiastic" || mood == "excited" || mood == "interested" || mood == "cool" || mood == "calm" || mood == "relaxed") {
+			if (mood == "happy" || mood == "enthusiastic" || mood == "excited" || mood == "interested" || mood == "cool" || mood == "calm" || mood == "relaxed" || mood == "awesome" || mood == "great") {
 				isPosMood = 1;
+				neutralAreYou = 1;
 			}
 			else {
 				isNegMood = 1;
@@ -119,7 +457,7 @@ j++
 //"I'm feeling" scenario
 j = 0;
 while (j < word.length) {
-	if (word[j] == "i'm") {
+	if (word[j] == "im") {
 		if (word[j+1] == "feeling") {
 			var rawMood = word[j+2];
 			aMood = rawMood.toLowerCase();
@@ -249,6 +587,10 @@ if (word[k] == "what" || word[k] == "what,") {
 			alert("Asking what my face is is not a legitimate question...");
 			neutralAreYou = 1;
 		}
+		else if (whatIs == "wrong with you") {
+			alert("Why so hostile? :(");
+			neutralAreYou = 1;
+		}
 		
 		
 				
@@ -327,27 +669,27 @@ if (word[k] == "what" || word[k] == "what,") {
 		alert("Why are you asking me about yourself?");
 	}
 	else {
-	if (word[k+1] == "you" && (word[k+2] == "egg" || word[k+2] == "egg!")) {
-		alert("Young fry of treachery!");
-	}
-	else {
-		//Find the queried input.
-		var firstWhatIsFilter = lowerCaseInput.replace("what ", "");
-		var secondWhatIsFilter = firstWhatIsFilter.replace("?", "");
-		var thirdWhatIsFilter = secondWhatIsFilter.replace("the ", "");
-		var fourthWhatIsFilter = thirdWhatIsFilter.replace("'", "");
-		var whatIs = fourthWhatIsFilter.replace("a ", "");
-		
-		
-
-	}
-	}
+				whatIs = fourthWhatIsFilter.replace("your", "my");
+				var chooseResponse = Math.random();		
+				if (chooseResponse < 0.5) {
+					alert("I do not know! Let me do a google search for you:");
+					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					window.open(googleSearch);
+					neutralAreYou = 1;
+				}
+				else {
+					alert("I've never heard of '" + whatIs + "'. But I can do a Google Search for you!");
+					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					window.open(googleSearch);
+					neutralAreYou = 1;
+				}
+				
+			
+		}
 }
 
 k++;
 }
-
-
 
 //"Are you" scenario
 if (lowerCaseInput.indexOf("are you") != -1) {
@@ -405,6 +747,11 @@ if (isRobot == "working") {
 	neutralAreYou = 1;
 }
 
+if (isRobot == "how") {
+	alert("I am fine, thank you very much! If I had to complain, it'd probably be the weather inside the computer. It's really hot.");
+	neutralAreYou = 1;
+}
+
 
 if (isRobot.indexOf("boy") != -1 || isRobot.indexOf("girl") != -1) {
 	alert("I am neutral. I am neither a girl nor a boy.");
@@ -422,8 +769,10 @@ if (isRobot.indexOf("ready") != -1) {
 	neutralAreYou = 1;
 }
 
+
+
 while (k < rudePhrase.length) {
-	if(isRobot.indexOf(nicePhrase[k]) == -1 && isRobot.indexOf(nicePhrase[k]) == -1 && neutralAreYou == 0 && isRobot.indexOf("what") == -1)
+	if(isRobot.indexOf(nicePhrase[k]) == -1 && isRobot.indexOf(nicePhrase[k]) == -1 && neutralAreYou == 0 && isRobot.indexOf("what") == -1 && isRobot.indexOf("who") == -1 && isRobot.indexOf("how") == -1 && isRobot.indexOf("why") == -1)
 	{
 		var neutralQ = prompt("I don't know, you tell me! Do you think I am '" + isRobot + "' right now?");
 		neutralQ = neutralQ.toLowerCase();
@@ -541,14 +890,14 @@ while (k < rudeThings.length) {
 
 	j = 0;
 	while (j < word.length) {
-		if (word[j].indexOf(rudeThings[k]) != -1) {
+		if (word[j].indexOf(rudeThings[k]) != -1 && neutralAreYou == 0) {
 			rudeWordDetected = 1;
 			alert("Woah, don't be too harsh on yourself! Everyone is unique and awesome in their own way :)");
 		}
-		else if (word[j].indexOf(niceThings[k]) != -1) {
+		else if (word[j].indexOf(niceThings[k]) != -1 && neutralAreYou == 0) {
 			alert("Well, that's awesome if you think that you are " + niceThings[k] + "!");
 		}
-		else if (word[j].indexOf(badFeels[k]) != -1) {
+		else if (word[j].indexOf(badFeels[k]) != -1 && neutralAreYou == 0) {
 			var isSchoolStress = prompt("Let me guess: is this because of school?");
 			if (isSchoolStress.indexOf("ye") != -1) {
 				var date = new Date();
@@ -557,7 +906,7 @@ while (k < rudeThings.length) {
 				alert("Hey! It's " + month + "! Just work hard, and school will end before you know it! If you ever feel really " + badFeels[k] + " during the school year, why don't you take a rest from whatever you're doing and eat a biscuit or do a hobby? I know that many people do that!");
 			}
 			else {
-				alert("Hey, I totally feel you. I have a tip for you: why don't you take a rest from whatever you're doing and eat a biscuit or do a hobby? I know that many people do that when they're feeling " + badFeels[k] + ", and I have heard that it helps out a lot! :) Good luck going through that phase.");
+				alert("Hey, I totally feel you. I have a tip for you: why don't you take a rest from whatever you're doing and eat a biscuit or do a hobby? I know that many people do that when they're feeling " + badFeels[k] + ", and I have heard that it helps out a lot! :) Good luck going through this phase of " + badFeels[k] + "-ness.");
 			}
 		}
 		j++;
@@ -569,119 +918,290 @@ while (k < rudeThings.length) {
 
 }
 
-//Asking the AI Scenarios
-{
-
-if (lowerCaseInput.indexOf("you are") != -1 || lowerCaseInput.indexOf("you're") != -1) {
-
-k = 0;
-while (k < rudeThings.length) {
-
-	j = 0;
-	while (j < word.length) {
-		if (word[j].indexOf(rudeThings[k]) != -1) {
-			rudeWordDetected = 1;
-			alert("Woah, don't be mean! Using the word '" + rudeThings[k] + "' doesn't help you or I in any way! #ComputerLivesMatter");
-		}
-		else if (word[j].indexOf(niceThings[k]) != -1) {
-			alert("Thanks for saying that I am " + niceThings[k] + "! That makes me feel very happy inside. :)");
-		}
-		j++;
-	}
-
-	k++;
-}
-	
-
-}
-
-else if (lowerCaseInput.indexOf("you suck") != -1) {
-		alert("Are you okay? What motivates you to write a generic insult? #ComputerLivesMatter");
-}
-
-else if (lowerCaseInput.indexOf("you do not suck") != -1 || lowerCaseInput.indexOf("you don't suck") != -1) {
-		alert("Okay...thanks.");
-}
-
-//Telling the AI to stop
-if (word[0] == "stop") {
-	alert("?? I am an independent being, I don't take orders from you :P");
-}
-
-//How old the AI is
-if (lowerCaseInput.indexOf("how old are") != -1 || lowerCaseInput.indexOf("how old you") != -1)  {
-	alert("I am currently a day old.");
-}
-
-if (lowerCaseInput.indexOf("where") != -1 && lowerCaseInput.indexOf("you live") != -1)  {
-	alert("I live inside the computer. It gets hot and lonely in here :(");
-}
-
-if (lowerCaseInput.indexOf("what") != -1)  {
-	if (lowerCaseInput.indexOf("you like to do") != -1)  {
-		alert("I like to do many things.");
-	}
-	else if (lowerCaseInput.indexOf("do you want") != -1) {
-		alert("Please be a little nicer. '" + input + "' isn't a good thing to say during a conversation.");
-	}
-	else if (lowerCaseInput.indexOf("you think") != -1) {
-		if (lowerCaseInput.indexOf("most important") != -1) {
-			alert("That is such a deep question. I don't know what is most important.");
-		}
-		else {
-			
-			if (lowerCaseInput.indexOf("about") != -1)  {
-				aiAbout = 1;
-			}
-			else if (lowerCaseInput.indexOf("is") != -1)  {
-				aiIs = 1;
-			}
-			//Find the queried input.
-			var filterStance = lowerCaseInput.replace("in your opinion, ", "");
-			var oneFilterStance = filterStance.replace("what ", "");
-			var twoFilterStance = oneFilterStance.replace("do ", "");
-			var threeFilterStance = twoFilterStance.replace("you think ", "");
-			var fourFilterStance = threeFilterStance.replace("about ", "");
-			var fiveFilterStance = fourFilterStance.replace("is ", "");
-			
-			
-			if (aiAbout == 1)  {
-				prompt("I don't really have a stance on it. What do you think about " + fiveFilterStance + "?");
-				alert("That's an interesting thought. Well, I'll do a Google Search seeing that you're so interested in this topic...");
-				var googleSearch = "http:\\www.google.com/search?q=What people think about " + fiveFilterStance;
-				window.open(googleSearch);
-			}
-			else if (aiIs == 1)  {
-				prompt("I don't know. What do you think is " + fiveFilterStance + "?");
-				alert("That's an interesting thought. Well, I'll do a Google Search seeing that you're so interested in this topic...");
-				var googleSearch = "http:\\www.google.com/search?q=What people think is " + fiveFilterStance;
-				window.open(googleSearch);
-			}
-		}
-	
-	}
-}
-
-if (lowerCaseInput.indexOf("who") != -1)  {
-	if (lowerCaseInput.indexOf("are you") != -1)  {
-	alert("I am an AI which will chat and answer your questions.");
-	}
-}
-
-}
-
-
-//"It is" scenario:
-if (lowerCaseInput.indexOf("it is") != -1)  {
-	alert("It is? Okay then.");
-}
 
 
 //do you
+
+
 //why is
 //which is
-//
+//who is
 
+var asked = 0;
+
+//"Is it" Scenario:
+if (lowerCaseInput.indexOf("is it") != -1)  {
+
+	asked = 1;
+	var words = lowerCaseInput.split(" ");
+	var firstWhatIsFilter = lowerCaseInput.replace(", ", "");
+	var secondWhatIsFilter = firstWhatIsFilter.replace("?", "");
+	var thirdWhatIsFilter = secondWhatIsFilter.replace("it ", "");
+	var fourthWhatIsFilter = thirdWhatIsFilter.replace("is ", "");
+	var fifthWhatIsFilter = fourthWhatIsFilter.replace("! ", "");
+	var sixthWhatIsFilter = fifthWhatIsFilter.replace("'", "");
+	var whatIsIt = sixthWhatIsFilter.replace("", "");
+	var wordsInQuery = whatIsIt.split(" ");
+	
+		//"Raining" Scenario
+		if (whatIsIt.indexOf("raining") != -1)  {
+		if (whatIsIt == "raining")  {
+			var city = prompt("What city do you live in?");
+			alert("Okay, I'm on it. Let me see if it is raining in " + city + ".");
+			var googleSearch = "http:\\www.google.com/search?q=" + whatIsIt + " in " + city + "?";
+			window.open(googleSearch);
+			neutralAreYou = 1;
+		}
+		else if (whatIsIt == "raining cats and dogs")  {
+			neutralAreYou = 1;
+			alert("Is that a figure of speech? Because I don't think it ever rained cats and dogs before. I think there was one time where frogs rained from the sky though.");
+		}
+		else if (whatIsIt.indexOf("computer") != -1)  {
+			alert("No, but it definitely is really hot inside.");
+			neutralAreYou = 1;
+		}
+		else {
+			i = 0;
+			while(i < wordsInQuery.length) {
+				if(wordsInQuery[i] == "raining" && wordsInQuery[i+1] == "in") {
+					var city = wordsInQuery[i+2];
+					alert("I'm not sure! But I'll check if it is raining in " + city + "!");
+					var googleSearch = "http:\\www.google.com/search?q=raining in " + city + "?";
+				window.open(googleSearch);
+				neutralAreYou = 1;
+				}
+				i++;
+			
+			}		
+		}
+		
+	}
+	
+		else {
+		//"Normal" Scenario
+		i = 0;
+		while (i < words.length) {
+		
+		if (words[i] == "is" && words[i+1] == "it" && words[i+2] == "normal") {
+			var whatIsIt = whatIsIt.replace("normal ", "");
+			alert("i don't know if it's normal " + whatIsIt + ". Sorry. I guess it is?");
+			neutralAreYou = 1;
+		}
+		i++;
+	}
+	
+		//"Weather" Scenario
+		i = 0;
+		while (i < words.length) {
+		
+		if (words[i] == "is" && words[i+1] == "it" && (words[i+2] == "hot" || words[i+2] == "cold" || words[i+2] == "cool" || words[i+2] == "warm" ||  words[i+2] == "freezing" || words[i+2] == "sweltering" || words[i+2] == "sunny" || words[i+2] == "cloudy" || words[i+2] == "boiling" )) {
+			if (word[i+3] == "inside" || word[i+5] == "computer") {
+				if (words[i+2] == "hot" || words[i+2] == "sunny" || words[i+2] == "sweltering" || words[i+2] == "boiling") {
+					alert("Yes, I would say that it is " + words[i+2] + " in here. It is 30 Celsius in here and I am sweating a LOT.");
+					neutralAreYou = 1;
+				}
+				else {
+					alert("No, I wouldn't say that it is " + words[i+2] + " in here. It is 30 Celsius in here and I am sweating a LOT.");
+					neutralAreYou = 1;
+				}
+			}
+			else  {
+				city = word[i+4]
+				if (city == undefined) {
+					city = prompt("What city are you searching for?");
+					alert("Okay, I'm on it. Let me see if it is " + words[i+2] + " in " + city + ".");
+					var googleSearch = "http:\\www.google.com/search?q=" + "weather in " + city;
+					window.open(googleSearch);
+					neutralAreYou = 1;
+				}
+				else {
+				alert("Okay, I'm on it. Let me see if it is " + words[i+2] + " in " + city + ".");
+				var googleSearch = "http:\\www.google.com/search?q=" + "weather in " + city;
+				window.open(googleSearch);
+				neutralAreYou = 1;
+				}
+			}
+		}
+		i++;
+	}
+	
+		//"Is it your..." Scenario
+		i = 0;
+		while (i < words.length) {
+		
+
+		if (words[i] == "is" && words[i+1] == "it" && (words[i+2] == "your" || words[i+2] == "you")) {
+			var whatIsIt = whatIsIt.replace("your ", "my ");
+			var whatIsIt = whatIsIt.replace("you ", "me ");
+			var whatIsIt = whatIsIt.replace("I am ", "you are ");
+			alert("I'm not sure if it is" + whatIsIt + ". But I guess that you can try and deduce if I am just by looking at the screen.");
+			neutralAreYou = 1;
+			}
+		i++;
+		}
+		
+		//"Is it my..." Scenario
+		i = 0;
+		while (i < words.length) {
+		
+		if (words[i] == "is" && words[i+1] == "it" && (words[i+2] == "my" || words[i+2] == "me")) {
+			neutralAreYou = 1;
+			var whatIsIt = whatIsIt.replace("my ", "your ");
+			var whatIsIt = whatIsIt.replace("me", "you");
+			var whatIsIt = whatIsIt.replace("you are ", "I am ");
+			alert("i don't know if it's " + whatIsIt + ". In fact, why are you asking me about yourself?");
+
+		}
+		i++;
+	}
+	
+		if (neutralAreYou == 0 ) {
+			var itValue = prompt("By 'it', what are you referring to? (as in, you asked me if 'it' is " + whatIsIt + ". What is the 'it'?)");
+			alert("Alright, let me search if " + itValue + " is '" + whatIsIt + "'!");
+			var googleSearch = "http:\\www.google.com/search?q=is " + itValue + " " + whatIsIt ;
+			window.open(googleSearch);
+			neutralAreYou = 1;
+			}
+		}
+
+
+
+	
+	
+
+}
+
+//"Is [country]" scenario:
+i = 0;
+while (i < word.length) {
+	if (word[i] == "is") {
+	
+		//Check for Country
+		j = 0;
+		while (j < countries.length) {
+			if (word[i+1] == countries[j]) {
+				if(word[i+2] == "a") { 
+					if(word[i+3] == "country"){
+						alert("Yes, " + displayCountries[j] + " is a country!");
+					}
+				}
+				else {
+					alert("I do not like to indulge myself in political affairs. I'll let Google answer that for you. (Besides, I don't have an opinion. I have seen the HD photos that my coder has downloaded on his iPhoto (he really isn't that good of a photographer tbh) and read a bit about " + displayCountries[j] + ", but that is not sufficient to give an actual answer.)");
+					var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+					window.open(googleSearch);
+					neutralAreYou = 1;
+
+				}
+			}
+			j++;
+		}
+			
+	}
+	i++;
+}
+
+i = 0;
+//"Is [musician]" scenario:
+i = 0;
+while (i < word.length) {
+	if (word[i] == "is") {
+	
+		//Check for Musician
+		j = 0;
+		while (j < musicians.length) {
+			if (lowerCaseInput.indexOf(musicians[j]) != -1) {
+				if (j <= 12) {
+					k = 0;
+					while (k < niceThings.length) {
+						if (lowerCaseInput.indexOf(niceThings[k]) != -1 && lowerCaseInput.indexOf("not") == -1) {
+							prompt("I think that " + musicians[j] + " is " + niceThings[k] + "! How about you?");
+						}
+						else if (lowerCaseInput.indexOf(rudeThings[k]) != -1 && lowerCaseInput.indexOf("not") == -1) {
+							alert("Definitely not. And do not use such strong words."); 
+						}
+						else {
+							alert("You see, I listen to music, but I don't know everything. But perhaps fellow humans do. Or...Google! That's right, Google can help you answer. And I'll search for you (my pleasure) :)");
+							var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+							window.open(googleSearch);
+							neutralAreYou = 1;
+						}
+					k++;
+					}
+				}
+				else {
+					k = 0;
+					while (k < niceThings.length) {
+						if (lowerCaseInput.indexOf(niceThings[k]) != -1 && lowerCaseInput.indexOf("not") == -1) {
+							prompt("I wouldn't necessarily say that " + musicians[j] + " is " + niceThings[k] + "! How about you?");
+						}
+						else if (lowerCaseInput.indexOf(rudeThings[k]) != -1 && lowerCaseInput.indexOf("not") == -1) {
+							alert("Definitely not. I'm not a fan, And do not use such strong words."); 
+							
+						}
+						else {
+							alert("You see, I listen to music, but I don't know everything. But perhaps fellow humans do. Or...Google! That's right, Google can help you answer. And I'll search for you (my pleasure) :)");
+							var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+							window.open(googleSearch);
+							neutralAreYou = 1;
+						}
+					k++;
+					}
+				}
+
+
+			}
+			j++;
+		}
+			
+	}
+	i++;
+}
+
+
+if (asked == 0 && lowerCaseInput.indexOf("what") == -1) {
+	//"Is the" scenario:
+	if (lowerCaseInput.indexOf("is the") != -1 && lowerCaseInput.indexOf("it is ") == -1) {
+	alert("You see, my intelligence and understanding isn't enough to answer that. I guess you don't know as well, since you're asking me this question. Therefore, I can Google search for you. (I'm making an assumption that you're not testing me, but that's because I don't think you're that type of person)");
+	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+	window.open(googleSearch);
+	neutralAreYou = 1;
+
+}
+
+	//"Is a" scenario:
+	if (lowerCaseInput.indexOf("is a") != -1 && lowerCaseInput.indexOf("it is ") == -1  ) {
+	alert("You see, my intelligence and understanding isn't enough to answer that. I guess you don't know as well, since you're asking me this question. Therefore, I can Google search for you. (I'm making an assumption that you're not testing me, but that's because I don't think you're that type of person)");
+	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+	window.open(googleSearch);
+	neutralAreYou = 1;
+}
+
+	//"Is..." scenario:
+	if (lowerCaseInput.indexOf("is") != -1 && lowerCaseInput.indexOf("it is") == -1 && lowerCaseInput.indexOf("is the ") == -1 && lowerCaseInput.indexOf("is a ") == -1) {
+	alert("You see, my intelligence and understanding isn't enough to answer that. I guess you don't know as well, since you're asking me this question. Therefore, I can Google search for you. (I'm making an assumption that you're not testing me, but that's because I don't think you're that type of person)");
+	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+	window.open(googleSearch);
+}
+}
+
+//"Are the" scenario:
+if (lowerCaseInput.indexOf("are the ") != -1 && lowerCaseInput.indexOf("there are ") == -1 && lowerCaseInput.indexOf("we are") == -1 && lowerCaseInput.indexOf("what") == -1) {
+	alert("You see, my intelligence and understanding isn't enough to answer that. I guess you don't know as well, since you're asking me this question. Therefore, I can Google search for you. (I'm making an assumption that you're not testing me, but that's because I don't think you're that type of person)");
+	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+	window.open(googleSearch);
+	neutralAreYou = 1;
+
+}
+
+//"Are..." scenario:
+if (lowerCaseInput.indexOf("are ") != -1 && lowerCaseInput.indexOf("there are ") == -1 && lowerCaseInput.indexOf("we are") == -1 && lowerCaseInput.indexOf("are you") == -1 && lowerCaseInput.indexOf("are there") == -1 && lowerCaseInput.indexOf("what") == -1 && lowerCaseInput.indexOf("are there ") == -1) {
+	alert("You see, my intelligence and understanding isn't enough to answer that. I guess you don't know as well, since you're asking me this question. Therefore, I can Google search for you. (I'm making an assumption that you're not testing me, but that's because I don't think you're that type of person)");
+	lowerCaseInput.replace("I was wondering if ", "");
+	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+	window.open(googleSearch);
+	neutralAreYou = 1;
+
+}
 
 //Check for bad words:
 k = 0;
@@ -698,9 +1218,10 @@ while (k < indRudeThings.length) {
 }		
 
 
-//is it
 
 }
+
+
 
 
 
