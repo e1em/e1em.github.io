@@ -200,8 +200,8 @@ function Aware() {
 	}
 	
 }
-var Charity = setInterval('Aware()', 2000);
-Window.onload = Charity;
+var charity = setInterval('Aware()', 2000);
+Window.onload = charity;
 
 
 
