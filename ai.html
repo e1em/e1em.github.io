@@ -7,7 +7,8 @@
     <h1> TALK TO GORDON CHI'S AI </h1></h1>
     <p> Updated as of August 25, 00:38:30 in +8 GMT</p>
    
-<script> function respond () {
+<script> 
+ function respond () {
 
 var answer = 0;
 var aiAbout = 0;
@@ -40,43 +41,7 @@ displayCountries = ["Taiwan","the United States", "the United States", "the Unit
 food = ["hamburgers", "spaghetti", "noodles", "chinese food", "sausages", "cake", "bananas", "fruits", "vegetables", "steak", "italian food", "japanese food", "fried chicken", "pizza", "watermelon", "watermelons", "korean food", "taiwanese food", "mongolian food", "lamb", "pork", "beef", "chicken", "mcdonalds", "kfc", "kfc chicken", "fried rice", "chicken curry", "lamb curry", "japanese curry", "indian curry", "curry", "sushi", "sashimi", "ice cream", "froyo", "frozen yoghurt", "apples", "apple pie", "bananas", "pineapple cake"]
 
 //TEMPLATE ANSWERS!!
-var i = 0;
-while (i<8) {
 
-	var h = 0;
-	word[h] = word[h].replace("!", "");
-	word[h] = word[h].replace("?", "");
-	word[h] = word[h].replace(",", "");
-	while (h < word.length) {
-		if (word[h] == choices[i]) {
-			alert(output[i]);
-			neutralAreYou = 1;
-		}
-	h++;
-	}
-	
-i++;
-}
-i = 8;
-while (i<9) {
-
-	if (lowerCaseInput == choices[i]) {
-		alert(output[i]);
-		neutralAreYou = 1;
-	}
-	
-i++;
-}
-i = 9;
-while (i<choices.length) {
-
-	if (lowerCaseInput.indexOf(choices[i]) != -1) {
-		alert(output[i]);
-		neutralAreYou = 1;
-	}
-
-i++;
-}
 
 
 //Things directed to the AI
@@ -1537,6 +1502,14 @@ while (i < 2) {
 //"If..." Scenario: 
 
 //"Would..." Scenario: 
+
+//Tell... Scenario
+
+//Find... Scenario
+
+//Search... Scenario
+
+//Calculate... Scenario
 
 }
 
@@ -3036,6 +3009,66 @@ i++;
 }
 
 }
+
+else {
+
+var i = 0;
+while (i<8) {
+
+	var h = 0;
+	word[h] = word[h].replace("!", "");
+	word[h] = word[h].replace("?", "");
+	word[h] = word[h].replace(",", "");
+	while (h < word.length) {
+		if (word[h] == choices[i]) {
+			alert(output[i]);
+			neutralAreYou = 1;
+		}
+	h++;
+	}
+	
+i++;
+}
+i = 8;
+while (i<9) {
+
+	if (lowerCaseInput == choices[i]) {
+		alert(output[i]);
+		neutralAreYou = 1;
+	}
+	
+i++;
+}
+i = 9;
+while (i<choices.length) {
+
+	if (lowerCaseInput.indexOf(choices[i]) != -1) {
+		alert(output[i]);
+		neutralAreYou = 1;
+	}
+
+i++;
+}
+
+if (neutralAreYou == 0) {
+//Check for bad words:
+k = 0;
+while (k < indRudeThings.length) {
+	j = 0;
+	while(j < word.length) {
+	if (word[j] == indRudeThings[k] && rudeWordDetected == 0 && neutralAreYou == 0) {
+		alert("WARNING: I can already sense your negative aura. Please watch your mouth!!");
+	}
+	j++;
+	}
+
+	k++;
+}	
+}
+	
+}
+
+
 
 }
 </script>
