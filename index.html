@@ -5,6 +5,15 @@ function credits() {
 alert("Created by: Gordon Chi\nMain Editor: Gordon Chi\nTeam: Gordon Chi, Andrew Gritsevskiy, Evan Gunter\nStop E1EM by: Gordon Chi\nAI by: Coded by Gordon Chi as of now, advice from Evan and Andrew!")
 }
 
+function puzzle() {
+firstPass = prompt("This area requires a passcode.");
+if (firstPass == "isengardpolonaise") {
+ window.open("puzzle.html")
+}
+else {
+ alert("You have entered the wrong passcode.")
+}
+
 </script>
  
  <body background="http://www.gomesweb.com.br/wp-content/uploads/2015/06/2-o.jpg">
@@ -26,6 +35,11 @@ alert("Created by: Gordon Chi\nMain Editor: Gordon Chi\nTeam: Gordon Chi, Andrew
     <p align=center>
     <br>   
     <button type="button" onclick="window.open('ai.html')" style="height:160px; width:300px">  CHECK THE ARTIFICIAL INTELLIGENCE <br> <br> <img height= 85 width = 85 src="http://rnbsoft.co/img/ci-artificial-intelligence.png"> </p> </button>
+    </p>
+    
+     <p align=center>
+    <br>   
+    <button type="button" onclick="puzzle()" style="height:160px; width:300px">  CHECK THE ARTIFICIAL INTELLIGENCE <br> <br> <img height= 85 width = 85 src="http://rnbsoft.co/img/ci-artificial-intelligence.png"> </p> </button>
     </p>
     
     <p align=center>
