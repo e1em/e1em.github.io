@@ -26,7 +26,7 @@ var Awareness = 0;
 ////// Timer ///////
 ////////////////////
 
-var CountdownToe1em = 120000;
+var CountdownToe1em = 75000;
 function e1emTimer() {
     document.getElementById('timer').innerHTML = CountdownToe1em + " minutes | Vaccines currently in store: " +  VaccinesMade + " | Vaccines Given out: " + VaccinesGiven + " | Money: $" + Money;
     if (CountdownToe1em == 0) {
