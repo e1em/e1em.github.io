@@ -288,5 +288,53 @@ a.ehideDisplay:hover span.showDisplayOnHover{
  line-height: 18px; 
   }
   
+
+/* HIS PART */
+  
+a.zhideDisplay{
+  position: relative; /* This makes everything work.*/
+  /* Allows you to layer overlapping elements. */
+  z-index: 20; 
+  color: #000;
+  text-decoration: none
+   }
+   
+a.zhideDisplay:hover {
+z-index: 1000; 
+}
+
+a.zhideDisplay span.showDisplayOnHover{
+ display: none
+ }
+ 
+a.zhideDisplay:hover span.showDisplayOnHover{ 
+  display: block;
+  position: absolute;
+  font-size: 12px; 
+  /* This sets the height of a line of text in the box. */
+  line-height: 25px;
+  
+  /* These position the box where it needs to go. */
+  top: -30px; 
+  right: -500px; 
+  
+  /* These adjust the size of the box when it appears. */
+  width: auto;
+  padding: 10px;
+  
+  border: 1px solid #666666;
+  background-color: #FFFFFF; 
+  
+ /* text color */
+  color: #000000;
+  text-align: left;
+  }
+
+span.showBodyOfDisplayOnHover {
+ font-size: 14px; 
+ font-weight: normal;
+ color: #444;
+ line-height: 18px; 
+  }
   
 
