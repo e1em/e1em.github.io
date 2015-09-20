@@ -105,13 +105,13 @@ if (lowerCaseInput.indexOf("what") != -1)  {
 			if (aiAbout == 1)  {
 				prompt("I don't really have a stance on it. What do you think about " + fiveFilterStance + "?");
 				alert("That's an interesting thought. Well, I'll do a Google Search seeing that you're so interested in this topic...");
-				var googleSearch = "http:\\www.google.com/search?q=What people think about " + fiveFilterStance;
+				var googleSearch = "https://encrypted.google.com/search?q=What people think about " + fiveFilterStance;
 				window.open(googleSearch);
 			}
 			else if (aiIs == 1)  {
 				prompt("I don't know. What do you think is " + fiveFilterStance + "?");
 				alert("That's an interesting thought. Well, I'll do a Google Search seeing that you're so interested in this topic...");
-				var googleSearch = "http:\\www.google.com/search?q=What people think is " + fiveFilterStance;
+				var googleSearch = "https://encrypted.google.com/search?q=What people think is " + fiveFilterStance;
 				window.open(googleSearch);
 			}
 		}
@@ -202,7 +202,7 @@ while (i < 2) {
 			}
 			else {
 				alert("This is a very fascinating question, and it's a shame I do not know about it. I shall have to read Google. Maybe you can read along!");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -233,14 +233,14 @@ while (i < 2) {
 			}
 			else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
 			}
 		else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
@@ -269,7 +269,7 @@ while (i < 2) {
 			}
 			else {
 				alert("This is a very fascinating question, and it's a shame I do not know about it. I shall have to read Google. Maybe you can read along!");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -294,14 +294,14 @@ while (i < 2) {
 			}
 			else {
 				alert("Hmmm...let me see...");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
 			}
 		else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
@@ -449,7 +449,7 @@ if (word[k] == "what" && neutralAreYou == 0) {
 			neutralAreYou = 1;
 		}
 		else if (whatIs.indexOf("weather") != -1) {
-			var googleSearch = "http:\\www.google.com/search?q=" + whatIs;
+			var googleSearch = "https://encrypted.google.com/search?q=" + whatIs;
 			window.open(googleSearch);
 			neutralAreYou = 1;	
 		}
@@ -462,13 +462,13 @@ if (word[k] == "what" && neutralAreYou == 0) {
 				
 				if (chooseResponse < 0.5) {
 					alert("I do not know! Let me do a google search for you:");
-					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					var googleSearch = "https://encrypted.google.com/search?q=" + whatIs
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
 				else {
 					alert("I've never heard of '" + whatIs + "'. But I can do a Google Search for you!");
-					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					var googleSearch = "https://encrypted.google.com/search?q=" + whatIs
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -480,14 +480,14 @@ if (word[k] == "what" && neutralAreYou == 0) {
 				if (chooseResponse < 0.5) {
 					alert("I do not know! Let me do a google search for you:");
 					var finalWhatIs = whatIs.replace("a ", "");
-					var googleSearch = "http:\\www.google.com/search?q=" + finalWhatIs
+					var googleSearch = "https://encrypted.google.com/search?q=" + finalWhatIs
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
 				else {
 					alert("I've never heard of '" + whatIs + "'. But I can do a Google Search for you!");
 					var finalWhatIs = whatIs.replace("a ", "");
-					var googleSearch = "http:\\www.google.com/search?q=" + finalWhatIs
+					var googleSearch = "https://encrypted.google.com/search?q=" + finalWhatIs
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -513,7 +513,7 @@ if (word[k] == "what" && neutralAreYou == 0) {
 			}
 			colourOf = "colour of " + colourQuery;
 			alert("I'm not too sure. Let me check what is the " + colourOf + ".");
-			var googleSearch = "http:\\www.google.com/search?q=" + colourOf;
+			var googleSearch = "https://encrypted.google.com/search?q=" + colourOf;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 
@@ -527,7 +527,7 @@ if (word[k] == "what" && neutralAreYou == 0) {
 		}
 		else {
 			alert("Well, there must be better movie experts out there! Lemme find one...");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			
@@ -539,7 +539,7 @@ if (word[k] == "what" && neutralAreYou == 0) {
 }
 	else if (neutralAreYou == 0) {
 		alert("Here: A google search!");
-		var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+		var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 		window.open(googleSearch);
 		neutralAreYou = 1;
 	}
@@ -592,7 +592,7 @@ while (i < 2) {
 			}
 			else {
 			alert("This is a very fascinating question, and it's a shame I do not know about it. I shall have to read Google. Maybe you can read along!");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			}
@@ -616,7 +616,7 @@ while (i < 2) {
 				askGoogle = prompt("Hmmm...do you want me to summon Google to see how you are " + isAsker + "?");
 				if (askGoogle.indexOf("ye") != -1 && askGoogle.indexOf("not") == -1) {
 					alert("Sure thing! I'm on it real quick.");
-					var googleSearch = "http:\\www.google.com/search?q=how i am" + isAsker;
+					var googleSearch = "https://encrypted.google.com/search?q=how i am" + isAsker;
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -647,7 +647,7 @@ while (i < 2) {
 				}
 				else {
 					alert("Good Question! Let me help you out:");
-					var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+					var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -655,14 +655,14 @@ while (i < 2) {
 			}
 			else {
 				alert("Good Question! Let me help you out:");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
 		}
 		else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
@@ -706,7 +706,7 @@ while (i < 2) {
 			}
 			else {
 			alert("This is a very fascinating question, and it's a shame I do not know about it. I shall have to read Google. Maybe you can read along!");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			}
@@ -730,7 +730,7 @@ while (i < 2) {
 				askGoogle = prompt("Hmmm...do you want me to summon Google to see why you are " + isAsker + "?");
 				if (askGoogle.indexOf("ye") != -1 && askGoogle.indexOf("not") == -1) {
 					alert("Sure thing! I'm on it real quick.");
-					var googleSearch = "http:\\www.google.com/search?q=how i am" + isAsker;
+					var googleSearch = "https://encrypted.google.com/search?q=how i am" + isAsker;
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -747,7 +747,7 @@ while (i < 2) {
 			}
 		else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
@@ -867,7 +867,7 @@ while (i < 2) {
 				else {
 				thingKnow = lowerCaseInput.replace("do you know ", "who is ");
 				alert("I do not. But maybe Google does...");
-				var googleSearch = "http:\\www.google.com/search?q=" + thingKnow;
+				var googleSearch = "https://encrypted.google.com/search?q=" + thingKnow;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -883,7 +883,7 @@ while (i < 2) {
 		}
 		else {
 			alert("That is quite an interesting thought. I'll bring you to a website that should be more ready in answering that!");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -915,7 +915,7 @@ if (lowerCaseInput.indexOf("are there ") != -1 && lowerCaseInput.indexOf("what "
 		if (whatIsIt == "showers")  {
 			var city = prompt("What city do you live in?");
 			alert("Okay, I'm on it. Let me see if there are showers in " + city + ".");
-			var googleSearch = "<http:\\www.google.com/search?q=raining in >" + city + "?";
+			var googleSearch = "<https://encrypted.google.com/search?q=raining in >" + city + "?";
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			}
@@ -929,7 +929,7 @@ if (lowerCaseInput.indexOf("are there ") != -1 && lowerCaseInput.indexOf("what "
 				if(wordsInQuery[i] == "showers" && neutralAreYou == 0) {
 					var city = wordsInQuery[i+2];
 					alert("I'm not sure! But I'll check if it is raining in " + city + "!");
-					var googleSearch = "http:\\www.google.com/search?q=raining in " + city + "?";
+					var googleSearch = "https://encrypted.google.com/search?q=raining in " + city + "?";
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -949,7 +949,7 @@ if (lowerCaseInput.indexOf("are there ") != -1 && lowerCaseInput.indexOf("what "
 	}	
 	else if (neutralAreYou == 0) {
 		alert("Here's what you need: A Google Search. Here, I'll do it FOR you! :)");
-		var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+		var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput
 		window.open(googleSearch);
 		neutralAreYou = 1;
 	
@@ -1037,7 +1037,7 @@ if (lowerCaseInput.indexOf("are your ") != -1) {
 }
 else if (neutralAreYou == 0) {
 	alert("Fascinating question. I'm struggling to find an answer from the top of my brain, but maybe you can tell me after you read this!");
-	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+	var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 	window.open(googleSearch);
 	neutralAreYou = 1;
 }
@@ -1073,7 +1073,7 @@ if (word[i] == "is") {
 		}
 		else {
 			alert("Okay, I'm on it. Let me see if there is " + city + ".");
-			var googleSearch = "http:\\www.google.com/search?q=" + city;
+			var googleSearch = "https://encrypted.google.com/search?q=" + city;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -1087,7 +1087,7 @@ if (word[i] == "is") {
 	}
 	else if (neutralAreYou == 0) {
 	alert("Hmm. That is a question that even I cannot answer for you. But I'm sure the internet is wide and much more intelligent than me!");
-	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+	var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput
 	window.open(googleSearch);
 	neutralAreYou = 1;
 	
@@ -1114,7 +1114,7 @@ if (word[i] == "is") {
 		}
 		else {
 			alert("Okay, I'm on it. Let me see if it is " + city + ".");
-			var googleSearch = "http:\\www.google.com/search?q=" + city;
+			var googleSearch = "https://encrypted.google.com/search?q=" + city;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -1161,13 +1161,13 @@ if (word[i] == "is") {
 				if (city == undefined) {
 					city = prompt("What city are you searching for?");
 					alert("Okay, I'm on it. Let me see if it is " + words[i+2] + " in " + city + ".");
-					var googleSearch = "http:\\www.google.com/search?q=" + "weather in " + city;
+					var googleSearch = "https://encrypted.google.com/search?q=" + "weather in " + city;
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
 				else {
 				alert("Okay, I'm on it. Let me see if it is " + words[i+2] + " in " + city + ".");
-				var googleSearch = "http:\\www.google.com/search?q=" + "weather in " + city;
+				var googleSearch = "https://encrypted.google.com/search?q=" + "weather in " + city;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -1208,7 +1208,7 @@ if (word[i] == "is") {
 		if (neutralAreYou == 0) {
 			var itValue = prompt("By 'it', what are you referring to? (as in, you asked me if 'it' is " + whatIsIt + ". What is the 'it'?)");
 			alert("Alright, let me search if " + itValue + " is '" + whatIsIt + "'!");
-			var googleSearch = "http:\\www.google.com/search?q=is " + itValue + " " + whatIsIt ;
+			var googleSearch = "https://encrypted.google.com/search?q=is " + itValue + " " + whatIsIt ;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			}
@@ -1230,7 +1230,7 @@ if (word[i] == "is") {
 	var wordsInQuery = whatIsIt.split(" ");
 		
 	alert("Interesting question. Let me search it up...");
-	var googleSearch = "http:\\www.google.com/search?q=" + whatIsIt;
+	var googleSearch = "https://encrypted.google.com/search?q=" + whatIsIt;
 	window.open(googleSearch);
 }
 
@@ -1239,7 +1239,7 @@ if (word[i] == "is") {
 	while (j < countries.length) {
 		if (word[i] == countries[j]) {
 			alert("I do not like to indulge in political affairs. All I know about " + displayCountries[j] + " are from the terrible photos that my coder took that are now put on his iPhoto. I can ask Google to answer them, though, it that pleases you.");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput + "?";
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput + "?";
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -1248,7 +1248,7 @@ if (word[i] == "is") {
 	
 	if (neutralAreYou == 0) {
 		alert("Interesting question. So interesting I am still scratching my head about it! Let me help search Google for you!");
-		var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput + "?";
+		var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput + "?";
 		window.open(googleSearch);
 		neutralAreYou = 1;
 	}
@@ -1393,7 +1393,7 @@ if (word[i] == "can" && neutralAreYou == 0) {
 	}
 	else {
 		alert("I have not thought of an answer to that question before. But I can do a search! Bless the web.");
-		var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+		var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 		window.open(googleSearch);
 		neutralAreYou = 1;
 	}
@@ -1464,7 +1464,7 @@ if (word[i] == "could" && neutralAreYou == 0) {
 	}
 	else {
 		alert("I have not thought of an answer to that question before. But I can do a search! Bless the web.");
-		var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+		var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 		window.open(googleSearch);
 		neutralAreYou = 1;
 	}
@@ -1493,7 +1493,7 @@ while (i < 2) {
 		}
 		else {
 			alert("Ooh, nice question there. Let me see what I can do for you.");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -1580,7 +1580,7 @@ if (lowerCaseInput.indexOf("it is") != -1)  {
 		if (whatIsIt == "raining")  {
 			var city = prompt("What city do you live in?");
 			alert("Okay, I'm on it. Let me see if it is raining in " + city + ".");
-			var googleSearch = "http:\\www.google.com/search?q=" + whatIsIt + " in " + city + "?";
+			var googleSearch = "https://encrypted.google.com/search?q=" + whatIsIt + " in " + city + "?";
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -1598,7 +1598,7 @@ if (lowerCaseInput.indexOf("it is") != -1)  {
 				if(wordsInQuery[i] == "raining" && wordsInQuery[i+1] == "in") {
 					var city = wordsInQuery[i+2];
 					alert("I'm not sure! But I'll check if it is raining in " + city + "!");
-					var googleSearch = "<http:\\www.google.com/search?q=raining in >" + city + "?";
+					var googleSearch = "<https://encrypted.google.com/search?q=raining in >" + city + "?";
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -1638,7 +1638,7 @@ if (lowerCaseInput.indexOf("it is") != -1)  {
 			else {
 			city = word[i+4]
 			alert("Okay, I'm on it. Let me see if it is " + words[i+2] + " in " + city + ".");
-			var googleSearch = "http:\\www.google.com/search?q=" + "weather in " + city;
+			var googleSearch = "https://encrypted.google.com/search?q=" + "weather in " + city;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			}
@@ -1648,7 +1648,7 @@ if (lowerCaseInput.indexOf("it is") != -1)  {
 	
 	if (neutralAreYou == 0) {
 		alert("Your wondering shall cease. I shall summon Google. (You're welcome!)");
-		var googleSearch = "<http:\\www.google.com/search?q=is it >" + whatIsIt + "?";
+		var googleSearch = "<https://encrypted.google.com/search?q=is it >" + whatIsIt + "?";
 		window.open(googleSearch);
 	}
 }
@@ -1685,7 +1685,7 @@ if (lowerCaseInput.indexOf("i was wondering if") != -1 || lowerCaseInput.indexOf
 		}
 		else {
 		alert("Your wondering shall cease. I shall summon Google. (You're welcome!)");
-		var googleSearch = "http:\\www.google.com/search?q=" + whatIsIt + "?";
+		var googleSearch = "https://encrypted.google.com/search?q=" + whatIsIt + "?";
 		window.open(googleSearch);
 		neutralAreYou = 1;
 		}
@@ -1955,7 +1955,7 @@ while (i < 2) {
 			}
 			else {
 				alert("This is a very fascinating question, and it's a shame I do not know about it. I shall have to read Google. Maybe you can read along!");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -1986,14 +1986,14 @@ while (i < 2) {
 			}
 			else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
 			}
 		else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
@@ -2022,7 +2022,7 @@ while (i < 2) {
 			}
 			else {
 				alert("This is a very fascinating question, and it's a shame I do not know about it. I shall have to read Google. Maybe you can read along!");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -2047,14 +2047,14 @@ while (i < 2) {
 			}
 			else {
 				alert("Hmmm...let me see...");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
 			}
 		else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
@@ -2202,7 +2202,7 @@ if (word[k] == "what" && neutralAreYou == 0) {
 			neutralAreYou = 1;
 		}
 		else if (whatIs.indexOf("weather") != -1) {
-			var googleSearch = "http:\\www.google.com/search?q=" + whatIs;
+			var googleSearch = "https://encrypted.google.com/search?q=" + whatIs;
 			window.open(googleSearch);
 			neutralAreYou = 1;	
 		}
@@ -2215,13 +2215,13 @@ if (word[k] == "what" && neutralAreYou == 0) {
 				
 				if (chooseResponse < 0.5) {
 					alert("I do not know! Let me do a google search for you:");
-					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					var googleSearch = "https://encrypted.google.com/search?q=" + whatIs
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
 				else {
 					alert("I've never heard of '" + whatIs + "'. But I can do a Google Search for you!");
-					var googleSearch = "http:\\www.google.com/search?q=" + whatIs
+					var googleSearch = "https://encrypted.google.com/search?q=" + whatIs
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -2233,14 +2233,14 @@ if (word[k] == "what" && neutralAreYou == 0) {
 				if (chooseResponse < 0.5) {
 					alert("I do not know! Let me do a google search for you:");
 					var finalWhatIs = whatIs.replace("a ", "");
-					var googleSearch = "http:\\www.google.com/search?q=" + finalWhatIs
+					var googleSearch = "https://encrypted.google.com/search?q=" + finalWhatIs
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
 				else {
 					alert("I've never heard of '" + whatIs + "'. But I can do a Google Search for you!");
 					var finalWhatIs = whatIs.replace("a ", "");
-					var googleSearch = "http:\\www.google.com/search?q=" + finalWhatIs
+					var googleSearch = "https://encrypted.google.com/search?q=" + finalWhatIs
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -2266,7 +2266,7 @@ if (word[k] == "what" && neutralAreYou == 0) {
 			}
 			colourOf = "colour of " + colourQuery;
 			alert("I'm not too sure. Let me check what is the " + colourOf + ".");
-			var googleSearch = "http:\\www.google.com/search?q=" + colourOf;
+			var googleSearch = "https://encrypted.google.com/search?q=" + colourOf;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 
@@ -2280,7 +2280,7 @@ if (word[k] == "what" && neutralAreYou == 0) {
 		}
 		else {
 			alert("Well, there must be better movie experts out there! Lemme find one...");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			
@@ -2292,7 +2292,7 @@ if (word[k] == "what" && neutralAreYou == 0) {
 }
 	else if (neutralAreYou == 0) {
 		alert("Here: A google search!");
-		var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+		var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 		window.open(googleSearch);
 		neutralAreYou = 1;
 	}
@@ -2345,7 +2345,7 @@ while (i < 2) {
 			}
 			else {
 			alert("This is a very fascinating question, and it's a shame I do not know about it. I shall have to read Google. Maybe you can read along!");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			}
@@ -2369,7 +2369,7 @@ while (i < 2) {
 				askGoogle = prompt("Hmmm...do you want me to summon Google to see how you are " + isAsker + "?");
 				if (askGoogle.indexOf("ye") != -1 && askGoogle.indexOf("not") == -1) {
 					alert("Sure thing! I'm on it real quick.");
-					var googleSearch = "http:\\www.google.com/search?q=how i am" + isAsker;
+					var googleSearch = "https://encrypted.google.com/search?q=how i am" + isAsker;
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -2400,7 +2400,7 @@ while (i < 2) {
 				}
 				else {
 					alert("Good Question! Let me help you out:");
-					var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+					var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -2408,14 +2408,14 @@ while (i < 2) {
 			}
 			else {
 				alert("Good Question! Let me help you out:");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
 		}
 		else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
@@ -2459,7 +2459,7 @@ while (i < 2) {
 			}
 			else {
 			alert("This is a very fascinating question, and it's a shame I do not know about it. I shall have to read Google. Maybe you can read along!");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			}
@@ -2483,7 +2483,7 @@ while (i < 2) {
 				askGoogle = prompt("Hmmm...do you want me to summon Google to see why you are " + isAsker + "?");
 				if (askGoogle.indexOf("ye") != -1 && askGoogle.indexOf("not") == -1) {
 					alert("Sure thing! I'm on it real quick.");
-					var googleSearch = "http:\\www.google.com/search?q=how i am" + isAsker;
+					var googleSearch = "https://encrypted.google.com/search?q=how i am" + isAsker;
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
@@ -2500,7 +2500,7 @@ while (i < 2) {
 			}
 		else {
 				alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
-				var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+				var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 			}
@@ -2620,7 +2620,7 @@ while (i < 2) {
 				else {
 				thingKnow = lowerCaseInput.replace("do you know ", "who is ");
 				alert("I do not. But maybe Google does...");
-				var googleSearch = "http:\\www.google.com/search?q=" + thingKnow;
+				var googleSearch = "https://encrypted.google.com/search?q=" + thingKnow;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -2636,7 +2636,7 @@ while (i < 2) {
 		}
 		else {
 			alert("That is quite an interesting thought. I'll bring you to a website that should be more ready in answering that!");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -2668,7 +2668,7 @@ if (lowerCaseInput.indexOf("are there ") != -1 && lowerCaseInput.indexOf("what "
 		if (whatIsIt == "showers")  {
 			var city = prompt("What city do you live in?");
 			alert("Okay, I'm on it. Let me see if there are showers in " + city + ".");
-			var googleSearch = "<http:\\www.google.com/search?q=raining in >" + city + "?";
+			var googleSearch = "https://encrypted.google.com/search?q=raining in " + city + "?";
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			}
@@ -2682,7 +2682,7 @@ if (lowerCaseInput.indexOf("are there ") != -1 && lowerCaseInput.indexOf("what "
 				if(wordsInQuery[i] == "showers" && neutralAreYou == 0) {
 					var city = wordsInQuery[i+2];
 					alert("I'm not sure! But I'll check if it is raining in " + city + "!");
-					var googleSearch = "http:\\www.google.com/search?q=raining in " + city + "?";
+					var googleSearch = "https://encrypted.google.com/search?q=raining in " + city + "?";
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -2702,7 +2702,7 @@ if (lowerCaseInput.indexOf("are there ") != -1 && lowerCaseInput.indexOf("what "
 	}	
 	else if (neutralAreYou == 0) {
 		alert("Here's what you need: A Google Search. Here, I'll do it FOR you! :)");
-		var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+		var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput
 		window.open(googleSearch);
 		neutralAreYou = 1;
 	
@@ -2790,7 +2790,7 @@ if (lowerCaseInput.indexOf("are your ") != -1) {
 }
 else if (neutralAreYou == 0) {
 	alert("Fascinating question. I'm struggling to find an answer from the top of my brain, but maybe you can tell me after you read this!");
-	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput;
+	var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
 	window.open(googleSearch);
 	neutralAreYou = 1;
 }
@@ -2826,7 +2826,7 @@ if (word[i] == "is") {
 		}
 		else {
 			alert("Okay, I'm on it. Let me see if there is " + city + ".");
-			var googleSearch = "http:\\www.google.com/search?q=" + city;
+			var googleSearch = "https://encrypted.google.com/search?q=" + city;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -2840,7 +2840,7 @@ if (word[i] == "is") {
 	}
 	else if (neutralAreYou == 0) {
 	alert("Hmm. That is a question that even I cannot answer for you. But I'm sure the internet is wide and much more intelligent than me!");
-	var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput
+	var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput
 	window.open(googleSearch);
 	neutralAreYou = 1;
 	
@@ -2867,7 +2867,7 @@ if (word[i] == "is") {
 		}
 		else {
 			alert("Okay, I'm on it. Let me see if it is " + city + ".");
-			var googleSearch = "http:\\www.google.com/search?q=" + city;
+			var googleSearch = "https://encrypted.google.com/search?q=" + city;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -2914,13 +2914,13 @@ if (word[i] == "is") {
 				if (city == undefined) {
 					city = prompt("What city are you searching for?");
 					alert("Okay, I'm on it. Let me see if it is " + words[i+2] + " in " + city + ".");
-					var googleSearch = "http:\\www.google.com/search?q=" + "weather in " + city;
+					var googleSearch = "https://encrypted.google.com/search?q=" + "weather in " + city;
 					window.open(googleSearch);
 					neutralAreYou = 1;
 				}
 				else {
 				alert("Okay, I'm on it. Let me see if it is " + words[i+2] + " in " + city + ".");
-				var googleSearch = "http:\\www.google.com/search?q=" + "weather in " + city;
+				var googleSearch = "https://encrypted.google.com/search?q=" + "weather in " + city;
 				window.open(googleSearch);
 				neutralAreYou = 1;
 				}
@@ -2961,7 +2961,7 @@ if (word[i] == "is") {
 		if (neutralAreYou == 0) {
 			var itValue = prompt("By 'it', what are you referring to? (as in, you asked me if 'it' is " + whatIsIt + ". What is the 'it'?)");
 			alert("Alright, let me search if " + itValue + " is '" + whatIsIt + "'!");
-			var googleSearch = "http:\\www.google.com/search?q=is " + itValue + " " + whatIsIt ;
+			var googleSearch = "https://encrypted.google.com/search?q=is " + itValue + " " + whatIsIt ;
 			window.open(googleSearch);
 			neutralAreYou = 1;
 			}
@@ -2983,7 +2983,7 @@ if (word[i] == "is") {
 	var wordsInQuery = whatIsIt.split(" ");
 		
 	alert("Interesting question. Let me search it up...");
-	var googleSearch = "http:\\www.google.com/search?q=" + whatIsIt;
+	var googleSearch = "https://encrypted.google.com/search?q=" + whatIsIt;
 	window.open(googleSearch);
 }
 
@@ -2992,7 +2992,7 @@ if (word[i] == "is") {
 	while (j < countries.length) {
 		if (word[i] == countries[j]) {
 			alert("I do not like to indulge in political affairs. All I know about " + displayCountries[j] + " are from the terrible photos that my coder took that are now put on his iPhoto. I can ask Google to answer them, though, it that pleases you.");
-			var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput + "?";
+			var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput + "?";
 			window.open(googleSearch);
 			neutralAreYou = 1;
 		}
@@ -3001,7 +3001,7 @@ if (word[i] == "is") {
 	
 	if (neutralAreYou == 0) {
 		alert("Interesting question. So interesting I am still scratching my head about it! Let me help search Google for you!");
-		var googleSearch = "http:\\www.google.com/search?q=" + lowerCaseInput + "?";
+		var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput + "?";
 		window.open(googleSearch);
 		neutralAreYou = 1;
 	}
