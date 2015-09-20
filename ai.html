@@ -804,7 +804,7 @@
                                 if (whatIsIt == "showers") {
                                     var city = prompt("What city do you live in?");
                                     alert("Okay, I'm on it. Let me see if there are showers in " + city + ".");
-                                    var googleSearch = "<https://encrypted.google.com/search?q=raining in >" + city + "?";
+                                    var googleSearch = "http://isitraining.in/" + city + "";
                                     window.open(googleSearch);
                                     neutralAreYou = 1;
                                 } else if (whatIsIt.indexOf("computer") != -1) {
@@ -816,7 +816,7 @@
                                         if (wordsInQuery[i] == "showers" && neutralAreYou == 0) {
                                             var city = wordsInQuery[i + 2];
                                             alert("I'm not sure! But I'll check if it is raining in " + city + "!");
-                                            var googleSearch = "https://encrypted.google.com/search?q=raining in " + city + "?";
+                                            var googleSearch = "http://isitraining.in/" + city + "";
                                             window.open(googleSearch);
                                             neutralAreYou = 1;
                                         }
