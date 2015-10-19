@@ -34,8 +34,8 @@
             var word = lowerCaseInput.split(" ");
 
 
-            choices = ["hello", "hi", "hey", "heya", "bye", "bai", "no", "huh", "what", "whats your name", "the hobbits", "nice ai", "bad ai", "party"];
-            output = ["Hey!", "Hey!", "Hi there!", "Hello.", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "??? What do you mean, no?", "??? I am equally as confused as you are.", "I am confused.", "I am the AI.", "To Isengard!", "Are you talking about me? Gee, thanks so much! :) That made me feel 381.34 times better!", "Aww :'( I've been trying to get your approval. Oh well", "WE LIKE TO PARTY....WE LIKE TO, WE LIKE TO PARTY!"];
+            choices = ["hello", "hi", "hey", "heya", "bye", "bai", "no", "huh", "what", "whats your name", "the hobbits", "nice ai", "bad ai", "party", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+            output = ["Hey!", "Hey!", "Hi there!", "Hello.", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "You're leaving? Ok then :( it was fun talking to you! Bye!!", "??? What do you mean, no?", "??? I am equally as confused as you are.", "I am confused.", "I am the AI.", "To Isengard!", "Are you talking about me? Gee, thanks so much! :) That made me feel 381.34 times better!", "Aww :'( I've been trying to get your approval. Oh well", "WE LIKE TO PARTY....WE LIKE TO, WE LIKE TO PARTY!", "You speak in numbers?", "Umm. Numbers mean nothing in this context.", "Come on, do not talk to me in numbers.", "I do m not get this. Are you writing an encrypted message?", "Numbers? Do you talk with numbers?", "Your message is interesting.", "I cannot understand this. Why do you write this number?", "eeehhhhh. Is that an english word?", "Numberese. A new language I shall never master.", "Numbers mean nothing in this context."];
             niceThings = ["good", "awesome", "smart", "intelligent", "perfect", "great", "genius", "amazing", "talented", "wise", "nice", "kind", "clever", "helpful"];
             nicePhrase = ["good", "awesome", "smart", "intelligent", "perfect", "great", "a genius", "amazing", "talented", "wise", "nice", "kind", "clever", "helpful"];
             rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch", "mental", "mentally", "nigga", "nigger", "poop", "poo", "a poo", "a poop", "weird", "vagina", "penis", "fucked"];
@@ -2752,9 +2752,21 @@
                     i++;
                 }
                 i = 9;
-                while (i < choices.length) {
+                while (i < 14) {
 
                     if (lowerCaseInput.indexOf(choices[i]) != -1) {
+                        alert(output[i]);
+                        neutralAreYou = 1;
+                        understands = 1;
+                    }
+
+                    i++;
+                }
+                
+                i = 14;
+                while (i < choices.length) {
+
+                    if (lowerCaseInput.indexOf(choices[i]) != -1 && understands != 1) {
                         alert(output[i]);
                         neutralAreYou = 1;
                         understands = 1;
@@ -2777,9 +2789,11 @@
                         k++;
                     }
                 }
-                if (understands != 1) {
+                if (understands != 1) {         
+
                 	alert("I have not been coded to understand that, sorry.");
         			neutralAreYou = 1;
+
                 }
             }
 
