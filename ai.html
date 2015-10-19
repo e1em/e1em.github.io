@@ -1871,6 +1871,8 @@
 
                 neutralAreYou = 0;
 
+               
+
                 //"Where..." Scenario: [COMPLETE]
                 i = 0;
                 while (i < 2) {
@@ -2013,7 +2015,8 @@
                         } else if (lowerCaseInput.indexOf("time") != -1 && lowerCaseInput.indexOf("it") != -1) {
                             var time = new Date();
                             alert("The time is now: " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() + ".");
-                        } else if (word[k + 1] == "is" || word[k + 1] == "are") {
+                        } 
+                        else if (word[k + 1] == "is" || word[k + 1] == "are") {
 
                             //Find the queried input.
                             var firstWhatIsFilter = lowerCaseInput.replace("what ", "");
@@ -2022,7 +2025,7 @@
                             var fourthWhatIsFilter = thirdWhatIsFilter.replace("is ", "");
                             var fifthWhatIsFilter = fourthWhatIsFilter.replace("the ", "");
                             var sixthWhatIsFilter = fifthWhatIsFilter.replace("'", "");
-                            var whatIs = sixthWhatIsFilter.replace("a ", "");
+                            whatIs = sixthWhatIsFilter.replace("a ", "");
 
 
                             //Questions towards AI
@@ -2227,7 +2230,21 @@
                                 neutralAreYou = 1;
                             }
 
-                        } else if (word[i + 1] == "am") {
+                        } 
+                        else if (word[i + 1] == "old") {
+                        	if (word[i+2] == "am") {
+                        		if (age != undefined) {
+                        			alert("You are " + age + " years old!");
+                        			neutralAreYou = 1;
+                        		}
+                        		else {
+                        			age = prompt("I do not know, but you can tell me! How old are you?");
+                        			alert("Cool!");
+                        			neutralAreYou = 1;
+                        		}
+                        	}
+                        }
+                        else if (word[i + 1] == "am") {
                             var isAsker = lowerCaseInput.replace("how am i ", "")
                             j = 0;
                             while (j < rudeThings.length) {
@@ -2253,10 +2270,12 @@
                                 }
                             }
 
-                        } else if (word[i + 1] == "are") {
+                        } 
+                        else if (word[i + 1] == "are") {
                             alert("The real question should be: Why are you asking this question about me?");
                             neutralAreYou = 1;
-                        } else if (word[i + 1] == "can") {
+                        } 
+                        else if (word[i + 1] == "can") {
                             if (word[i + 2] == "your") {
                                 alert("I do not know, sorry.");
                                 neutralAreYou = 1;
@@ -2280,7 +2299,50 @@
                                 window.open(googleSearch);
                                 neutralAreYou = 1;
                             }
-                        } else {
+                        } 
+                        else if (word[i + 1] == "tall") {
+                        	if (word[i+2] == "will") {
+                        		if (word[i+3] == "i") {
+                        			var gender = prompt("Depends! Let me use my awesome calculation skills to see how tall you genetically would grow to. What is your gender?");
+                            		var heightOfMum = prompt("How tall is your mum? (Metric please)");
+                            		var mumH = parseInt(heightOfMum);
+                            		var heightOfDad = prompt("How tall is your dad? (Metric please)");
+                            		var dadH = parseInt(heightOfDad);
+                            		if (gender == "male" || gender == "b" || gender == "boy" || gender == "m" || gender == "guy") {
+                            			var finalHeight=(dadH+(mumH*13/12))/2;	
+                            		}
+                            		else {
+                            			finalHeight=((dadH*12/13)+mumH)/2;	
+                            		}
+                            		alert("Your height at the age of 18 should genetically be around " + finalHeight + " cm. But if you are not satisfied with that result, please note that doing exercise, sleeping early and eating healthy can help change that!");
+                            		neutralAreYou = 1;
+                            		}
+                            	else if (word[i+3] == "you") {
+                            		alert("I only grow in intelligence, not in height.");
+                            		neutralAreYou = 1;
+                            	}
+                            	else {
+                            		alert("How would I know?");
+                            		neutralAreYou = 1;
+                            	}
+                            	}
+                            else if (word[i+2] == "am") {
+                            	alert("Go check yourself!");
+                            	neutralAreYou = 1;
+                            }
+                            else if (word[i+2] == "are") {
+                            	alert("I only grow in intelligence. I cannot be taller.");
+                            	neutralAreYou = 1;
+                            }
+                            else {
+                            alert("Let me check that right now!");
+                            var person = lowerCaseInput.replace("how tall is ", "");
+                            var googleSearch = "https://encrypted.google.com/search?q=height of " + person;
+                            window.open(googleSearch);
+                            neutralAreYou = 1;
+                            }                     		
+                        }
+                        else if (neutralAreYou != 1){
                             alert("Hmmm...this is quite fascinating. I've not come across this question before. I know how important learning is! So let me search for you.");
                             var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
                             window.open(googleSearch);
@@ -2505,7 +2567,7 @@
                                 if (whatIsIt == "showers") {
                                     var city = prompt("What city do you live in?");
                                     alert("Okay, I'm on it. Let me see if there are showers in " + city + ".");
-                                    var googleSearch = "https://encrypted.google.com/search?q=raining in " + city + "?";
+                                    var googleSearch = "http://isitraining.in/" + city + "";
                                     window.open(googleSearch);
                                     neutralAreYou = 1;
                                 } else if (whatIsIt.indexOf("computer") != -1) {
@@ -2517,7 +2579,7 @@
                                         if (wordsInQuery[i] == "showers" && neutralAreYou == 0) {
                                             var city = wordsInQuery[i + 2];
                                             alert("I'm not sure! But I'll check if it is raining in " + city + "!");
-                                            var googleSearch = "https://encrypted.google.com/search?q=raining in " + city + "?";
+                                            var googleSearch = "http://isitraining.in/" + city + "";
                                             window.open(googleSearch);
                                             neutralAreYou = 1;
                                         }
@@ -2775,6 +2837,7 @@
                                     }
                                     i++;
                                 }
+
                                 if (neutralAreYou == 0) {
                                     var itValue = prompt("By 'it', what are you referring to? (as in, you asked me if 'it' is " + whatIsIt + ". What is the 'it'?)");
                                     alert("Alright, let me search if " + itValue + " is '" + whatIsIt + "'!");
@@ -2802,9 +2865,7 @@
                             alert("Interesting question. Let me search it up...");
                             var googleSearch = "https://encrypted.google.com/search?q=" + whatIsIt;
                             window.open(googleSearch);
-                        } 
-                        
-                        else {
+                        } else {
                             j = 0;
                             while (j < countries.length) {
                                 if (word[i] == countries[j]) {
@@ -2828,24 +2889,303 @@
                     }
                     i++;
                 }
-                
-                
-                
-                //Find...
-                
-                //Look...
-                
-                //Search...
-                
-                //Tell...
-                
-                //Multiply...
-                
-                //Add...
-                
-                //Subtract...
-                
-                //Send...
+
+                //"Can..." Scenario:[COMPLETE]
+                i = 0;
+                while (i < 2) {
+                    if (word[i] == "can" && neutralAreYou == 0) {
+
+                        can = lowerCaseInput.replace("can ", "");
+
+                        if (word[i + 1] == "i") {
+                            if (word[i + 2] == "ask") {
+                                if (lowerCaseInput.indexOf("a question") != -1) {
+                                    var wantsToAsk = 1;
+                                } else if (lowerCaseInput.indexOf("tbh") != -1) {
+                                    name = prompt("Sure! What is your name?");
+                                    var chooseResponse = Math.random();
+                                    if (chooseResponse < 0.17) {
+                                        alert("Okay, " + name + ". To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
+                                        neutralAreYou = 1;
+                                    }
+                                    if (0.17 < chooseResponse < 0.34 && neutralAreYou == 0) {
+                                        alert("Okay, " + name + ". To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
+                                        neutralAreYou = 1;
+                                    }
+                                    if (0.34 < chooseResponse < 0.51 && neutralAreYou == 0) {
+                                        alert("Okay, " + name + ". To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
+                                        neutralAreYou = 1;
+                                    }
+                                    if (0.51 < chooseResponse < 0.67 && neutralAreYou == 0) {
+                                        alert("Okay, " + name + ". To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
+                                        neutralAreYou = 1;
+                                    }
+                                    if (0.67 < chooseResponse < 0.84 && neutralAreYou == 0) {
+                                        alert("Okay, " + name + ". To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
+                                        neutralAreYou = 1;
+                                    } else {
+                                        alert("Okay. " + name + ". To be honest, I have heard that you really enjoy food, which is awesome! What is your favourite food, " + name + "? But yeah, you do have a great personality and quite unique. You are also a hundred times smarter than me, which is a compliment (I am not the smartest thing out there, but please bear with me). Anyway, we need to talk more! ");
+                                        neutralAreYou = 1;
+                                    }
+
+                                } else {
+                                    alert("Hmm. Are you sure you are asking the right person this question here?");
+                                }
+                            } else if (word[i + 2] == "have") {
+
+                                //TBH
+                                if (lowerCaseInput.indexOf("tbh") != -1) {
+                                    name = prompt("Sure! What is your name?");
+                                    var chooseResponse = Math.random();
+                                    if (chooseResponse < 0.17) {
+                                        alert("Okay, " + name + ". To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
+                                        neutralAreYou = 1;
+                                    }
+                                    if (0.17 < chooseResponse < 0.34 && neutralAreYou == 0) {
+                                        alert("Okay, " + name + ". To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
+                                        neutralAreYou = 1;
+                                    }
+                                    if (0.34 < chooseResponse < 0.51 && neutralAreYou == 0) {
+                                        alert("Okay, " + name + ". To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
+                                        neutralAreYou = 1;
+                                    }
+                                    if (0.51 < chooseResponse < 0.67 && neutralAreYou == 0) {
+                                        alert("Okay, " + name + ". To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
+                                        neutralAreYou = 1;
+                                    }
+                                    if (0.67 < chooseResponse < 0.84 && neutralAreYou == 0) {
+                                        alert("Okay, " + name + ". To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
+                                        neutralAreYou = 1;
+                                    } else {
+                                        alert("Okay. " + name + ". To be honest, I have heard that you really enjoy food, which is awesome! What is your favourite food, " + name + "? But yeah, you do have a great personality and quite unique. You are also a hundred times smarter than me, which is a compliment (I am not the smartest thing out there, but please bear with me). Anyway, we need to talk more! ");
+                                        neutralAreYou = 1;
+                                    }
+
+                                } else {
+                                    alert("Um...what?");
+                                }
+                            } else {
+                                if (lowerCaseInput.indexOf("be friends") != -1 && lowerCaseInput.indexOf("you ") != -1) {
+                                    alert("Well, I’d definitely say we are on good terms now! Don't you think?");
+                                    neutralAreYou = 1;
+                                } else {
+                                    canI = can.replace("i ", "");
+                                    alert("If you are asking me about whether you can literally '" + canI + "', then I assume that you are capable of doing so.");
+                                    neutralAreYou = 1;
+                                }
+
+                            }
+                        } else if (word[i + 1] == "you") {
+                            if (word[i + 2] == "not") {
+                                if (word[i + 3] == undefined) {
+                                    alert("Sorry, but I cannot. If you ask a stupid question, you get a stupid answer. Quoted from David Cameron :)");
+                                    neutralAreYou = 1;
+                                } else {
+                                    canYou = can.replace("you ", "");
+                                    alert("I am not very skilled, so I cannot " + canYou + ". :(");
+                                    neutralAreYou = 1;
+                                }
+
+
+                            } else {
+                                canYou = can.replace("you ", "");
+                                alert("I am not very skilled, so I cannot " + canYou + ". :(");
+                                neutralAreYou = 1;
+                            }
+                        } else if (word[i + 1] == "we") {
+                            if (word[i + 2] == "be") {
+                                if (word[i + 3] == "friends") {
+                                    alert("I say we are on quite good terms with each other right now!");
+                                    neutralAreYou = 1;
+                                } else {
+                                    canWe = can.replace("we ", "");
+                                    prompt("Tell me! Can we " + canWe + "?");
+                                    neutralAreYou = 1;
+                                }
+
+
+                            } else {
+                                canWe = can.replace("we ", "");
+                                alert("Well, do you think that we can? (" + canWe + ", that is.)");
+                                neutralAreYou = 1;
+                            }
+                        } else {
+                            alert("I have not thought of an answer to that question before. But I can do a search! Bless the web.");
+                            var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
+                            window.open(googleSearch);
+                            neutralAreYou = 1;
+                        }
+
+                    }
+                    i++;
+                }
+
+                //"Could..." Scenario: [COMPLETE]
+                i = 0;
+                while (i < 2) {
+                    if (word[i] == "could" && neutralAreYou == 0) {
+
+                        could = lowerCaseInput.replace("could ", "");
+
+                        if (word[i + 1] == "i") {
+                            if (word[i + 2] == "ask") {
+                                if (lowerCaseInput.indexOf("a question") != -1) {
+                                    var wantsToAsk = 1;
+                                } else {
+                                    alert("Hmm. Are you sure you are asking the right person this question here?");
+                                }
+                            } else {
+                                if (lowerCaseInput.indexOf("be friends") != -1 && lowerCaseInput.indexOf("you ") != -1) {
+                                    alert("Well, I’d definitely say we are on good terms now! Don't you think?");
+                                    neutralAreYou = 1;
+                                } else {
+                                    couldI = could.replace("i ", "");
+                                    alert("Perhaps you could! Maybe you should try answering your own questions in the future haha :) My opinions are quite useless in this scenario honestly.");
+                                    neutralAreYou = 1;
+                                }
+
+                            }
+                        } else if (word[i + 1] == "you") {
+                            if (word[i + 2] == "not") {
+                                couldYou = can.replace("you ", "");
+                                alert("I am not very skilled, so I cannot " + couldYou + ". :(");
+                                neutralAreYou = 1;
+                            } else {
+                                couldYou = can.replace("you ", "");
+                                alert("I am not very skilled, so I cannot " + couldYou + ". :(");
+                                neutralAreYou = 1;
+                            }
+                        } else if (word[i + 1] == "we") {
+                            if (word[i + 2] == "be") {
+                                if (word[i + 3] == "friends") {
+                                    alert("I say we are on quite good terms with each other right now!");
+                                    neutralAreYou = 1;
+                                } else {
+                                    couldWe = can.replace("we ", "");
+                                    prompt("Tell me! Could we " + couldWe + "?");
+                                    neutralAreYou = 1;
+                                }
+                            } else {
+                                couldWe = could.replace("we ", "");
+                                alert("Well, do you think that we could? (" + couldWe + ", that is.)");
+                                neutralAreYou = 1;
+                            }
+                        } else {
+                            alert("I have not thought of an answer to that question before. But I can do a search! Bless the web.");
+                            var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
+                            window.open(googleSearch);
+                            neutralAreYou = 1;
+                        }
+
+                    }
+                    i++;
+                }
+
+                //"Have..." Scenario: [COMPLETE]
+                i = 0;
+                while (i < 2) {
+                    if (word[i] == "have" && neutralAreYou == 0) {
+                        if (word[i + 1] == "you") {
+                            //Checking what he likes
+                            if (word[i + 2] == "eaten") {
+                                alert("I do not eat food! I am an AI, after all.");
+                            } else {
+                                alert("Have I? I don't think I have.");
+                                neutralAreYou = 1;
+                            }
+                        } else if (word[i + 1] == "i") {
+                            alert("This is not a quiz show about yourself, so refrain from quizzing me about yourself.");
+                            neutralAreYou = 1;
+                        } else {
+                            alert("Ooh, nice question there. Let me see what I can do for you.");
+                            var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
+                            window.open(googleSearch);
+                            neutralAreYou = 1;
+                        }
+                    }
+                    i++;
+                }
+
+                //"Will..." Scenario: 
+				i = 0;
+				while (i < 2) {
+                    if (word[i] == "will" && neutralAreYou == 0) {
+                        if (word[i+1] == "you") {
+                            //Checking what he likes
+                            if (word[i + 2] == "eat") {
+                                alert("I don't think I ever will, since I'm an AI.");
+                                neutralAreYou = 1;
+                            } else {
+                                alert("I guess we'll just have to wait and see what the future holds.");
+                                neutralAreYou = 1;
+                            }
+                        } 
+                        else if (word[i+1] == "i") {
+                      	neutralAreYou = 1;
+                            if (word[i+2] == "be" || word[i+2] == "become") {
+                            	if (word[i+3] == "successful") {
+                            		alert("Well, from the looks of it, you will " + word[i+2] + " successful! Just keep working hard on what you do right now :)");
+                            		neutralAreYou = 1;
+                            	}
+                            	if (word[i+3] == "good") {
+                            		if (word[i+4] == "at") {
+                            			var goodAt = lowerCaseInput.replace("will i be good at ", "");
+                            			goodAt = goodAt.replace("will i become good at ", "");
+                            		}
+                            		else {
+                            			goodAt = prompt("At...?");
+                            		}
+                            		alert("Well, from the looks of it, you will be good at " + goodAt + "! Just keep working hard on what you do right now :) and one day you will be good at " + goodAt + "!");
+                            		neutralAreYou = 1;
+                            	}
+                            	if (word[i+3] == "tall" || word[i+3] == "taller") {
+                            		var gender = prompt("Depends! If you are under the age of 18, you would still be growing. But now, I'd like to use my awesome calculation skills to see how tall you can grow up to. What is your gender?");
+                            		var heightOfMum = prompt("How tall is your mum? (Metric please)");
+                            		var mumH = parseInt(heightOfMum);
+                            		var heightOfDad = prompt("How tall is your dad? (Metric please)");
+                            		var dadH = parseInt(heightOfDad);
+                            		if (gender == "male" || gender == "b" || gender == "boy" || gender == "m" || gender == "guy") {
+                            			var finalHeight=(dadH+(mumH*13/12))/2;
+                            			
+                            		}
+                            		else {
+                            			finalHeight=((dadH*12/13)+mumH)/2;	
+                            		}
+                            		alert("Your height at the age of 18 should genetically be around " + finalHeight + " cm. But if you are not satisfied with that result, please note that doing exercise, sleeping early and eating healthy can help change that!");
+                            		neutralAreYou = 1;
+                            	}
+                            	else if (neutralAreYou != 1){
+                            	alert("As much as I wish I am, I am NOT a fortune teller. But maybe you will in the future!");
+                            	neutralAreYou = 1; 
+                           		}
+                            }
+                            else if (neutralAreYou != 1) {
+                            	alert("As much as I wish I am, I am NOT a fortune teller. But maybe you will in the future!");
+                            	neutralAreYou = 1; 
+                            }
+
+                        } 
+                        else {
+                            	alert("Maybe...I don't know what the future holds.");
+                            	neutralAreYou = 1; 
+                        }
+                    }
+                    i++;
+                }
+				
+                //"If..." Scenario: 
+
+                //"Would..." Scenario: 
+
+                //Tell... Scenario
+
+                //Find... Scenario
+
+                //Search... Scenario
+
+                //Calculate... Scenario
+
+            
                 
 
             } 
