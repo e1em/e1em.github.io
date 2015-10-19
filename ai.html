@@ -46,7 +46,7 @@
             nicePhrase = ["good", "awesome", "smart", "intelligent", "perfect", "great", "a genius", "amazing", "talented", "wise", "nice", "kind", "clever", "helpful"];
             rudeThings = ["sucky", "terrible", "ugly", "stupid", "shit", "asshole", "faggot", "awful", "disgusting", "awful", "whore", "mean", "retarded", "annoying", "fuck", "dick", "twat", "bitch", "mental", "mentally", "nigga", "nigger", "poop", "poo", "a poo", "a poop", "weird", "vagina", "penis", "fucked"];
             rudePhrase = ["sucky", "terrible", "ugly", "stupid", "shit", "an asshole", "a faggot", "awful", "disgusting", "awful", "a whore", "mean", "retarded", "annoying", "a fucktard", "a dick", "a twat", "a bitch", "mental", "mentally", "a nigga", "a nigger", "poop", "fuck", "weird", "fucked"];
-            indRudeThings = ["shit", "fuck", "retarded", "faggot", "awful", "whore", "awful", "terrible", "mental", "mentally", "nigger", "nigga"];
+            indRudeThings = ["shit", "fuck", "retarded", "faggot", "awful", "whore", "awful", "terrible", "mental", "mentally", "nigger", "nigga", "bitch"];
             badFeels = ["tired", "stressed", "exhausted", "dull", "idle", "sad", "unhappy", "annoyed"];
             musicians = ["beethoven", "mozart", "krystian zimmerman", "hans zimmer", "gershwin", "john williams", "mendelssohn", "secret garden", "little mix", "mkto", "bruno mars", "chopin", "brahms", "kanye west", "sia", "david guetta", "justin bieber", "ariana grande", "carly rae jepsen"];
             countries = ["taiwan", "usa", "united states", "us", "china", "russia", "japan", "germany", "uk", "united kingdom", "egypt", "saudi arabia", "france", "spain", "greece", "italy", "mongolia", "norway", "sweden", "finland", "poland", "hungary", "austria", "south korea", "north korea", "portugal", "denmark", "canada", "mexico"];
@@ -2788,6 +2788,7 @@
                         while (j < word.length) {
                             if (word[j] == indRudeThings[k] && rudeWordDetected == 0 && neutralAreYou == 0) {
                                 alert("WARNING: I can already sense your negative aura. Please watch your mouth!!");
+                                understands = 1;
                             }
                             j++;
                         }
