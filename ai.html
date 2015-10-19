@@ -25,6 +25,7 @@
             var isPosMood = 0;
             var isNegMood = 0;
             var wantsToAsk = 0;
+            var understands = 0;
 
             var input = prompt("Say something to the AI");
             var lowerCaseInput = input.toLowerCase();
@@ -2645,7 +2646,6 @@
                                     }
                                     i++;
                                 }
-
                                 if (neutralAreYou == 0) {
                                     var itValue = prompt("By 'it', what are you referring to? (as in, you asked me if 'it' is " + whatIsIt + ". What is the 'it'?)");
                                     alert("Alright, let me search if " + itValue + " is '" + whatIsIt + "'!");
@@ -2673,7 +2673,9 @@
                             alert("Interesting question. Let me search it up...");
                             var googleSearch = "https://encrypted.google.com/search?q=" + whatIsIt;
                             window.open(googleSearch);
-                        } else {
+                        } 
+                        
+                        else {
                             j = 0;
                             while (j < countries.length) {
                                 if (word[i] == countries[j]) {
@@ -2697,8 +2699,28 @@
                     }
                     i++;
                 }
+                
+                //Find...
+                
+                //Look...
+                
+                //Search...
+                
+                //Tell...
+                
+                //Multiply...
+                
+                //Add...
+                
+                //Subtract...
+                
+                //Send...
+                
 
-            } else {
+            } 
+            
+            
+            else {
 
                 var i = 0;
                 while (i < 8) {
@@ -2711,6 +2733,7 @@
                         if (word[h] == choices[i]) {
                             alert(output[i]);
                             neutralAreYou = 1;
+                            understands = 1;
                         }
                         h++;
                     }
@@ -2723,6 +2746,7 @@
                     if (lowerCaseInput == choices[i]) {
                         alert(output[i]);
                         neutralAreYou = 1;
+                        understands = 1;
                     }
 
                     i++;
@@ -2733,11 +2757,11 @@
                     if (lowerCaseInput.indexOf(choices[i]) != -1) {
                         alert(output[i]);
                         neutralAreYou = 1;
+                        understands = 1;
                     }
 
                     i++;
                 }
-
                 if (neutralAreYou == 0) {
                     //Check for bad words:
                     k = 0;
@@ -2753,7 +2777,10 @@
                         k++;
                     }
                 }
-
+                if (understands != 1) {
+                	alert("I have not been coded to understand that, sorry.");
+        			neutralAreYou = 1;
+                }
             }
 
 
