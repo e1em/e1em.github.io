@@ -19,8 +19,10 @@
     <br>
     <p align="center">We need your help! If you want to help code the AI, please ask Gordon CHI through email (gordonchi11@gmail.com)! Thanks! </p>
 
-    <script>
-            
+    <script>var name = prompt("Hello! Welcome! I am the AI. I go by the name AI. What name do you go by?");
+var age = prompt("Hello there, " + name + "! And how old are you?");
+alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask me any questions or tell me something, you can always click the button that is labelled 'TALK TO THE AI'. I hope to talk to you more today! :)");
+
         function respond() {
 
             var answer = 0;
@@ -33,7 +35,6 @@
             var isNegMood = 0;
             var wantsToAsk = 0;
             var understands = 0;
-            var age;
 
 
             var input = prompt("Say something to the AI");
@@ -332,7 +333,7 @@
 
 
                             //Questions towards AI
-                            if (whatIs == "your name") {
+                            if (whatIs.indexOf("your") != -1 && whatIs.indexOf("name") != -1) {
                                 alert("I am the AI.");
                                 neutralAreYou = 1;
                             } else if (whatIs == "your favourite food" || whatIs == "your favorite food") {
@@ -360,7 +361,14 @@
                                 alert("I don't remember. I guess I was separated at birth?");
                                 neutralAreYou = 1;
                             } else if (word[k + 2] == "my") {
-                                alert("That is about you, not me. I wouldn't know anything about you.");
+                            	if (word[k + 3] == "name") {
+                            		alert("Your name is " + name + "!");
+                            		neutralAreYou = 1;
+                            	}
+                            	else {
+                            		alert("That is about you, not me. I wouldn't know anything about you.");
+                            		neutralAreYou = 1;
+                            	}
                                 neutralAreYou = 1;
                             } else if (whatIs == "you doing") {
                                 alert("Talking to you.");
@@ -534,17 +542,10 @@
                             }
 
                         } 
-                        else if (word[i + 1] == "old") {
+                        else if (word[i + 1] == "old" || word[i + 1] == "young") {
                         	if (word[i+2] == "am") {
-                        		if (age != undefined) {
-                        			alert("You are " + age + " years old!");
+                        			alert("You are " + age + " years " + word[i+1] + "!");
                         			neutralAreYou = 1;
-                        		}
-                        		else {
-                        			age = prompt("I do not know, but you can tell me! How old are you?");
-                        			alert("Cool!");
-                        			neutralAreYou = 1;
-                        		}
                         	}
                         }
                         else if (word[i + 1] == "am") {
@@ -1204,27 +1205,26 @@
                             if (word[i + 2] == "ask") {
                                 if (lowerCaseInput.indexOf("a question") != -1) {
                                     var wantsToAsk = 1;
-                                } else if (lowerCaseInput.indexOf("tbh") != -1) {
-                                    name = prompt("Sure! What is your name?");
+                                } else if (lowerCaseInput.indexOf("tbh") != -1 && neutralAreYou != 1) {
                                     var chooseResponse = Math.random();
                                     if (chooseResponse < 0.17) {
-                                        alert("Okay, " + name + ". To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
+                                        alert("Sure, " + name + ". To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
                                         neutralAreYou = 1;
                                     }
                                     if (0.17 < chooseResponse < 0.34 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
+                                        alert("Sure, " + name + ". To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
                                         neutralAreYou = 1;
                                     }
                                     if (0.34 < chooseResponse < 0.51 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
+                                        alert("Sure, " + name + ". To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
                                         neutralAreYou = 1;
                                     }
                                     if (0.51 < chooseResponse < 0.67 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
+                                        alert("Sure, " + name + ". To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
                                         neutralAreYou = 1;
                                     }
                                     if (0.67 < chooseResponse < 0.84 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
+                                        alert("Sure, " + name + ". To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
                                         neutralAreYou = 1;
                                     } else {
                                         alert("Okay. " + name + ". To be honest, I have heard that you really enjoy food, which is awesome! What is your favourite food, " + name + "? But yeah, you do have a great personality and quite unique. You are also a hundred times smarter than me, which is a compliment (I am not the smartest thing out there, but please bear with me). Anyway, we need to talk more! ");
@@ -1237,27 +1237,26 @@
                             } else if (word[i + 2] == "have") {
 
                                 //TBH
-                                if (lowerCaseInput.indexOf("tbh") != -1) {
-                                    name = prompt("Sure! What is your name?");
+                                if (lowerCaseInput.indexOf("tbh") != -1 && neutralAreYou != 1) {
                                     var chooseResponse = Math.random();
                                     if (chooseResponse < 0.17) {
-                                        alert("Okay, " + name + ". To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
+                                        alert("Sure, " + name + ". To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
                                         neutralAreYou = 1;
                                     }
                                     if (0.17 < chooseResponse < 0.34 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
+                                        alert("Sure, " + name + ". To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
                                         neutralAreYou = 1;
                                     }
                                     if (0.34 < chooseResponse < 0.51 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
+                                        alert("Sure, " + name + ". To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
                                         neutralAreYou = 1;
                                     }
                                     if (0.51 < chooseResponse < 0.67 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
+                                        alert("Sure, " + name + ". To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
                                         neutralAreYou = 1;
                                     }
                                     if (0.67 < chooseResponse < 0.84 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
+                                        alert("Sure, " + name + ". To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
                                         neutralAreYou = 1;
                                     } else {
                                         alert("Okay. " + name + ". To be honest, I have heard that you really enjoy food, which is awesome! What is your favourite food, " + name + "? But yeah, you do have a great personality and quite unique. You are also a hundred times smarter than me, which is a compliment (I am not the smartest thing out there, but please bear with me). Anyway, we need to talk more! ");
@@ -1457,9 +1456,31 @@
                             		alert("Your height at the age of 18 should genetically be around " + finalHeight + " cm. But if you are not satisfied with that result, please note that doing exercise, sleeping early and eating healthy can help change that!");
                             		neutralAreYou = 1;
                             	}
-                            	else if (neutralAreYou != 1){
-                            	alert("As much as I wish I am, I am NOT a fortune teller. But maybe you will in the future!");
-                            	neutralAreYou = 1; 
+                            	else {
+                            		j = 0;
+                            	while (j < rudeThings.length) {
+                            		if (word[i+3] == niceThings[j]) {
+                            			var niceDetect = 1;
+                            			var phrNiceUsed = niceThings[j]
+                            		}
+                            		else if (word[i+3] == rudeThings[j]) {
+                            			var rudeDetect = 1;
+                            			var phrRudeUsed = rudeThings[j]
+                            		}
+                            		if (niceDetect == 1 && neutralAreYou != 1) {
+                            			alert("You already are " + phrNiceUsed + "! :)");
+                            			neutralAreYou = 1;
+                            		}
+                            		else if (rudeDetect == 1 && neutralAreYou != 1) {
+                            			alert("You shouldn't worry about being " + phrRudeUsed + ". You will not be " + phrRudeUsed + ".");
+                            			neutralAreYou = 1;
+                            		}
+                            	j++;
+                            	}
+                            		if (neutralAreYou != -1) {
+                            		alert("As much as I wish I am, I am NOT a fortune teller. But it is all about effort.");
+                            		neutralAreYou = 1; 
+                            		}
                            		}
                             }
                             else if (neutralAreYou != 1) {
@@ -1477,6 +1498,56 @@
                 }
 				
                 //"If..." Scenario: 
+                i = 0;
+				while (i < 2) {
+                    if (word[i] == "if" && neutralAreYou == 0) {
+                        if (word[i+1] == "you") {
+                            //Checking what he likes
+                            if (word[i + 2] == "eat") {
+                                alert("I will never eat.");
+                                neutralAreYou = 1;
+                            } else {
+                                alert("If, if, if. So many questions. Hmm.");
+                                neutralAreYou = 1;
+                            }
+                        } 
+                        else if (word[i+1] == "i") {
+                      	neutralAreYou = 1;
+                            if (word[i+2] == "am") {
+                            	j = 0;
+                            	while (j < rudeThings.length) {
+                            		if (word[i+3] == niceThings[j]) {
+                            			var niceDetect = 1;
+                            			var phrNiceUsed = niceThings[j]
+                            		}
+                            		else if (word[i+3] == rudeThings[j]) {
+                            			var rudeDetect = 1;
+                            			var phrRudeUsed = rudeThings[j]
+                            		}
+                            		if (niceDetect == 1 && neutralAreYou != 1) {
+                            			alert("You already are " + phrNiceUsed + "! :)");
+                            			neutralAreYou = 1;
+                            		}
+                            		else if (rudeDetect == 1 && neutralAreYou != 1) {
+                            			alert("You shouldn't be worried about becoming " + phrRudeUsed + ". There is no point thinking about what will happen, because you won't be " + phrRudeUsed + ".");
+                            			neutralAreYou = 1;
+                            		}
+                            	j++;
+                            	}
+                            }
+                            else if (neutralAreYou != 1) {
+                            	alert("As much as I wish I am, I am NOT a fortune teller. But maybe you will in the future!");
+                            	neutralAreYou = 1; 
+                            }
+
+                        } 
+                        else {
+                            	alert("Maybe...I don't know what the future holds.");
+                            	neutralAreYou = 1; 
+                        }
+                    }
+                    i++;
+                }
 
                 //"Would..." Scenario: 
 
@@ -1504,10 +1575,13 @@
                             if (word[j].indexOf(rudeThings[k]) != -1 && neutralAreYou == 0) {
                                 rudeWordDetected = 1;
                                 alert("Woah, don't be too harsh on yourself! Everyone is unique and awesome in their own way :)");
+                                neutralAreYou = 1;
                             } else if (word[j].indexOf(niceThings[k]) != -1 && neutralAreYou == 0) {
                                 alert("Well, that's awesome if you think that you are " + niceThings[k] + "!");
+                                neutralAreYou = 1;
                             } else if (word[j].indexOf(badFeels[k]) != -1 && neutralAreYou == 0) {
                                 var isSchoolStress = prompt("Let me guess: is this because of school?");
+                                neutralAreYou = 1;
                                 if (isSchoolStress.indexOf("ye") != -1) {
                                     var date = new Date();
                                     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -1733,6 +1807,7 @@
                         if (word[j] == "i") {
                             if (word[j + 1] == "am") {
                                 if (word[j + 2] == "feeling") {
+                                	neutralAreYou = 1;
                                     var rawMood = word[j + 3];
                                     aMood = rawMood.toLowerCase();
                                     mood = aMood.replace("!", "");
@@ -1780,6 +1855,7 @@
                                 var rawMood = word[j + 2];
                                 aMood = rawMood.toLowerCase();
                                 mood = aMood.replace("!", "");
+                                neutralAreYou = 1;
 
                                 if (mood == "happy" || mood == "enthusiastic" || mood == "excited" || mood == "interested" || mood == "cool" || mood == "calm" || mood == "relaxed") {
                                     isPosMood = 1;
@@ -1823,7 +1899,7 @@
                                 var rawMood = word[j + 2];
                                 aMood = rawMood.toLowerCase();
                                 mood = aMood.replace("!", "");
-
+								neutralAreYou = 1;
                                 if (mood == "happy" || mood == "enthusiastic" || mood == "excited" || mood == "interested" || mood == "cool" || mood == "calm" || mood == "relaxed") {
                                     isPosMood = 1;
                                 } else {
@@ -2231,17 +2307,10 @@
                             }
 
                         } 
-                        else if (word[i + 1] == "old") {
+                        else if (word[i + 1] == "old" || word[i+1] == "young") {
                         	if (word[i+2] == "am") {
-                        		if (age != undefined) {
-                        			alert("You are " + age + " years old!");
+                        			alert("You are " + age + " years " + word[i+1] + "!");
                         			neutralAreYou = 1;
-                        		}
-                        		else {
-                        			age = prompt("I do not know, but you can tell me! How old are you?");
-                        			alert("Cool!");
-                        			neutralAreYou = 1;
-                        		}
                         	}
                         }
                         else if (word[i + 1] == "am") {
@@ -2901,67 +2970,69 @@
                             if (word[i + 2] == "ask") {
                                 if (lowerCaseInput.indexOf("a question") != -1) {
                                     var wantsToAsk = 1;
-                                } else if (lowerCaseInput.indexOf("tbh") != -1) {
-                                    name = prompt("Sure! What is your name?");
+                                } 
+                                else if (lowerCaseInput.indexOf("tbh") != -1) {
                                     var chooseResponse = Math.random();
                                     if (chooseResponse < 0.17) {
-                                        alert("Okay, " + name + ". To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
+                                        alert("Sure, " + name + ". To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
                                         neutralAreYou = 1;
                                     }
                                     if (0.17 < chooseResponse < 0.34 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
+                                        alert("Sure, " + name + ". To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
                                         neutralAreYou = 1;
                                     }
                                     if (0.34 < chooseResponse < 0.51 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
+                                        alert("Sure, " + name + ". To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
                                         neutralAreYou = 1;
                                     }
                                     if (0.51 < chooseResponse < 0.67 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
+                                        alert("Sure, " + name + ". To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
                                         neutralAreYou = 1;
                                     }
                                     if (0.67 < chooseResponse < 0.84 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
+                                        alert("Sure, " + name + ". To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
                                         neutralAreYou = 1;
                                     } else {
                                         alert("Okay. " + name + ". To be honest, I have heard that you really enjoy food, which is awesome! What is your favourite food, " + name + "? But yeah, you do have a great personality and quite unique. You are also a hundred times smarter than me, which is a compliment (I am not the smartest thing out there, but please bear with me). Anyway, we need to talk more! ");
                                         neutralAreYou = 1;
                                     }
 
-                                } else {
+                                } 
+                                else {
                                     alert("Hmm. Are you sure you are asking the right person this question here?");
                                 }
                             } else if (word[i + 2] == "have") {
 
                                 //TBH
-                                if (lowerCaseInput.indexOf("tbh") != -1) {
-                                    name = prompt("Sure! What is your name?");
+                                if (lowerCaseInput.indexOf("tbh") != -1 && neutralAreYou != 1) {
+							
                                     var chooseResponse = Math.random();
                                     if (chooseResponse < 0.17) {
-                                        alert("Okay, " + name + ". To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
+                                        alert("Sure, " + name + "! To be honest, I am a code. I think very logically. It is really cool that you do, to some extent, think that way as well! Other than that, I have not heard much about you. But, it is nice that you want a to be honest from me. Um, we should talk more? There is a version of me on www.e1em.com/ai if you wanna do so!");
                                         neutralAreYou = 1;
                                     }
                                     if (0.17 < chooseResponse < 0.34 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
+                                        alert("Sure, " + name + "! To be honest, your choice in music is quite unique 0_o (or should I say fascinating) but other than that you have such a welcoming personality and I wish we have more chances to talk in the future! (Since we have not talked that much in the past, I cannot make any more judgments.");
                                         neutralAreYou = 1;
                                     }
                                     if (0.34 < chooseResponse < 0.51 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
+                                        alert("Sure, " + name + "! To be honest, you are probably a hundred times smarter than me and also a hundred times more human than I am. But hey, I still think you are cool! Maybe you will think about teaching me about how you talk, " + name + "? As a code with limited understanding, I would very much like to gain some knowledge! Talk to me more, okay?");
                                         neutralAreYou = 1;
                                     }
                                     if (0.51 < chooseResponse < 0.67 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
+                                        alert("Sure, " + name + "! To be honest, your friends are just as cool as you! Haha and you are also really skilled with that...I think it's called a pencil? Anyway, good luck in your future, " + name + "! I hope you can talk to me one day. I am cool! (even without sunglasses)");
                                         neutralAreYou = 1;
                                     }
                                     if (0.67 < chooseResponse < 0.84 && neutralAreYou == 0) {
-                                        alert("Okay, " + name + ". To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
+                                        alert("Sure, " + name + "! To be honest, I think you have lots of potential and you are a nice friend my coder Gordon (at least, I think so, right?) But yeah, you seem to be quite skilled at using Facebook and clicking a like button. Oh well, if you talk more to me, I will hopefully know you better! You can do so if you check out www.e1em.com/ai for that!!");
                                         neutralAreYou = 1;
                                     } else {
-                                        alert("Okay. " + name + ". To be honest, I have heard that you really enjoy food, which is awesome! What is your favourite food, " + name + "? But yeah, you do have a great personality and quite unique. You are also a hundred times smarter than me, which is a compliment (I am not the smartest thing out there, but please bear with me). Anyway, we need to talk more! ");
+                                        alert("Okay. " + name + "! To be honest, I have heard that you really enjoy food, which is awesome! What is your favourite food, " + name + "? But yeah, you do have a great personality and quite unique. You are also a hundred times smarter than me, which is a compliment (I am not the smartest thing out there, but please bear with me). Anyway, we need to talk more! ");
                                         neutralAreYou = 1;
                                     }
 
-                                } else {
+                                } 
+                                else {
                                     alert("Um...what?");
                                 }
                             } else {
@@ -3097,7 +3168,7 @@
                             alert("This is not a quiz show about yourself, so refrain from quizzing me about yourself.");
                             neutralAreYou = 1;
                         } else {
-                            alert("Ooh, nice question there. Let me see what I can do for you.");
+                            alert("Ooh, nice question there, " + name + "! Let me see what I can do for you.");
                             var googleSearch = "https://encrypted.google.com/search?q=" + lowerCaseInput;
                             window.open(googleSearch);
                             neutralAreYou = 1;
@@ -3116,7 +3187,7 @@
                                 alert("I don't think I ever will, since I'm an AI.");
                                 neutralAreYou = 1;
                             } else {
-                                alert("I guess we'll just have to wait and see what the future holds.");
+                                alert(name + ", I guess we'll just have to wait and see what the future holds.");
                                 neutralAreYou = 1;
                             }
                         } 
@@ -3160,7 +3231,7 @@
                            		}
                             }
                             else if (neutralAreYou != 1) {
-                            	alert("As much as I wish I am, I am NOT a fortune teller. But maybe you will in the future!");
+                            	alert("As much as I wish I am, " + name + ", I am NOT a fortune teller. But maybe you will in the future!");
                             	neutralAreYou = 1; 
                             }
 
@@ -3189,8 +3260,6 @@
                 
 
             } 
-            
-            
             else {
 
                 if (neutralAreYou != 1) {
@@ -3268,7 +3337,8 @@
         			neutralAreYou = 1;
 
                 }
-            }}
+            }
+            }
 
 
 
