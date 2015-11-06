@@ -1665,7 +1665,7 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
                             	if (word[i+3] == "story") {
                             		prompt("Go ahead! Tell me all about it!");
                             		var foundCharacter;
-                            		var characterName;
+                            		var characterName = Samuel;
                             		if (foundCharacter == 1) {
                             			prompt("Tell me about the character, " + characterName + "! What is this character like? Appearance? Hobbies? Age?");
                             			neutralAreYou = 1;
