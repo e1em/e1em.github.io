@@ -1657,39 +1657,7 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
                     i++;
                 }
                 //Tell... Scenario
-                i = 0;
-		while (i < 2) {
-                    if (word[i] == "tell" && neutralAreYou == 0) {
-                        if (word[i+1] == "you") {
-                            if (word[i+2] == "a") {
-                            	if (word[i+3] == "story") {
-                            		story = prompt("Go ahead! Tell me all about it!");
-                            		//Find the character name
-                            		story = story.toLowerCase();
-                            		story = story.replace("'", "");
-                            		story = story.replace("?", "");
-                            		story = story.replace(".", "");
-                            		indStory = story.split(" ");
-
-
-                            	}
-                            	else if (neutralAreYou != 1) {
-                            		prompt("Go ahead. Tell me!");
-                            		neutralAreYou = 1;
-                            	}
-                            }
-                            else {
-                                alert("Sure, tell me.");
-                                neutralAreYou = 1;
-                            }
-                        } 
-                        else {
-                            	alert("Maybe...should I?");
-                            	neutralAreYou = 1; 
-                        }
-                    }
-                    i++;
-                }
+              
                 //Find... Scenario
 
                 //Search... Scenario
