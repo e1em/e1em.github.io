@@ -1663,10 +1663,43 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
                         if (word[i+1] == "you") {
                             if (word[i+2] == "a") {
                             	if (word[i+3] == "story") {
-                            		prompt("Go ahead! Tell me all about it!");	
+                            		story = prompt("Go ahead! Tell me all about it!");
+                            		//Find the character name
+                            		story = story.toLowerCase();
+                            		story = story.replace("'", "");
+                            		story = story.replace("?", "");
+                            		story = story.replace(".", "");
+                            		indStory = story.split(" ");
+                            		j = 0;
+                            		while (j < indStory.length) {
+                            			if (indStory[j] == "named" || indStory[j] == "called" || (indStory[j-1] == "name" && indStory[j] = "of")) {
+                            				var characterName = indStory[j+1];
+                            				var foundCharacter = 1;
+                            			}
+                            			if (indStory[j] == "named" || indStory[j] == "called" || (indStory[j-1] == "name" && indStory[j] = "of") && foundCharacter == 1) {
+                            				var characterName2 = indStory[j+1];
+                            				var foundCharacter = 2;
+                            			}
+                            			j++;
+                            		}
+                            		if (foundCharacter == 1) {
+                            			prompt("Tell me about the character, " + characterName + "! What is this character like? Appearance? Hobbies? Age?");
+                            			neutralAreYou = 1;
+                            		}
+                            		if (foundCharacter == 2) {
+                            			prompt("Tell me about the first character, " + characterName + "! What is this character like? Appearance? Hobbies? Age?");
+                            			neutralAreYou = 1;
+                            			prompt("Now tell me about the second character you introduced" + characterName2 + "! What is this character like? Appearance? Hobbies? Age?");
+                            		}
+                            		else if (neutralAreYou != 1) {
+                            			prompt("Cool Story! I have one too! So there was this guy named Bob...wait...or Bobletta...or Samuel. Actually, I don't think that's how it started. Hmm, I'll think about it and get back to you someday.");
+                            			neutralAreYou = 1;
+                            			
+                            		}
                             	}
-                            	else {
+                            	else if (neutralAreYou != 1) {
                             		prompt("Go ahead. Tell me!");
+                            		neutralAreYou = 1;
                             	}
                             }
                             else {
@@ -1675,7 +1708,7 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
                             }
                         } 
                         else {
-                            	alert("Maybe...I don't know what the future holds.");
+                            	alert("Maybe...should I?");
                             	neutralAreYou = 1; 
                         }
                     }
