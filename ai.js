@@ -2,7 +2,11 @@ var name = prompt("Hello! Welcome! I am the AI. I go by the name AI. What name d
 var age = prompt("Hello there, " + name + "! And how old are you?");
 alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask me any questions or tell me something, you can always click the button that is labelled 'TALK TO THE AI'. I hope to talk to you more today! :)");
 
-        function respond() {
+if (localStorage.getItem("ques1").length <1) {
+localStorage.setItem("teachCount", "0");
+}
+
+    function respond() {
 
             var answer = 0;
             var aiAbout = 0;
@@ -14,7 +18,6 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
             var isNegMood = 0;
             var wantsToAsk = 0;
             var understands = 0;
-
 
             var input = prompt("Say something to the AI");
             var lowerCaseInput = input.toLowerCase();
@@ -152,7 +155,25 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
                 }
 
             }
-
+				
+				if (lowerCaseInput === localStorage.getItem("ques1")) {
+    					alert(localStorage.getItem("ans1"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques2")) {
+    					alert(localStorage.getItem("ans2"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques3")) {
+    					alert(localStorage.getItem("ans3"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
             //Questions (certain ones)
             if (askedAi == 0) {
 
@@ -271,7 +292,7 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
                 //"What..." Scenario: [COMPLETE]
                 var k = 0
                 while (k < 2) {
-                    if (word[k] == "what" && neutralAreYou == 0) {
+                    if ((word[k] == "what" || word[k] == "whats")&& neutralAreYou == 0) {
                         if (lowerCaseInput.indexOf("day") != -1 && lowerCaseInput.indexOf("week") != -1 && lowerCaseInput.indexOf("of") != -1) {
                             var date = new Date();
                             var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -972,7 +993,7 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
 
                 //"Is..." Scenario: [COMPLETE]
                 i = 0;
-                while (i < 2) {
+                while (i < 1) {
                     if (word[i] == "is") {
                         //"Is there" scenario:
                         if (lowerCaseInput.indexOf("is there ") != -1) {
@@ -1664,21 +1685,9 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
                             if (word[i+2] == "a") {
                             	if (word[i+3] == "story") {
                             		prompt("Go ahead! Tell me all about it!");
-                            		var foundCharacter;
-                            		var characterName = Samuel;
-                            		if (foundCharacter == 1) {
-                            			prompt("Tell me about the character, " + characterName + "! What is this character like? Appearance? Hobbies? Age?");
-                            			neutralAreYou = 1;
-                            		}
-                            		else if (foundCharacter == 2) {
-                            			prompt("Tell me about the first character, " + characterName + "! What is this character like? Appearance? Hobbies? Age?");
-                            			neutralAreYou = 1;
-                            			prompt("Now tell me about the second character you introduced" + characterName2 + "! What is this character like? Appearance? Hobbies? Age?");
-                            		}
-                            		else {
-                            			prompt("Cool Story! I have one too! So there was this guy named Bob...wait...or Bobletta...or Samuel. Actually, I don't think that's how it started. Hmm, I'll think about it and get back to you someday.");
-                            			neutralAreYou = 1;
-                            		}
+										alert("Cool story! I also have a story! It is about Bob...or was it Bobletta? I shall get back to you once I know about it.");
+										neutralAreYou = 1;
+									
                             	}
                             	else {
                             		prompt("Go ahead. Tell me!");
@@ -2910,7 +2919,7 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
 
                 //"Is..." Scenario: [COMPLETE]
                 i = 0;
-                while (i < 2) {
+                while (i < 1) {
                     if (word[i] == "is") {
                         //"Is there" scenario:
                         if (lowerCaseInput.indexOf("is there ") != -1) {
@@ -3608,6 +3617,7 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
                 
 
             } 
+            
             else {
 
                 if (neutralAreYou != 1) {
@@ -3680,9 +3690,19 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
                     }
                 }
                 if (understands != 1 && neutralAreYou != 1 && askedAi != 1) {         
-
-                	alert("I have not been coded to understand that, sorry.");
-        			neutralAreYou = 1;
+					if (lowerCaseInput === localStorage.getItem("ques1")) {
+    					alert(localStorage.getItem("ans1"));
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques2")) {
+    					alert(localStorage.getItem("ans2"));
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques3")) {
+    					alert(localStorage.getItem("ans3"));
+    				}									
+    				else {	
+                		alert("I have not been coded to understand that, sorry.");
+        				neutralAreYou = 1;
+        			}
 
                 }
             }
@@ -3691,4 +3711,56 @@ alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask
 
 
         }
+
+	function createScenario() {
+	if (localStorage.getItem("teachCount") == "0") {
+	var jumbleques = prompt("Create question for computer to interpret. (Storage 1)");
+	var ques = jumbleques.toLowerCase();
+    localStorage.setItem("ques1", ques);
+    var jumbleans = prompt("Create answer for this question. (Storage 1)");
+    var ans = jumbleans.toLowerCase();
+    localStorage.setItem("ans1", ans);
+    localStorage.setItem("teachCount", "1");
+    }
+    else if (localStorage.getItem("teachCount") == "1") {
+	var jumbleques2 = prompt("Create question for computer to interpret. (Storage 2)");
+	var ques2 = jumbleques2.toLowerCase();
+    localStorage.setItem("ques2", ques2);
+    var jumbleans2 = prompt("Create answer for this question. (Storage 2)");
+    var ans2 = jumbleans2.toLowerCase();
+    localStorage.setItem("ans2", ans2);
+    localStorage.setItem("teachCount", "2");
+    }
+    else if (localStorage.getItem("teachCount") == "2") {
+	var jumbleques3 = prompt("Create question for computer to interpret. (Storage 3)");
+	var ques3 = jumbleques3.toLowerCase();
+    localStorage.setItem("ques3", ques3);
+    var jumbleans3 = prompt("Create answer for this question. (Storage 3)");
+    var ans3 = jumbleans3.toLowerCase();
+    localStorage.setItem("ans3", ans3);
+    localStorage.setItem("teachCount", "3");
+    }
+    else {
+    alert("You cannot teach the AI any more stuff!");
+    }
+    }
+    
+    function respondToNewScen() {
+    var rawSubmitResp = prompt("What do you want to say to chat bot?");
+    var submitResp = rawSubmitResp.toLowerCase();
+    if (submitResp === localStorage.getItem("ques1")) {
+    	alert(localStorage.getItem("ans1"));
+    }
+    else {
+    alert("Lol.");
+    }
+    }
+    
+    function brainwash() {
+    localStorage.setItem("teachCount", "0");
+    }
+    
+
+
+
     
