@@ -1,38 +1,40 @@
-<!DOCTYPE html>
-<html>
-
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
 <head>
-
-
-    <title>E1EM | TALK TO THE AI</title>
-    <link rel="shortcut icon" href="https://www.drupal.org/files/project-images/edit(27117).png">
-    <title>TALK TO THE AI</title>
+ 
+<title>AI</title>
+<link rel="shortcut icon" href="https://www.drupal.org/files/project-images/edit(27117).png">
 </head>
 
- <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
-
-<body>
-    <h1 align="center"> TALK TO GORDON CHI'S AI </h1>
-    <p align="center"> Updated as of October 20, 18:20:40 +8 GMT</p>
+<head>
+    <div class="Homepage">
+    <h1 align="center"> TALK TO THE AI </h1>
+    <p align = "center">An interface created by Gordon Chi; Updated as of Friday, March 18 2016, +8 GMT 22:00:00
     <br>
     <br>
-    <p align="center">We need your help! If you want to help code the AI, please ask Gordon CHI through email (gordonchi11@gmail.com)! Thanks! </p>
-
-    <script src="ai.js"></script>
-
-    <body background="background.jpg">
-
-        <head>
-            <div class="Homepage">
-                <p align="center">
-                    <br>
-                    <button type="button" onclick="respond()" style="height:160px; width:300px"> TALK TO THE AI
-                        <br> </p>
-                </button>
-                </p>
-
-
-    </body>
-
-</html>
+    What's new: You can now teach the AI. Store 3 questions or answers using the "Teach the AI". They are saved within the local storage of your computer. Now, when you input the taught statement/question to the computer, it will respond with the answer you have taught it.</p>
+    </div>
+	
+	
+	<script src="ai.js"> </script>
+		<div align="center" id="timer"></div>
+	<br>
+		<p align="center">
+			<span id="timer" class="timer"></span>
+		</p>
+		    
+		<p align="center">
+    <br>
+    <button type="button" onclick="respond()" style="height:160px; width:300px">  TALK TO THE AI <br> </p> </button>
+    </p>
+     <p align=center>
+    <br>
+    <button type="button" onclick="createScenario()" style="height:160px; width:300px">  Teach the AI (Storage Max = 3) <br> </p> </button>
+    </p>
+     <p align=center>
+    <br>
+    <button type="button" onclick="brainwash()" style="height:160px; width:300px">  Teach AI again <br> </p> </button>
+    </p>
+    
+    
+</head>
