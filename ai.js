@@ -2,6 +2,7 @@ var name = prompt("Hello! Welcome! I am the AI. I go by the name AI. What name d
 var age = prompt("Hello there, " + name + "! And how old are you?");
 alert("Hello there, " + name + ", aged " + age + "! Now, if you ever want to ask me any questions or tell me something, you can always click the button that is labelled 'TALK TO THE AI'. I hope to talk to you more today! :)");
 
+
 if (localStorage.getItem("ques1").length <1) {
 localStorage.setItem("teachCount", "0");
 }
@@ -170,6 +171,48 @@ localStorage.setItem("teachCount", "0");
     				}
     				else if (lowerCaseInput === localStorage.getItem("ques3")) {
     					alert(localStorage.getItem("ans3"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques4")) {
+    					alert(localStorage.getItem("ans4"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques5")) {
+    					alert(localStorage.getItem("ans5"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques6")) {
+    					alert(localStorage.getItem("ans6"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques7")) {
+    					alert(localStorage.getItem("ans7"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques8")) {
+    					alert(localStorage.getItem("ans8"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques9")) {
+    					alert(localStorage.getItem("ans9"));
+    					understands = 1;
+    					neutralAreYou = 1;
+    					askedAi = 1;
+    				}
+    				else if (lowerCaseInput === localStorage.getItem("ques10")) {
+    					alert(localStorage.getItem("ans10"));
     					understands = 1;
     					neutralAreYou = 1;
     					askedAi = 1;
@@ -3689,56 +3732,106 @@ localStorage.setItem("teachCount", "0");
                         k++;
                     }
                 }
-                if (understands != 1 && neutralAreYou != 1 && askedAi != 1) {         
-					if (lowerCaseInput === localStorage.getItem("ques1")) {
-    					alert(localStorage.getItem("ans1"));
-    				}
-    				else if (lowerCaseInput === localStorage.getItem("ques2")) {
-    					alert(localStorage.getItem("ans2"));
-    				}
-    				else if (lowerCaseInput === localStorage.getItem("ques3")) {
-    					alert(localStorage.getItem("ans3"));
-    				}									
-    				else {	
+                if (understands != 1 && neutralAreYou != 1 && askedAi != 1) {         								
                 		alert("I have not been coded to understand that, sorry.");
         				neutralAreYou = 1;
-        			}
 
                 }
             }
             }
 
-
-
         }
 
 	function createScenario() {
 	if (localStorage.getItem("teachCount") == "0") {
-	var jumbleques = prompt("Create question for computer to interpret. (Storage 1)");
+	var jumbleques = prompt("Teach the computer a question or statement. (Storage 1)");
 	var ques = jumbleques.toLowerCase();
     localStorage.setItem("ques1", ques);
-    var jumbleans = prompt("Create answer for this question. (Storage 1)");
+    var jumbleans = prompt("How should I (the computer) respond to this? (Storage 1)");
     var ans = jumbleans.toLowerCase();
     localStorage.setItem("ans1", ans);
     localStorage.setItem("teachCount", "1");
     }
     else if (localStorage.getItem("teachCount") == "1") {
-	var jumbleques2 = prompt("Create question for computer to interpret. (Storage 2)");
+	var jumbleques2 = prompt("Teach the computer a question or statement. (Storage 2)");
 	var ques2 = jumbleques2.toLowerCase();
     localStorage.setItem("ques2", ques2);
-    var jumbleans2 = prompt("Create answer for this question. (Storage 2)");
+    var jumbleans2 = prompt("How should I (the computer) respond to this? (Storage 2)");
     var ans2 = jumbleans2.toLowerCase();
     localStorage.setItem("ans2", ans2);
     localStorage.setItem("teachCount", "2");
     }
     else if (localStorage.getItem("teachCount") == "2") {
-	var jumbleques3 = prompt("Create question for computer to interpret. (Storage 3)");
+	var jumbleques3 = prompt("Teach the computer a question or statement. (Storage 3)");
 	var ques3 = jumbleques3.toLowerCase();
     localStorage.setItem("ques3", ques3);
-    var jumbleans3 = prompt("Create answer for this question. (Storage 3)");
+    var jumbleans3 = prompt("How should I (the computer) respond to this? (Storage 3)");
     var ans3 = jumbleans3.toLowerCase();
     localStorage.setItem("ans3", ans3);
     localStorage.setItem("teachCount", "3");
+    }
+    else if (localStorage.getItem("teachCount") == "3") {
+	var jumbleques4 = prompt("Teach the computer a question or statement. (Storage 4)");
+	var ques4 = jumbleques4.toLowerCase();
+    localStorage.setItem("ques4", ques4);
+    var jumbleans4 = prompt("How should I (the computer) respond to this? (Storage 4)");
+    var ans4 = jumbleans4.toLowerCase();
+    localStorage.setItem("ans4", ans4);
+    localStorage.setItem("teachCount", "4");
+    }
+    else if (localStorage.getItem("teachCount") == "4") {
+	var jumbleques5 = prompt("Teach the computer a question or statement. (Storage 5)");
+	var ques5 = jumbleques5.toLowerCase();
+    localStorage.setItem("ques5", ques5);
+    var jumbleans5 = prompt("How should I (the computer) respond to this? (Storage 5)");
+    var ans5 = jumbleans5.toLowerCase();
+    localStorage.setItem("ans5", ans5);
+    localStorage.setItem("teachCount", "5");
+    }
+    else if (localStorage.getItem("teachCount") == "5") {
+	var jumbleques6 = prompt("Teach the computer a question or statement. (Storage 6)");
+	var ques6 = jumbleques6.toLowerCase();
+    localStorage.setItem("ques6", ques6);
+    var jumbleans6 = prompt("How should I (the computer) respond to this? (Storage 6)");
+    var ans6 = jumbleans6.toLowerCase();
+    localStorage.setItem("ans6", ans6);
+    localStorage.setItem("teachCount", "6");
+    }
+    else if (localStorage.getItem("teachCount") == "6") {
+	var jumbleques7 = prompt("Teach the computer a question or statement. (Storage 7)");
+	var ques7 = jumbleques7.toLowerCase();
+    localStorage.setItem("ques7", ques7);
+    var jumbleans7 = prompt("How should I (the computer) respond to this? (Storage 7)");
+    var ans7 = jumbleans7.toLowerCase();
+    localStorage.setItem("ans7", ans7);
+    localStorage.setItem("teachCount", "7");
+    }
+    else if (localStorage.getItem("teachCount") == "7") {
+	var jumbleques8 = prompt("Teach the computer a question or statement. (Storage 8)");
+	var ques8 = jumbleques8.toLowerCase();
+    localStorage.setItem("ques8", ques8);
+    var jumbleans8 = prompt("How should I (the computer) respond to this? (Storage 8)");
+    var ans8 = jumbleans8.toLowerCase();
+    localStorage.setItem("ans8", ans8);
+    localStorage.setItem("teachCount", "8");
+    }
+    else if (localStorage.getItem("teachCount") == "8") {
+	var jumbleques9 = prompt("Teach the computer a question or statement. (Storage 9)");
+	var ques9 = jumbleques9.toLowerCase();
+    localStorage.setItem("ques9", ques9);
+    var jumbleans9 = prompt("How should I (the computer) respond to this? (Storage 9)");
+    var ans9 = jumbleans9.toLowerCase();
+    localStorage.setItem("ans9", ans9);
+    localStorage.setItem("teachCount", "9");
+    }
+    else if (localStorage.getItem("teachCount") == "9") {
+	var jumbleques10 = prompt("Teach the computer a question or statement. (Storage 10)");
+	var ques10 = jumbleques10.toLowerCase();
+    localStorage.setItem("ques10", ques10);
+    var jumbleans10 = prompt("How should I (the computer) respond to this? (Storage 10)");
+    var ans10 = jumbleans10.toLowerCase();
+    localStorage.setItem("ans10", ans10);
+    localStorage.setItem("teachCount", "10");
     }
     else {
     alert("You cannot teach the AI any more stuff!");
@@ -3762,5 +3855,3 @@ localStorage.setItem("teachCount", "0");
     
 
 
-
-    
